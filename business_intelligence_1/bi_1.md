@@ -122,3 +122,39 @@ Examples of these applications include OLAP, MIS & EIS, text mining, data mining
 "Insert image here"
 
 # **Data Provisioning**
+
+In order to leverage powerful BI tools to analyse data for decision making, a basic requirement that must be
+fulfilled to ensure that the data is consistent is **data preparation and storage**.
+
+### Operational and Dispostive Systems
+
+According to Modern business studies, a firm's activities are categorized in **operational or dispositive**.
+**Operational activies include the *the provision of goods and services, utilization of goods and services*,
+and the *performance of financial tasks* that are not of a planning nature. On the other hand, dispositive
+activities are related to the *management and control of operational processes*. A key property of *operational*
+*Systems* for the implementation of operational activities is that **they capture and record data** where as
+*Dispotive Systems* only **analyse data**.
+
+#### Operational Systems
+
+As mentioned above operational systems are used to capture and record data. Addtionally, they are use to manage
+the information needed for the daily operations of a firm, e.g., customer database or employee directory. The
+data in these systems can regularly be changed, updated, deleted and freequently queried.This is to ensure that
+Data in these systems are always up to date. Models used to set up these systems must be optimized for a high
+number of transactions or queries,especially during business hours. since these systems usually have a high 
+number of users. Most queries on these systems are read requests. The processsing method for these systems is 
+**online transactional processing (OLTP)**.
+
+#### Dispositve Systems
+
+These Systems use data from operational Systems and are highly optimized for complex queries.Typically they
+don't store data and queried by few individual experts in the organisation whoseek to address complex issues,
+e.g., aggregate data by regions of a country to find the sum of sales of sneakers in the last 12months. This
+information could be used to design marketing campaignes. A **DWH** falls under dispositive systems and the
+processing method used by these systems is **online analytical processing (OLAP)**. Due to the difference in
+the objectives that both the operational system (OLPT) and dispositive system (OLAP) seek to address, in
+practice they are also **physically separated from each other**.
+
+### Data Warehouse Concept
+
+
