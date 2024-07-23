@@ -157,4 +157,46 @@ practice they are also **physically separated from each other**.
 
 ### Data Warehouse Concept
 
+In practice companies build their DWH with regards to the requirements they have. To avoid developing DWH from
+scratch there are some *architechtures* which companies pick from and customise according to their needs. 
+Typically, DWH can include different process phases, architectures and BI Components.
+
+#### Process Phase and Reference Architecture
+
+A process phase refer to the **stages through which data passes** while a referench architecture refers to the
+template that can be used to design the **collection and storage** of data using a DWH. In literature one can
+find numerous suggestions of process phases and reference architectures. Examples of process phases include:
+
++ data provision
+  - In this step, data from heterogeneous source systems e.g., CRM,ERP, SCM or external source are merged into
+  the DWH.
++ information generation, storage, and distribution
+  - In this step stored data is analysed using OLAP and data mining tools.
++ information access(Kemper et al., 2010)
+  - Insights gained from analysis is communicated in the form of recommendations or actions.
+
+The following BI reference architecture is suggested by Gansor et al. (2010),p.56
+"insert image here"
+
+The components of this reference architecture are explained as follow:
+
++ Source systems:
+  - Data from heterogeneous sources both internal(e.g ERP) and external(websites) sources are imported in their 
+  respective formats or structures. This data can be in form of text, numbers etc. and could be structured, 
+  semi-structured or unstructured.
++ Staging area:
+  - Area where data is storage temporally. The is important as it can relieve downstream systems when processing
+  large amounts of data (Inmon, 2005).
++ Operational data store (ODS)
+  - Data stored at a preliminary stage for supplying data for conventional DWH approaches. Data in this store is
+  usually **not** aggregated nor does it contain historical data for longer periods.
++ Basic database (core data warehouse)
+  - This is the central database with the DWH. After the initial transformation, data is made available for various
+  evaluation purposes or for downstream systems.
++ Evaluation database (data mart)
+  - From a technical point of view, these databases are usually based on relational databases and store data with
+  the help of a multidimensional model. This makes it possible to divide data with regards to analysis requirements
+  or organizational units (Bauer & Günzel, 2008).
+
+
 
