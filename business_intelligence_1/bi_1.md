@@ -180,23 +180,74 @@ The following BI reference architecture is suggested by Gansor et al. (2010),p.5
 
 The components of this reference architecture are explained as follow:
 
-+ Source systems:
++ **Source systems**:
   - Data from heterogeneous sources both internal(e.g ERP) and external(websites) sources are imported in their 
   respective formats or structures. This data can be in form of text, numbers etc. and could be structured, 
   semi-structured or unstructured.
-+ Staging area:
++ **Staging area**:
   - Area where data is storage temporally. The is important as it can relieve downstream systems when processing
   large amounts of data (Inmon, 2005).
-+ Operational data store (ODS)
++ **Operational data store (ODS)**:
   - Data stored at a preliminary stage for supplying data for conventional DWH approaches. Data in this store is
   usually **not** aggregated nor does it contain historical data for longer periods.
-+ Basic database (core data warehouse)
++ **Basic database (core data warehouse)**:
   - This is the central database with the DWH. After the initial transformation, data is made available for various
   evaluation purposes or for downstream systems.
-+ Evaluation database (data mart)
++ **Evaluation database (data mart)**
   - From a technical point of view, these databases are usually based on relational databases and store data with
   the help of a multidimensional model. This makes it possible to divide data with regards to analysis requirements
   or organizational units (Bauer & Günzel, 2008).
++ **Extracting, Transforming, and Loading (ETL) process**:
+This is the prcess of integrating data from different source systems with ETL Tools into the DWH.
+  - Extract: Extracting and converting data according to the company's requirements.
+  - Transforamtion: Possibly changing the structure and content of the data into the unified agreed format. It is
+  possible to check the state of the data to improve its quality if neccessary.
+  - Loading: Transfer the data into the central database in the target schema. (Bauer& Günzel, 2008).
++ **Aggregation**:
+  - Reducing the amount of data by summarising the data to lower *granularity* as agreed.
++ **Front end**:
+  - These are data mining and OLAP tools used to analyse data to infer information. These tools vary in complexity
+  according to their applications. It is in the analysis phase that some unknown relationship within the data
+  can be uncovered. 
 
+### **Architecture Variants or Types**
 
+In practice there are several architecture types. They stem from the area of data management and others from the
+field of Business intelligence. These architectures can be used as templates to be customized to meet up the 
+requirements that a company has. Some of these architectures are listed and explained as follows:s
 
++ **Independent Data Marts**:
+They are created as a result of every department in a company building their DWHs independently from each other.
+The underlying data sources are often the same. This architecture makes it easy for every department to their
+decisions easilly and faster as aquiring results from calculations and analysis occurs within a short time frame.
+It reduces the complexity of working with a central DWH but then creating a central DWH from independent data
+marts is quite challenging. (Kemper et al., 2010).
+"insert image here!"
+
++ **Data Marts with Coordinated Data Models**:
+Conceptually coordinated data models ensure the consistency and integrity of the dispositive data model thus
+making it easier, as compared to the independent data marts, to build a central or company-wide DWH.
+(Kemper et al., 2021).
+"insert image here!"
+
++ **Central C-DWH (No Data Marts)**:
+This BI Solution is recommended for situations where the number of users and the volume of data is small but
+there is interest in having a company-wide DWH.
+
++ **Multiple C-DWHs**:
+If it is determined from the company's requirements that there are different products or market structures, then
+it is recommendable to set up several core DWHs.
+"insert image here!"
+
++ **C-DWH and Dependent Data Marts**:
+This is the most presented architecture in literature and it is built by extending the core data DWH with one or
+more data marts. The data marts are fed with data and transformation processes from the core data warehouse. In 
+this architecture, the department-specific data is extracted from the C-DWH.
+"insert image here!"
+
++ **DWH Architecture Mix**:
+This is a common architecture in practice and it consists of *C-DWHs, dependent and independent data marts*.
+It also provides the possibility to have direct access to the data i.e virtual DWH with its own data transformation.
+"insert image here!"
+
+# Data Warehouse
