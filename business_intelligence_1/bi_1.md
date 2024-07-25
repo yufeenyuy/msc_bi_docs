@@ -256,3 +256,65 @@ can be done programmatically or with a set of available tools. Kimball & Caserta
 ETL Tools because of the complex nature of ETL Processes.
 The following is an illustration of the ETL Process
 "Insert image of ETL_Process here!"
+
+#### Components of the Transformation Process
+This step of the ETL-Process consist of four sub-processes whiche are: **Filtering, Harmonisation, Aggregation and**
+**Enriching**. As a result of this, it is the most elaborate and complex part of the ETL-Process.
+
++ **Filtering**
+This step of the transformation process aims at *extracting and removing syntactic(technical) and semantic(content)*
+defects from the data before it is moved to the DWH. The process occurs in two steps; **extraction and Cleansing**.
+In the extraction step, data from operational systems e.g., ERP-Systms, and external sources e.g., Online portal for
+exchange rates are stored in the staging area. The staging area is a special temporal storage for source data in the
+form, format or structure in which it comes. In the cleansing step, technical defects e.g., numeric values in a date fiel
+and content defects e.g., inaccurate sales values. Defects that are automatically detected and fixed during extraction
+are first class defects, while those that are automatically detected but manually fix after extraction are second class
+errors. Other errors are only manually determined and fixed. Those are third class errors. Once the filtering process
+is completed, of course with regards to the business objectives, the *filtered data is ingested in the data warehouse*.
++ **Harmonization**
+Harmonization in other words is **normalization** of *filtered data*. In this step, the data, most often from different
+source systems is reconcilled or unified into an agreed format. For instance, data from the sales department recording
+sneaker sizes as **S, M or L**. On the other hand, procurement department be recording these entries as **Small, Medium,**
+**Large**. These data can be reconcilled by agreeing to store the entries as **S, M or L**. This means that in the
+harmonization or normalization step, the data entries from the procurement department will be transformed to **S, L or M**.
+When this transformation is done, then the data from these two departments can be consolidated or merged into one before
+storage in DWH. Currency conversions can also be done in this step(Kimball & Caserta, 20024).
+  - Syntactic harmonization: When data from different source systems is being merged together, it is a common practice
+    to assign or create primary key for the merged data. This is often done through a map table, that contains this
+    primary key, and the primary keys of the individual tables of the various sources. This primary key is referred to
+    as a global key and is used in the basic database, DWH and data mart. Some ETL Tools can help generate this key
+    during data transformation. The term used for this key is **surrogate keys**.
+  - Semantic harmonization: This is to ensure that business terms have the same meaning and well understood by those
+    who will be using them.
++ **Aggregation**
+In this step of the transformation process, *harmonized and filtered data* is summarised or condensed into an agreed
+granularity or hierarchical level. In this phase functions that are required to calculate key business figures are
+prepared for later use. It is also in this step where dimensions that will be used for analysing the data is set.
++ **Enrichment**
+This is the final step of in the transformation process. It is in this phase that **key business figures** are actually
+created or calculated and stored.
+>The bulk of the work in the ETL process lies in the Extraction and Transformation steps. Specifically the Sub-Processes
+>of the transformation process are the key components of the ETL Process. Once the data has been enriched; the data
+>is **written** in the target system. This occurs in the last step of the ETL Process which is *Loading*.
+
+### DWH and Data-Mart Concepts
+In a narrower sense, the functions of a data warehouse includes data storage. To be leverage this functionality, the
+components of a data warehouse play very important roles. These components include:**staging area, basic database or**
+**C-DWH, data mart, ODS, and metadata**. 
+
++ **Staging area**
+This is a working area where data is extracted to, transformed before it is loaded into the data warehouse. This acts
+as a relieve area for downstream systems, particular when working with large amounts of data that alos require alot
+of cleansing and harmonization. Typically, data is loaded into this area periodically and later on discarded once
+the data has been transformed and loaded into the data warehouse. Thus, it is a **temporal store** for raw data.
+(Inmon,2005).
++ **C-DWH**
+Located between the staging area and the avaluation database is the basic database. This database is particular in
+in its function in the sense that the transformed data it receives from the staging area is stored bytopic, historically,
+consistent, permanently,by dimenssion and in a normalized form. This is why modelling is a very important aspect of setting-up
+a DWH. The data in the C-DWH is then served to the evaluation database for calculating key business figures or metrics.
+Depending on the business goals, data are also historicized, that is, they are kept track of over time(Bauer & Günzel,2008).
+
+
+
+
