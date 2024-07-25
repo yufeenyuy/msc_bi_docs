@@ -25,48 +25,40 @@ Business intelligence has seen its birth through the creation of *information sy
 
 1. **Management Information Systems (MIS)**
 
-```
-The MIS was created in the late 90s with the aim to serve company managers with the information they need to make
-decisions. However, these Systems were strongly constraint by the technological infrastructure of that time. As a
-result Time, content and presentation of information needed to be optimized as a secondary factor.
-```
+>The MIS was created in the late 90s with the aim to serve company managers with the information they need to make
+>decisions. However, these Systems were strongly constraint by the technological infrastructure of that time. As a
+>result Time, content and presentation of information needed to be optimized as a secondary factor.
 
 2. **Decision Support Systems (DSS)**
 
-```
-The DSS was created in the mid 70s and with its introduction the MIS was large replaced. This was due to technical
-development in hardware which allowed DDS to bring forth the act of storing data in a structural manner for decision
-making. Additionally, the DSS introduced Models and Methods as well as scenarios that made it possible to analyse data
-for some departments in the company. However, the DSS did not meet its high expections as Companies Managers did not
-trust computers to be able to correct business decisions with changing business conditions.
-```
+>The DSS was created in the mid 70s and with its introduction the MIS was large replaced. This was due to technical
+>development in hardware which allowed DDS to bring forth the act of storing data in a structural manner for decision
+>making. Additionally, the DSS introduced Models and Methods as well as scenarios that made it possible to analyse data
+>for some departments in the company. However, the DSS did not meet its high expections as Companies Managers did not
+>trust computers to be able to correct business decisions with changing business conditions.
+
 
 3. **Executive Information System (EIS)**
 
-```
-The DSS was created in the mid 80s as it became possible to own personal computers, the EIS was introduce specifically
-for the upper management an those in controling positions. With this system it was possible to serve these group of 
-people with up to date data in the form of multidimensional cube. This the previous systems, this was not possible. 
-However, with the presence of Personal PCs, the EIS could only be used within single department which made it also
-expensive in the event of changes or updates. The EIS eventually suffered the same faith as the DSS.
-```
+>The DSS was created in the mid 80s as it became possible to own personal computers, the EIS was introduce specifically
+>for the upper management an those in controling positions. With this system it was possible to serve these group of 
+>people with up to date data in the form of multidimensional cube. This the previous systems, this was not possible. 
+>However, with the presence of Personal PCs, the EIS could only be used within single department which made it also
+>expensive in the event of changes or updates. The EIS eventually suffered the same faith as the DSS.
 
 4. **Data Warehouse (DWH)**
 
-```
-With the globalisation of markets in the early 90s, companies started decentralising their systems of operation. As a
-result managers started facing the challenge of making decisions from heterogenous data, sometimes inconsistent,and often 
-arising from different sources. These forced company managers to be information dependent and as such they became obliged
-to trust informations systems which they were initially skeptical to. This is when information systems made a breakthrough
-in business environments. As the amount of data even grew the need for making decentralised decisions i.e decision made at
-different locations or sites not neccessarilly from a central location became more petinent. In order to handle large amounts
-of heterogenous data arising from inconsistent and non-compartible systems, and effectively make decisions the need to create
-a new system became inevitable. As such a centralised database was developed to bring together data from different sources or
-systems throughout the company. Thus the birth of the term data warehouse.
-```
+>With the globalisation of markets in the early 90s, companies started decentralising their systems of operation. As a
+>result managers started facing the challenge of making decisions from heterogenous data, sometimes inconsistent,and often 
+>arising from different sources. These forced company managers to be information dependent and as such they became obliged
+>to trust informations systems which they were initially skeptical to. This is when information systems made a breakthrough
+>in business environments. As the amount of data even grew the need for making decentralised decisions i.e decision made at
+>different locations or sites not neccessarilly from a central location became more petinent. In order to handle large amounts
+>of heterogenous data arising from inconsistent and non-compartible systems, and effectively make decisions the need to create
+>a new system became inevitable. As such a centralised database was developed to bring together data from different sources or
+>systems throughout the company. Thus the birth of the term data warehouse.
 
 #### Business Intelligence as a Framework
-
 Nowadays several companies are faced with increasing amount of heterogeneous data from different systems. This challenge can
 be handled with data warehouses. However, another significant challenge is that the right information is often not delivered
 in the right quantity, at the right place, and at the right time to enable effective decision making by company managers. To
@@ -75,14 +67,8 @@ power of data warehouse to ensure that information is retrieved and delivered at
 decison making.
 
 ##### Definations and Features of a DWH and BI
-
-```
-"
-By the initial definition, a data warehouse is a subject-oriented, integrated, non-volatile, time-variant collection
-of data in support of management's decisions.
-"(Inmon, 2005, p.31)
-```
-
+*By the initial definition, a data warehouse is a subject-oriented, integrated, non-volatile, time-variant collection*
+*of data in support of management's decisions. (Inmon, 2005, p.31)*
 The four basic properties of a data warehouse are described as follows:
 
 + **subject-oriented (theme-focuse)**: The data stock of a DWH are selected and organised according to profession or business 
@@ -102,7 +88,7 @@ of a **DWH** suggest that a DWH can be observed from two angles, namely: a *narr
 + DWH in a narrow view implies that a DWH is solely used for **data collection**.
 + DWH in a broad view implies that a DWH can be used to **generate reports, graphs, perform spreadsheet and analytics**.
 
-"insert image with source: Glasker(2017) here"
+<img src="datawarehouse.JPG" width="350" height="300" style="float: center">
 
 ```
 Since data collection and aggregation alone does not provide analysis of the data, "business intelligence is thus the process
@@ -251,3 +237,22 @@ It also provides the possibility to have direct access to the data i.e virtual D
 "insert image here!"
 
 # Data Warehouse
+In practice, business intelligence applications require data to be *arranged* according to **topics** i.e theme focused.
+The organised data is usually **aggregated** according to *business management perspective*. To achieve this, **ETL**
+Tools are used to **integrate** the *provisioned data (data storage and data management)* from different operational Systems. 
+The aggregated data is persistently stored in a timely manner according to specific-topics e.g customer, product, or 
+organizational unit. Thus, the need of a **DWH**.
+
+The ETL-Tools are used to design and implement and **ETL**-Process for Extracting, transforming and storing operational
+data from heterogeneous source systems into a DWH, so that it can be used for further analysis. Ths transformation process 
+prepares data for analysis in *four sub-processes* namely: **Filtering, Harmonisation, Aggregation and Enrichment**. 
+
+### ETL Process
+In order to integrate data from different operational systems so as to be able to infer relevant information that 
+business managers can use to steer the business or strive to achieve business goals, an ETL Process must be implemented.
+The development of an ETL-Process is the most challenging task in data integration, as it solely rely on the nature of
+the operational Systems from which data should be extracted. Once such a process have been designed, its implementation
+can be done programmatically or with a set of available tools. Kimball & Caserta, 2004 recommend the use of available
+ETL Tools because of the complex nature of ETL Processes.
+The following is an illustration of the ETL Process
+"Insert image of ETL_Process here!"
