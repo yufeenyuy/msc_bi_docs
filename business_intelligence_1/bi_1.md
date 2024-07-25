@@ -243,7 +243,7 @@ Tools are used to **integrate** the *provisioned data (data storage and data man
 The aggregated data is persistently stored in a timely manner according to specific-topics e.g customer, product, or 
 organizational unit. Thus, the need of a **DWH**.
 
-The ETL-Tools are used to design and implement and **ETL**-Process for Extracting, transforming and storing operational
+The ETL-Tools are used to design and implement and **ETL**Process for Extracting, transforming and storing operational
 data from heterogeneous source systems into a DWH, so that it can be used for further analysis. Ths transformation process 
 prepares data for analysis in *four sub-processes* namely: **Filtering, Harmonisation, Aggregation and Enrichment**. 
 
