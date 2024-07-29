@@ -314,7 +314,110 @@ in its function in the sense that the transformed data it receives from the stag
 consistent, permanently,by dimenssion and in a normalized form. This is why modelling is a very important aspect of setting-up
 a DWH. The data in the C-DWH is then served to the evaluation database for calculating key business figures or metrics.
 Depending on the business goals, data are also historicized, that is, they are kept track of over time(Bauer & Günzel,2008).
++ **Data Mart**
+Data marts or *evaluation databases* are sections of the C-DWH that are served with specific data from the C-DWH for a 
+particular department or users with specific responsibilities within the firm. For instance the marketing department is
+often more interested in *payback points* of customers to use this information for developing marketing campaigns. These
+databases are useful in situations of complex C-DWH and have the advantage that the entire data in the C-DWH is not mapped,
+i.e only the required data is mapped. For data marts that use data from C-DWH as their source system, the data in them is
+usually in aggregated and enriched. Thus front end BI-Tools can connect to them to use their data for analysis purposes.
+If the data marts are not linked to a C-DWH then the data must be cleansed during transformation in the ETL-Process before
+it is loaded in them for evaluation. As measures to *secure or protect* data, it is recommended to
+distribute data accross several data marts(Bauer & Günzel, 2008).
 
+### ODS and Meta-Data
+The Operational Data Store (ODS) is a preliminary stage of a DWH that is integrated in new designs of a data warehouse. 
+It contains **current or up-to-date** transaction-based data that originates from various operational source system and 
+it is characterised by the following features:
++ subject-oriented
++ integrated
++ time referenced
++ volatile, and
++ high level of detail.
+
+**Meta data** is information that is used to describe the data stored in a data warehouse and how these data has been 
+processed. Without it will be challenging to perform analysis on the data. It is equally important in the effective
+development and operation of the BI System. Meta Data is classified into **active, passive, technical** and 
+**business metadata** with each type having its specificities.
++ *Passive Meta Data*: A document that contains the description of the data and its relationship to the environment. The
+content includes structure of the data, development process and how the data should be used. These document is relevant
+for users who are active in the BI environment e.g end users, administrators and developers (kemper et al,2010).
++ *Active Meta Data*: This is a document that contains explainations how methods in the ETL-Process are executed.
+(Kemper et al., 2010).
++ *Technical metadata*: Based on the filtering sub-process of transformation in the ETL-Process, this document contains
+details on the data as it is in the source system.
++ *Business Meta Data*: This document contains additional information like business keyword and specificities of the meta
+objects. The content is derived from the harmonization, aggregation and enrichment sub-processes of the transformation
+step in the ETL-Process.
+
+Due to the fact that an ETL-Process can be very complex depending on the nature of the source systems, transformations and
+tools involved to implement this process, it can be complicated to handle metadata effectively. In practice, there are
+architectures that are being used to manage metadata. These include:
++ Central metadata management: Meta Data for all components and authorization structures are stored in a the database.
+This method is less used. This reduces redundancy and everyone has access to the same information but it is difficult
+to manage or maintene as the metadata grows.
++ Decentralized metadata management: Meta Data is stored in the various tools or components involved the ETL-Process.
+The risk of redundant metadata is high but users only have access to metadata based on their needs and roles. 
++ Federated metadata management: It is a mix of central -and decentralised metadata management. Its advantages include:
+  - uniform presentation of shared metadata
+  - autonomy of the local repository
+  - reduced number of interfaces between repositories and
+  - controlled redundancy
+
+### Authorization structures:
+In practice, companies follow a role-based access control system as this allows users or individuals to access only the
+information they need to perform their duties.
+
+### Administration Interfaces
+There are two administrative interfaces name; **technical administrative interface and business administrative interface**
+- Technical administrative interface: Applied at the *filter* level of the ETL-Process, to allow authorized users to make
+actions like data manipulation, extraction and cleansing.
+- Business administrative interface: Applied at the levels of data harmonization, aggregation and enrichment to allow
+authorized users to make syntactic and semantic changes.
+
+# Modeling Multidimensional Dataspaces
+We've seen that, with the help of data marts, data from a DWH can be served to users or group of users in a particular
+department or with specific responsibilities according to their needs. With multidimensional models, this can be achieved
+with in C-DWH. This makes DWH powerful than relational databases where data is stored in two dimensions. Beside learning
+how to create multidimensional dataspaces in a DWH, we'll also learn how multidimensions are stored physically.
+
+### Data Modeling
+
+#### Relational and Multidimensional Models
+Both relational data models and multidimensional data spaces play an important role in business intelligence. Star and
+Snowflake schemas can be used to enhance the performance of multidimensional spaces. Basically, data models can be described
+in 3 stages which are:
++ Semantic: This is a user friendly way to describe data models by using a technology-neutral approach. An example of this
+approach is the Entity-Relationship-Model (ERM). It is used to facilitate the communication betwenn users and developers,
+as well as it forms the basis of database design. ERM is equally used to model two dimensional spaces as well as multidimensional
+spaces. The Author of this approach is **Peter Chen**.
++ Logical: This stage is built on the semantics and describes all the data in a logical level irrespective on the manner
+in which it is stored. This is where a schema for the semantic model is developed including stating primary keys, column
+names and data types that are contained the various tables involved.
++ Physical: This is where the model is technically implemented and specifies how the data is physically stored.
+#### Redundancies and Normal Forms
+Redundancy occurs when an entity or an entry with same information accross all other columns of the same table is stored
+more than once in the same table. When creating a relational database it is important to do this in accordance of the 
+qualities(Maintenance, Re-usability, Scalability,Consistence,Portability,Interoperability,Understandable) of a software.
+Unfortunately these software qualities cannot be guaranteed when creating a database from a ERM Model. Redundant data is 
+an issue to watch out for when modeling databases as it can compromise the consistency, in the **ACID principle**, of 
+relational databases. To solve the issue of redundancy to avoid inconsistencies in the database, the concept of data 
+**Normalization** can be applied. When normalising data, the **relationships in ERM** are desolved stepwise to the simplest 
+form that will make it easy to understand the **functional relationship** that exist between 
+#### Primary Key and First Normal Form,
++ First Normal Form: A Table row may only contain one attribute value i.e column or attribute values must be atomic. 
+This implies that, if there are repeating groups or entries in a table, then every line for the non-repeating groups must
+be created with entries for the repeating groups.
++ Second Normal Form: Must be in a first normal form and all non-key columns or attributes must depend functionally or
+or completely from the entire key. That is, every entry of non-key attributes should be identifiable only via a primary key 
+otherwise the table is not in a second normal form. If the table is not in the second normal form then another table must
+be created to reduce redundancy.
++ Third Normal Form: A relation must be in second normal form and no functional dependencies must exist between non-key 
+attributes. This means that there should not be non-key attributes that are related to the primary key via a **transitivity.**
+Once the third normal form is achieved, all primary keys of the resulted normalization are put in a separate table. Then,
+a new ERM is developed from the normalised tables. This ERM can now be used to create a relational database.
+
+### OLAP Cubes
 
 
 
