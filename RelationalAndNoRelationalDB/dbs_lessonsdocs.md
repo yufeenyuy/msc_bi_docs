@@ -128,3 +128,5 @@ occur in the conceptual phase while implementing cardinality limits occur both i
 and limits requires details that determine the complexity of implementation. Maximum cardinality, can be implemented directly in the Database 
 Management System by creating relationships between tables and setting maximum cardinalities. On the other hand, implementing minimum cardinalities 
 can sometimes require triggers or stored procedures due to their complex nature.
+
+# Database Physiology
