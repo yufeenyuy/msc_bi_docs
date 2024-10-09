@@ -1,10 +1,11 @@
 
 ### **Concepts in Data Management**
 
-This course is concerned with developing strategies to securely store data in a cost-effective and efficient way.<br>  
-It also covers data lifecycle, data collection upto and including analysis as well as transforming **data** into<br>
-**information** to support operational decision-making. At the end of the course one should have learned the<br>
-vital skills and knowledge necessary for managing data professionaly. The major concepts that will be covered are:<br>
+This course is concerned with developing strategies to securely store data in a cost-effective and efficient way. 
+It also covers data lifecycle, data collection upto and including analysis as well as transforming **data** into
+**information** to support operational decision-making. At the end of the course one should have learned the
+vital skills and knowledge necessary for managing data professionaly. The major concepts that will be covered are:
+
 1. *Data processing lifecycle*
 > This segment falls in unit one and covers data ingestion, storage, analysis and reporting.
 2. *Data protection and security*
@@ -28,16 +29,16 @@ Developing analytical data applications often entail *complex processes* since d
 The development of analytical data applications i.e the transformation of aggregated data from different sources into actionable<br>
 insight or information is refered as **Data Lifecycle.** This cycle is made up of five phases which include:
 
-Data Ingestion and Integration
-: Involves data extraction from different sources and transforming these to a homogeneous storage format.
-Data Processing
-: Processing and transforming of Data
-Data Storage
-: Storing Data in an adequate format.
-Data Analysis
-: Providing tools to analyze the stored data. e.g Machine learning
-Reporting
-: Business Intelligence applications or static reports and presentations.
+Data Integration and Ingestion: 
+Involves data extraction from different sources and transforming these to a homogeneous storage format.
+Data Processing: 
+Processing and transforming of Data. This involves harmonization, aggregation and enrichment.
+Data Storage: 
+Storing Data in a target data store like relational database or multidimensional data space like an OLAP cube.
+Data Analysis: 
+Providing tools to analyze the stored data. e.g Data mining.
+Reporting: 
+Deploying business intelligence tools to build KPI Reports like Score Cards and interactive dashboards.
 
 ##### Data Ingestion and Integration
 
@@ -93,7 +94,7 @@ A modern data ingestion tool should have the following characteristics.
 - Hardware and operating systems that can support data integration processes
 - Scalable and adaptive
 - Capability for data transformation operations including fundamental and complex transformations.
-- Secure to protect bridges in the transformation pipeline.
+- Secure to protect breach in the transformation pipeline.
 
 ##### Challenges
 
@@ -105,12 +106,11 @@ Challenges in data integration include:
 
 #### Data Processing
 
-Data processing is achieved by the use of data processing frameworks that typically transform data in 
-several steps. Some frameworks model the transformation in a form of a **Directed Acyclic Graph (DAG)**.
-Apart from the root and final nodes, every inner node on the DAG comprises of an **incoming and outgoing** arrow
-called **source and target** respectively. DAGs are great to model transformation as they clearly show 
-dependencies and prevent backward propagation in the transformation pipeline. An Orchestrator of the pipeline
-usually have the following tasks:
+Data processing is achieved by the use of data processing frameworks that typically transform data in  several steps. 
+Some frameworks model the transformation in a form of a **Directed Acyclic Graph (DAG) e.g Apache Airflow**. Apart 
+from the root and final nodes, every inner node on the DAG comprises of an **incoming and outgoing** arrow called 
+**source and target** respectively. DAGs are great to model transformation as they clearly show dependencies and 
+prevent backward flow in the transformation pipeline. An Orchestrator of the pipeline usually have the following tasks:
 - Supervises the correct execution of the pipeline
 - Uses a **schedular** to cordinate executions of the pipeline
 - Uses an executor to run the tasks
