@@ -178,7 +178,7 @@ The components of this reference architecture are explained as follow:
   - Data stored at a preliminary stage for supplying data for conventional DWH approaches. Data in this store is
   usually **not** aggregated nor does it contain historical data for longer periods.
 + **Basic database (core data warehouse)**:
-  - This is the central database with the DWH. After the initial transformation, data is made available for various
+  - This is the central database within the DWH. After the initial transformation, data is made available for various
   evaluation purposes or for downstream systems.
 + **Evaluation database (data mart)**
   - From a technical point of view, these databases are usually based on relational databases and store data with
@@ -187,7 +187,7 @@ The components of this reference architecture are explained as follow:
 + **Extracting, Transforming, and Loading (ETL) process**:
 This is the process of integrating data from different source systems with ETL Tools into the DWH.
   - Extract: Extracting and converting data according to the company's requirements.
-  - Transforamtion: Possibly changing the structure and content of the data into the unified agreed format. It is
+  - Transformation: Possibly changing the structure and content of the data into the unified agreed format. It is
   possible to check the state of the data to improve its quality if neccessary.
   - Loading: Transfer the data into the central database in the target schema. (Bauer& Günzel, 2008).
 + **Aggregation**:
@@ -206,7 +206,7 @@ requirements that a company has. Some of these architectures are listed and expl
 + **Independent Data Marts**:
 They are created as a result of every department in a company building their DWHs independently from each other.
 The underlying data sources are often the same. This architecture makes it easy for every department to make their
-decisions easilly and faster as aquiring results from calculations and analysis occurs within a short time frame.
+decisions easilly and faster as acquiring results from calculations and analysis occurs within a short time frame.
 It reduces the complexity of working with a central DWH but then creating a central DWH from independent data
 marts is quite challenging (Kemper et al., 2010).
 
@@ -232,7 +232,7 @@ it is recommendable to set up several core DWHs.
 <img src = "./img/multiple_c-dwh.JPG" width="350" height="300" style="float: center">
 
 + **C-DWH and Dependent Data Marts**:
-This is the most presented architecture in literature and it is built by extending the core data DWH with one or
+This is the most presented architecture in literature and it is built by extending the core DWH with one or
 more data marts. The data marts are fed with data and transformation processes from the core data warehouse. In 
 this architecture, the department-specific data is extracted from the C-DWH.
 
@@ -250,9 +250,8 @@ The organised data is usually **aggregated** according to *business management p
 Tools are used to **integrate** the *provisioned data (data storage and data management)* from different operational Systems. 
 The aggregated data is persistently stored in a timely manner according to specific-topics e.g customer, product, or 
 organizational unit. Thus, the need of a **DWH**.
-
 The ETL-Tools are used to design and implement an **ETL** Process for Extracting, transforming and storing operational
-data from heterogeneous source systems into a DWH, so that it can be used for further analysis. This transformation process 
+data from heterogeneous source systems into a DWH, so that it can be used for further analysis. The transformation process 
 prepares data for analysis in *four sub-processes* namely: **Filtering, Harmonisation, Aggregation and Enrichment**. 
 
 ### ETL Process
@@ -364,7 +363,7 @@ step in the ETL-Process.
 Due to the fact that an ETL-Process can be very complex depending on the nature of the source systems, transformations and
 tools involved to implement this process, it can be complicated to handle metadata effectively. In practice, there are
 architectures that are being used to manage metadata. These include:
-+ Central metadata management: Meta Data for all components and authorization structures are stored in a the database.
++ Central metadata management: Meta Data for all components and authorization structures are stored in the database.
 This method is less used. This reduces redundancy and everyone has access to the same information but it is difficult
 to manage or maintene as the metadata grows.
 + Decentralized metadata management: Meta Data is stored in the various tools or components involved the ETL-Process.
@@ -411,7 +410,7 @@ names and data types that are contained in the various tables involved.
 Redundancy occurs when an entity or an entry with same information accross all other columns of the same table is stored
 more than once in the same table. When creating a relational database it is important to do this in accordance with the 
 qualities (Maintenance, Re-usability, Scalability, Consistency, Portability,Interoperability,Understandable) of a software.
-Unfortunately these software qualities cannot be guaranteed when creating a database from a ERM Model. Redundant data is 
+Unfortunately these software qualities cannot be guaranteed when creating a database from a ERM or semantic stage. Redundant data is 
 an issue to watch out for when modeling databases as it can compromise the consistency, in the **ACID principle**, of 
 relational databases. To solve the issue of redundancy to avoid inconsistencies in the database, the concept of data 
 **Normalization** can be applied. When normalising data, the **relationships in ERM** are desolved stepwise to the simplest 
@@ -492,52 +491,53 @@ The physical implementation of a multidimensional data space or OLAP Cube model 
 In this schema a central table consisting the keys of the dimensions and the quantitative value e.g sales are stored. This 
 table is called **fact table** and it is used to manage the keys of the entire OLAP cube. Around this fact table are the
 dimension tables. There only exist relationships between the fact table and the individual dimension tables. This relationship
-is achieved by inserting the **primary key of the fact table into the each dimension table as a foreign key**.
+is achieved by **inserting the primary key of the dimension tables into the fact table as a foreign key. The combination of these**
+**foreign keys are then combined to form the primary key of the fact table.** Every combination of the the primary keys of the
+dimension tables with the associated fact value is stored as a cell in the OLAP cube.
 
 ![Star Schema](./img/star-schema.JPG "Star Schema")
 
 #### Snowflake Schema
 Unlike the star schema, the snowflake schema contains a fact table which is surrounded by dimensions and these dimensions
-are further surrounded by other dimensions. To created a snowflake schema, the data must be **normalized** taking functional
+are further surrounded by other dimensions. To creat a snowflake schema, the data must be **normalized** taking functional
 dependencies into consideration. As a result, the snowflake schema tend to have more tables to query than the star schema.
 
 ```find and insert image of snowflake schema here.```
 
 ### Historicization
 
-Historicization of Data in a multidimensional data space is not trivial especially when it concerns dimension tables. To
-historise facts or quantitative values, the foreign key relationship of the time dimension is used. On the other hand,
-to deal with the complex situation of historizing dimension data the concept of **slowly changing dimensions SCD** is applied.
-This concept offers 3 approaches namely: *SCD Type 1, SCD Type 2,SCD Type 3*
+Historicization of Data in a multidimensional data space is not trivial especially when it concerns dimension tables, as they
+store data in a de-normalise form. To historicise facts or quantitative values, the foreign key relationship of the time dimension 
+is used. On the other hand,to deal with the complex situation of historizing dimension data the concept of **slowly changing dimensions SCD** is applied. This concept offers 3 approaches namely: *SCD Type 1, SCD Type 2,SCD Type 3*
 
 #### SCD Type 1
 During historicization as a result of changes made in the data of dimension tables, the affected entries are overwritten by
-teh new entry. This type of historicization keeps the volume of data low but then causes loss of information as it becomes
+the new entry. This type of historicization keeps the volume of data low but then causes loss of information as it becomes
 impossible to determin when a change was made.
 
 #### SCD Type 2
 In this type of historicization two attributes are added to the dimension where the change is or will be made. These attributes
 or columns are **ValidFrom and ValidTo**. The ValidFrom get the a date entry when a value was originally entered and the 
 ValidTo gets the Date when this entry is or will lastly be used. On the Row Level, an entry is added when the new entry
-starts being used i.e ValidFrom is when the Changed entry comes into effect and ValidTo is set to infinity. With thi type
-of historicization the Volume of increases with respect to the rate at which changes are made but then it effectively tracks
+starts being used i.e ValidFrom is when the Changed entry comes into effect and ValidTo is set to infinity. With this type
+of historicization the Volume increases with respect to the rate at which changes are made but then it effectively tracks
 when changes to entries where made. This is suitable for scenarios where changes often occure in the data.
 
-```find and insert image here.```
+![Star Schema](./img/scd-type2_solution.JPG "SCD Type 2")
 
 #### SCD Type 3
-In this type, a new attribute or column named **NewXGroup** is added to the dimension(s) in question. This attribue stored
+In this type, a new attribute or column named **NewXGroup** is added to the dimension(s) in question. This attribue stores
 the new entry. However information about the period the changed occured is lost. Additionally, information is further lost
 when changes are made several times as the previous entries in this attribute will be overwritten. This historicization 
 approach is only used where changes are rarely made or expected e.g change in place of birth. It is important to note that
 both **SCD Types 2 and 3** are complex to implement.
 
-```find and insert image here.```
+![Star Schema](./img/scd-type3_solution.JPG "SCD Type 3")
 
 # Analytical Systems
 Once data, in an agreed format, is physically stored in an OLAP cube model or multidimensional data space, special systems
 can then be used to perform analysis with the aim to infer information rich enough to make data-driven decisions. The 
-choice of teh System used for analysis depends on several factors including the IT know-how of the users. The different 
+choice of the System used for analysis depends on several factors including the *IT know-how of the users*. The different 
 types of systems that can be used for analysis include:
 + free data research,
 + ad-hoc analysis systems (e.g OLAP)
@@ -547,7 +547,7 @@ types of systems that can be used for analysis include:
 
 The above mention systems can be categorised into **concept oriented systems and generic basic systems**.
 
-```find and insert image for concept_and_generic_systems here.```
+![Star Schema](./img/concept_and_generic_systems.JPG "Concept and Generic Analytical Systems")
 
 ### OLAP - Online Analytical Processing
 
@@ -555,27 +555,27 @@ As already seen, OLAP cubes model offers methods and technologies that users can
 This enables users to analyse data insearch of information. To analyse the performance of OLAP systems some rules 
 have be developed which are summarised in the acronym **FASMI**. The meaning of this acronym is **Fast Analysis**
 **Shared multidimensional Information**.
-+ Fast: Queries should be process within a time frame of maximumly twenty seconds.
++ Fast: Queries should be processed within a time frame of maximumly twenty seconds.
 + Analysis: Complex analysis should be achievable with less programming effort.
 + Shared: Multiple users should be able to access data parallely without hindernis.
-+ Multidimensional: Data should be stored in dimension in a hierarchichal manner
++ Multidimensional: Data should be stored in dimensions in a hierarchichal manner
 + Information: Data evaluated during analysis should be transparent to all users to avoid inconsistencies.
 
-As a result, OLPA Systems are highly performant and easy to use. Thus reports generated from these Systems are 
-presented in form of graphics and tables. Example of OLAP System is SAP Business Warehouse.
+As a result, OLAP Systems are highly performant and easy to use. Thus reports generated from these Systems are 
+presented in form of graphics and tables. Example of OLAP System is **SAP Business Warehouse**.
 
 ### Reporting Systems
 These are systems which users can use to create and design reports based on company data. These data is the underlying
 source for calculating **Key performance indicators (KPIs)**. KPIs are key business metrics that can be measured to
 evaluate the performance of a business against its business goals. These systems or tools usually provide users with a 
-**GUI and drag-and-drop operations** to furster analysis. Examples of such toolsinclude power bi, cognos, tableau, QLik.
+**GUI and drag-and-drop operations** to furster analysis. Examples of such tools include power bi, cognos, tableau, QLik.
 
 #### Scorecards and Dashboards
-+ Scorecards: They provide a snapshop of the current business performance based on key performance indicators. This
++ *Scorecards:* They provide a snapshop of the current business performance based on key performance indicators. This
 can help business managers to quickly evaluate the business against it goals. The data in score in scorecards are
 usually summarised based on the desired level of granularity that is enough to quickly assess the business. These data
 is often represented in form of **charts, graphs, traffic lights, speedometers, and thermometer displays**.
-+ Dashboard: They provide real-time performance of a business based on data from different parts of the company. 
++ *Dashboard:* They provide **real-time** performance of a business based on data from different parts of the company. 
 Performance is measured by means of key performance indicators which are consolidated in a single uniform view. In
 Dashboards it is possible to set threshholds for KPIs so that alerts can be triggered whenever a threshhold is reached.
 Additionally, dashboards can scorecards, other measures and filters and the data must not be in summary form.
@@ -583,8 +583,5 @@ Additionally, dashboards can scorecards, other measures and filters and the data
 #### Generated Reports
 
 + Management information systems (MIS)
-+ Executive information Systems(EIS)
-
-
-
++ Executive information Systems (EIS)
 
