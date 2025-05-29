@@ -1,5 +1,5 @@
 
-### **Concepts in Data Management**
+## **Concepts in Data Management**
 
 This course is concerned with developing strategies to securely store data in a cost-effective and efficient way. 
 It also covers data lifecycle, data collection upto and including analysis as well as transforming **data** into
@@ -20,7 +20,7 @@ vital skills and knowledge necessary for managing data professionaly. The major 
 6. *Metadata management*
 > This segment falls in unit six and covers types of metadata and how they are stored.
 
-#### Data Processing Lifecycle
+# Data Processing Lifecycle
 
 As the amount of data genarated rapidly increases, technological level ups have been made to enhance data integration, <br>
 storage, analysis and reporting. As a result companies are shifting their traditional decision making rules by deploying these<br> 
@@ -40,7 +40,7 @@ Providing tools to analyze the stored data. e.g Data mining.
 Reporting: 
 Deploying business intelligence tools to build KPI Reports like Score Cards and interactive dashboards.
 
-##### Data Ingestion and Integration
+## Data Ingestion and Integration
 
  This is the stage in the data processing lifecycle where data from different sources is extracted, in
  some cases processed to correspond to the target data format, then ingested in a database. Data integration
@@ -72,10 +72,9 @@ Extensible Markup Language (XML) or Hypertext Markup Language(HTML). Results of 
 Finally, unstructured data are those that lack a schema to describe them. They don't necessarily appear in a table format and
 don't have tags that can be used to restructure them. Most of these data are found in text files like word, powerpoint, pdf, jpg,
 audios etc. One good aspect of these data is that they are easilly interpretable by humans. However, they need preprocessing by 
-computers before information can be extracted. One way to ingest unstructured data is by collecting text files from a google drive
-directory uploaded by someone in a survey process.
+computers before information can be extracted. One way to ingest unstructured data is by collecting text files from a google drive directory uploaded by someone in a survey process.
 
-##### Data ingestion and ingegration frameworks
+#### Data ingestion and ingegration frameworks
 
 From a technological point of view, data integration and ingestion are treated as same. Data integration framworks have been
 around for quite sometime and are being used in the context of *data warehousing* as *ETL* processes. 
@@ -83,10 +82,14 @@ around for quite sometime and are being used in the context of *data warehousing
 > while Transformation entails bringing the data to a homogeneous agreed format, cleaning, feature engineering and enrichment and
 > Loading takes care of putting the data in the right storage location e.g database.
 
-Apart from ETL Tools other approaches for data integration and ingestion include, *data pipeline orchestrators, bulk import tools*
-and *data streaming platforms*.
+Apart from ETL Tools other approaches or frameworks for data integration and ingestion include: 
+**IoT Hub**
+**Digital twins** 
+**data pipeline orchestrators**
+**bulk import tools**
+**data streaming platforms**.
 
-##### Features of a data integration tool
+#### Features of a data integration tool
 
 A modern data ingestion tool should have the following characteristics.
 
@@ -96,7 +99,7 @@ A modern data ingestion tool should have the following characteristics.
 - Capability for data transformation operations including fundamental and complex transformations.
 - Secure to protect breach in the transformation pipeline.
 
-##### Challenges
+#### Challenges
 
 Challenges in data integration include:
 - handling multiple data sources
@@ -104,10 +107,10 @@ Challenges in data integration include:
 - Cybersecurity
 - integrating tools for analysis directly on the edge devices.
 
-#### Data Processing
+## Data Processing
 
 Data processing is achieved by the use of data processing frameworks that typically transform data in  several steps. 
-Some frameworks model the transformation in a form of a **Directed Acyclic Graph (DAG) e.g Apache Airflow**. Apart 
+Some frameworks model the transformation in a form of a **Directed Acyclic Graph (DAG) e.g Apache Airflow, dbt**. Apart 
 from the root and final nodes, every inner node on the DAG comprises of an **incoming and outgoing** arrow called 
 **source and target** respectively. DAGs are great to model transformation as they clearly show dependencies and 
 prevent backward flow in the transformation pipeline. An Orchestrator of the pipeline usually have the following tasks:
@@ -116,7 +119,9 @@ prevent backward flow in the transformation pipeline. An Orchestrator of the pip
 - Uses an executor to run the tasks
 - Uses a metadata to monitor the state of the pipeline.
 
-##### Batch versus stream data ingestion architecture
+    There exist different data processing frameworks or architectures. This include: Batch, Streaming and Lambda.
+
+### Batch versus stream data ingestion architecture
 
 Batch data ingestion involves an automated process for collecting data at **regular time intervals** from different 
 data sources, transforming and loading the transformed data into a centralised system for analysis. 
@@ -129,19 +134,22 @@ The following table show example scenarios where batch is used and one where str
 
 |batch data ingestion|streaming data ingestion|
 |:-------:|:--------:|
-|Hourly number of orders received|health monitoring applications|
+|Data processing occurs at given time intervals| Data processing occurs at near real time|
+|Size and nature of data is known or can be estimated| Size and nature of data is not known|
 |capable of complex analytical tasks|Suitable where speed is necessary|
+|E.g Hourly number of orders received|E.g health monitoring applications|
 
-##### Lambda Architecture
+### Lambda Architecture
 
 This data processing framework is a combination of the batch and stream framwork. It is made up of 3 layers where
 ther first layer implements batch for handling complex analytical tasks, the second layer implements streaming
-for generate quick insight with little to no delay(low latency). The third layer provides an interface where the
-process data can be querried with other analytical tools. An alternative to the lambda architecture is the
-**kappa architecture** that combines all 3 layers of the lambda architecture into a single layer. This makes it
-easier to maintain and provides less possibilities of system attacks.
+for generating quick insight at near real time(low latency). The third layer provides an interface where the
+processed data can be queried with other analytical tools. **Microsoft Fabric** offers *lambda* architecture for
+data processing. An alternative to the lambda architecture is the **kappa architecture** that combines the batch 
+and stream layers of the lambda architecture into a single layer.  This makes it easier to maintain and provides 
+less possibilities of system attacks.
 
-##### Data Processing Solutions in the Cloud
+#### Data Processing Solutions in the Cloud
 
 The Hadoop ecosystem like **MapReduce, Spark and Kafka** provides technical solutions via Apache open-source projects 
 where Batch, Stream and hybrid(lambda and kappa) have been implemented. The challenge with such ecosystems is that
@@ -154,7 +162,7 @@ services for batch processing as well as for stream processing frameworks. When 
 consider the supporting programming language, the programming paradigm,the pricing model and available connectors.
 
 1. Batch Processing analytical services in Azure.
-    - Azure Synapse is a distributed **data warehouse** offering analytics capabilities
+    - Azure Synapse is a distributed **data warehouse** offering analytical capabilities
     - Azure Data Lake analytics
     - HDInsights for Hadoop technologies such as MapReduce, Hive an Pig
     - Databricks is a large-scale analytical platform based on spark
@@ -170,7 +178,7 @@ consider the supporting programming language, the programming paradigm,the prici
 The following illustrates out-of-the-box available data sources and sinks for some streaming solution in Azure.<br>
 ![Sources](/datamanagementconcepts/img/azure_solutions_for_streamfw_sources.jpg)
 
-#### Data Storage
+## Data Storage
 
 Storing Data means saving it on a physical device. Primarily on a computer's CPU. Secondary storage ensures that
 the data is persistently stored in a way that it can be retrieved. Secondary storage include Hard Disc Drives, 
@@ -183,7 +191,7 @@ to compress data files hereby taking advantage of the storage available. Data st
 computers since they can access this faster. Converting data from human readable text to binary is called 
 **Serialisation** while converting from binary to human-readable is called **de-serialisation**.
 
-##### Data Storage types
+### Data Storage types
 
 Depending on the business requirement and the resources available data can be stored in different ways including:
 - File Systems e.g think of storage-box or sftp server
@@ -296,7 +304,7 @@ flexible schemas. NoSQL Databases are differentiated from each other based on th
 Azure CosmoDB is a NoSQL that supports multiple data models like Document oriented, Column Oriented and Graph
 oriented storage.
 
-### Data Analysis
+## Data Analysis
 
 So far in the Data lifecycle, data integration, processing and storage have been covered. Most of getting data
 to storage is not the end goal. To extract insight from stored Data, *data analysis* is required. However, there
@@ -310,18 +318,18 @@ historical data. Example: Use past orders to predict expected number of orders n
 - **Prescriptive data analytics**: Using Models to investigate all possible *outcomes from predictive analytics*
 so as to be able to suggest the most favourable predicted event. E.g maximize efficiencies for production lines.
 
-#### Machine Learning (ML)
+### Machine Learning (ML)
 
 ML is the ability of models to automatically extract underlying vital patterns from data that can reveal insights
-that wouldn't possible by barely observing data with a human eye. ML is performed on tabular Data where the rows
-represent observation, a column called the *Label or Target*, and one or more other column(s) called *Predictors* 
+that wouldn't be possible by barely observing data with a human eye. ML is performed on tabular Data where the rows
+represent observations, a column called the *Label or Target*, and one or more other column(s) called *Predictors* 
 *or Features*. Artificial intelligence is a larger category of ML while deep learning is a specific field in ML. 
 ML is made up of 3 major parts name;
 
 * **Supervised Learning**
 > It is that part of ML that aims at predicting a label of an observation. It comprises *Regression and 
-> *Classification*. In Regression the ML Model must predict a *numerical label*. In Classification the ML
-> must predict a *text lael* belonging to two or more predefined classes of labels. 
+> *Classification*. In Regression the ML Model must predict a *numerical value*. In Classification the ML
+> must predict a *label* belonging to two or more predefined classes of labels. 
 
 ```
 "Typical supervised classification algorithms include Logistic Regression, Decision Trees, Random Forest, Support Vector Machines (SVM), Naïve Bayes, k-Nearest Neighbors (kNN), and Gradient Boosting. For supervised regression tasks, we can use, for example, Linear, Ridge, Lasso, or Elastic Net Regression, Decision Trees, Random Forest, or Support Vector Regression (SVR)." 
@@ -344,7 +352,7 @@ Dimensionality Reduction – Large datasets with many columns/features are hard 
 * **Deep Learning**
 > Learn it on my own.
 
-#### Time Series
+### Time Series
 > Learn Time Series from ***https://otexts.com/fpp2/***.
 
 ```
@@ -354,7 +362,7 @@ From a data management perspective, we should memorize that the time index is hi
 "
 ```
 
-### Reporting
+## Reporting
 
 This is the final stage of the **Data Processing Lifecycle**. In this phase *Business Intelligence* methods come into play
 to get actionable insights from data. In fact, BI Reporting is the use of *processes and tools* to extract actionable 
