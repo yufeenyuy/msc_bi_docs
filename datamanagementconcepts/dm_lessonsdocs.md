@@ -380,5 +380,255 @@ Depending on the use case or business activity that needs to monitored and impro
 Data in order to achieve results. Internal data sources include **ERP or MIS** Systems. While external data sources include
 **Social media platforms, Webshops, Websites etc**.
 
+# Data Protection and Security
+
+Nowadays Big Data and Digitilization are taking their peak raising data privacy concerns. As such, sustainable and appropriate
+measures must be taken to protect individuals rights. To develop appropriate measures it is necessary to review the impact of
+(big) data collection, data analysis and digitalization on individuals rights. Ethical principles define the fundamentals for
+handling individuals data during data analysis. The General Data Protection Regulation (**GDPR**) has established ethical
+principles that must be implemented to **protect** individuals rights. The technical implementation of these principles are often
+non-trivial and thus have an impact on information systems. Two modern technological techniques used in data protection are
+**Encryption and data masking**. These techniques must be implemented following a well thought risk management plan that provides
+mitigation strategies for security threats.
+
+## Ethics in Data Handling
+Ethical principles defined the basics for developing legislative regulations (e.g GDPR) for data protection and privacy. For this
+reason it is vital for everyone designing modern data systems to fully understand these ethical principles.
+
+### Ethical Principles
+As technoligical improvements are often faster than legislative regulations, there could be gaps between the current state of
+technology and the regulations safe guarding individual data. For this reason, it is always important to fall back to the ethical
+principles used in the development of legislative regulations. The basic ethical principles are **Transparency, Fairness and Respect**
+(Jobin, Lenca & Vayena, 2019, p.1).
+
+#### Transparency
+The individual (data subject) whose data is collected and stored, and the data handler who stores or processes the data must have
+the same understanding on the **usage** of the data subject's data. Usage in this context entails *data collection, storage and processing*.
+To ensure transparency, clearly written policies should be defined and shared. An example of a scenario that implements transparency are
+cookies on a website. In this scenario policies that protect user's privacy are set by default. If the individual consent to the 
+collection and processing of additional data, then the purpose must be clear to the user.
+
+#### Fairness
+This principles focuses on the **impact** of data handling on the data subjects and their interests. Under no circumstance should data
+handling lead to *discrimation*, *exposure of senstive personal data* e.g race, religion, sexual orientation etc. This should strongly
+be considered when developing automated systems used in decision-making. Addtionally, organizations should only used data within the scope 
+for which the data subject consented.
+
+#### Respect
+This principle focuses on the *indidual* for whom the data is collected. Data managers should primarily consider the data subject's
+individual interets before considering the value that an organization can derive from the collection, storing and processing of the
+data subject's data.
+
+### Discussion on the ethical management of data
+Key take aways in this segment are:
+* Unethical handling of data can harm the right of the data subject or lead to loss of control over their data.
+* Data subjects must consent to the use of their data and organizations must limit the use of individual's data within the consented scope.
+* Inappropriate data-sharing: Sharing data with third party stakeholders without the consent of the data subject
+* Privacy preserving transformation or data anonymization: Transforming or removing all personal identifiable information from the data in a way that it cannot beused to identify a data subject using appropriate methods. It is legal to use anonymized data in big data applications without violating regulations. However, there are cases where data anonymization isn't enough as the anonymized data can still be used to identify datasubjects. For this reason, it is advisable to use anonymized data with caution
+* Data profiling: The process of finding correlations between data in a database that is required to identify or represent a human or 
+nonhuman (individual or group), or it is the process of using a profile to identify and represent an individual or the use of profile
+to identify and represent an individual as a member of a group or category. Profiling depends on data mining approaches, specifically
+on descriptive and predictive analytics. In descriptive data analytics, profiling is the identification of groups by means of measures
+calculated on historical and present data and the output is the description of the characteristics and relationships found between
+group members. In predictive analytics, profiling is the use of models that learn from the data the underlying relationship between the
+data subjects and their class membership to be able to predict with a certain accuracy that a data subject belongs to a specific class or
+group. Usually, the data used for learning is labelled. Unethical use of profiling and data mining is associated with a significant risks 
+that can lead to **discrimination, de-individualization and information asymmetry**.  
+
+* Discrimination: The intensional use of profiling to favour data subjects over others. E.g Training a model based on biased data.
+* De-individualization: Stigmatization of a data subject based on the characteristics of the class or group assinged to him or her. E.g
+Rejecting credit offer to an individual because they live(d) in a particular zipcode. 
+* Information Asymmetry: As profiling and data mining create insight on data subjects, this can offset the balance of power between 
+parties and affect the relationship between them. E.g Profiling can impact the relationship between Governments and Citizens, Businesses 
+and Consumers etc.
+
+To achieve results free from discrimination or de-individualization, it is advisable to exclude the use of personal data like gender, race,
+political orientation etc when developing predictive models used for profiling.
+
+### Risks of data privacy in the digital society
+This arise from the voluntary act of revealing personal identifiable information such as images of oneself or other personal information
+like location,age, gender, place and date of birth etc. This could have the following effect on individuals
++ lead to data theft and stalking.
++ Data aggregators can collect and sell these data to third parties who use it for commercial purposes
++ Governments can use these data for public surveilance which can harm the rights of citizens. For instance, it can lead to disservice.
++ Internet of Things applications are often under cyber attacks as they store data in the open. As such IoT applications that use personal
+data can negatively impact its users in cases where these applications are compromised.
+
+Interesting literature on this include: (Keyes & Lamnitchi, 2017), (Ziegler, 2019), (Crawford, 2019)
+
+### Discrimination by algorithms
++ Revisit the case of *discrimination* in predictive profiling.
+
+## Data Protection Principles
+These are legislative regulation built on ethical data protection principles. In this case, we'll focus on the EU General Data Protection 
+Regulation (GDPR). GDPR is a regulatory framework that defines how Data from EU Citizens should be protected during **collection, storage** 
+**and process.** Additionally, it defines the roles of different stakeholders and their responsibilities as well as provide several data
+protection principles derived from the ethical principles. The three roles stakeholders can belong to are: **Data Subject, Data Controller** 
+**and Data Processor**.
+- Data Subject: The individual (person) whose data is or being collected.
+- Data Controler: Those who store the data and define how the subject's data is collected and processed.
+- Data Processor: Those who collect and process data in the name of and commissioned by the data controler.
+
+#### Data Protection Principles of the GDPR
+These principles are built on the ethical principles and defined in (EU) 2016/269 (2016). These principles include
++ Fairness, Lawfulness, and transparency:
+First and famous, the reason for data collection should be defined on a legal basis. The GDPR considers *consent, public interest and*
+*legitimate interest* as options for legal grounds.
+    - Fairness: Subject's data should be handled in a fair and reasonable manner from the data subject's perspective
+    - Lawfulness: This could be with regard to public or legitimate interest. Data collection for public interest should be done under
+    the explicit consent of the data subject. Data collection for legimate interest occur when the data is required to fulfil administrative
+    obligations e.g Registration in a city after relocation. 
+    - Transparency: Data stakeholders should have the same understanding for the purpose of collecting the data subjects data.
+
++ Purpose Limitation: Data should only be stored and process for its clearly defined primary legitimate purpose. E.g Data collected to fulfil
+a delivery should not be used for sending markting advertisements without previously obtaining explicit consent.
++ Data minimization: Sets the minimum amount of data to be collected for a particular purpose. This is done prio to data collection.
++ Accuracy: The controller and processor must ensure that the subject's personal data is correct and current. In the case of modification
+requests from the data subject, the controller and processor must be able to make the necessary changes.
++ Storage Limitation: Data should be stored as long as it is needed for a given purpose. This should be guided by policies, that set the time
+frame for storage and when the data should be deleted or anonymized. Typically, this principle should be automated.
++ Integrity and Confidentiality: The responsibility of data controllers and processors to secure the subject's data and treat it as sensitive
+information. They should protect the data from unlawful access, loss, processing, damage.
++ Accountability: It is not a principle but emphasises on the need of controllers to adhere to the principles of GDPR.
++ Exceptions and special cases: These are cases that allow data processing without considering the principles of DGPR. Usally this is
+backed by union or membeer state law. These cases can be as a result of public or legimate interest.
++ Rights of data subjects: GDPR also describes the rights that data subjects have conerning the collection and processing of their
+individual data. These rights include:
+    - Right to access
+    - Right to notice
+    - Right not to be subjected to profiling
+    - Right to erasure
+    - Right to rectification
+    - Right to know the personal information being collected
+    - Right to know the source from which their data is extracted.
+
+### Data Security
+This involves the physical protection of premises or workstations to guarantee data privacy. Data Systems should include
+data minimization, anonymization and restriction to minimize the effect of damage to the data subject's integrity in case of data breaches. 
+
+### Anonymization and Pseudonymization
+As earlier stated, anonymization removes all personal identifiable information from the data in a way that it cannot beused to 
+identify a data subject using appropriate methods. This is useful in for data sharing, data analysis other use cases. There exist
+four categories of attributes that require different anonymization forms. These are:
+- Explicit identifiers: Attributes that can be used to directly identify a data subject e.g email, names.
+- Quasi-identifiers: Attributes that indirectly reveal the identity of a data subject e.g date of birth, zipcode, gender
+- Sensitive information: Attributes that store senstive information like health status, gender orientation, political beliefs.
+- Non-sensitive information: Attributes that store data that is not related to an individual e.g climate data.
+In Pseudonymization, Personal identifiable information is substituted by random identifiers derived from a linkage table.
+
+### Data protection in scientific research
+In scientific research often process personal sensitive data such as health data, genetic data etc. As a result, they must comply
+to legal data protection regulations such as those provided by GDPR. The most important regulation for scientif research is data
+integrity and confidentiality. Obtaining consent and anonymization are also regulations often required for processing medical data.
+Sensitive data in medical include health-related entries, genomic or other **omics**. Omics is a neologism from biological research 
+and serves as a generic term for molecular biological methods.
+
+## Data Encryption
+Encription is centered around the right to see data. Its target is to protect data integrity and confidentiality be converting
+a given data into a ciphertext. In this way unauthorised users will not be able to see the data. To decipher the data a
+password or secret key is required which is usually held by authorised users. In practice, there is a difference between
+*encription at rest* and *encription in transit*. 
++ Encryption at rest is the process of encrypting data that has been archived.
++ Encryption in transit is the process of encripting data that is being transfered over a network.
+
+There exist several encrypting techniques. These include:
++ Symmetric encryption: Same password or secrete key used for encryption and decryption.Examples of symmetric encryption algorithms
+include: Data Encryption Standard(DES), Advanced Encryption Standard (AES), or Blowfish.
++ Asymmetric encryption: A public key is used for encryption while a private key is used for decryption.
++ Hash Function: A hash function is used to produce a fix-length unique fingerprint of the particular data being encrypted.
+This fingerprint is used to verify the integrity of the data. Example of hash functions include: MD-5 or SHA-256.
++ Key Stores: These are storage used to securely keep passwords or secrete keys required by authorised user to access encrypted data.
+    - Hardware Security Modules (HSM): These are physical devices purposely designed to securely store key and cryptographic 
+    operations. They range from small to large suitable for small to massive cryptographic operations.
+    - Cloud-based key stores: These are key management solutions with centralised key management and secure key storage provided
+    by cloud providers. E.g Amazon Key Management and Azure Key vault.
+
+## Data Masking Strategy
+In most data systems, the level of access to data is determined by the user's role. Through this users can only access data they
+required to accomplish their tasks. Data masking or data sanitization, is a an approach used to replace observed values by random
+values with the aim to securely protect confidential data and personal identifiable information. There exist several masking
+techniques. These include:
++ Shuffling: Values within a column are randomly interchanged.
++ Scramble: This technique changes the value in each cell by reordering its alphanumeric characters. For instance, a cell containing
+the value: 4563P738 could be changed to 87P35643.
++ Substitution: This technique substitutes original values of sensitive content with other values in a range of possible values. This
+is to ensure that the structure of the data stays the same. Example: Replace original emails via fictive emails. The fictive emails
+have the format of correct emails yet don't exist.
++ Data aging/variance: Applicable on numerical values. Data aging adds or rests a random offset from the original values while
+variance adds noise to the original values according to the data distribution.
++ Character masking: Part of the original values are substituted with a given character values e.g. Yufenyuy is substituted with
+Yuf*****.
++ Nullifying: Original values are substituted by null values.
+
+### Data masking process
+This can be static or dynamic.
++ Static data masking: Masking is applied to the copy of the original data. The masked data can then be used for practice or testing
+purposes. e.g Data from Electronic election system.
++ Dynamic masking: Used in production systems to obscure sensitive information based on the role-based policies at the time of access.
+This is to ensure that people only see what is relevant to them based on their roles. E.g applicable in medical systems where receptionists
+may see patients medical appointments with doctors but can't see their medical history. On the other hand, the medical doctor can see
+appointments and medical history of their patients.
+
+Challenges in Data masking:
+- Inadequate data masking can violate data integrity or cause data leakage which can include sensitive information.
+- Inadequate data masking can destroy the structure of the data and lead to data loss. e.g scrabling ids required in joins
+can affect join operations.
+- System performance can drastically reduce as data masking require processing resources.
+- Obscuring data require maintenance especially when adapting it to the production system.
+- Masking data accross several large information systems can lead to complications.
+
+### Data masking solutions
+There exist standalone solutions for data masking that can be integrated into data systems. Also, some database management
+systems also have embedded solutions in their systems that can be used for data masking. Addtionally, cloud providers like
+AWS and Azure also provide data masking solutions. Some Data masking solutions are as follows:
++ MS SQL Server integrates with Redgate SQL Data Masker.
++ Oracle SQL Server uses Oracle data masking.
++ Some standalone solutions include: Informatica MDM (commercial), Talend Data Masking(open source). These solutions are compatible 
+on-premise as well as on cloud.
++ Cloud solution include: 
+    - Azure Security Center for dynamic data masking suitable for Azure SQL Database and Azure SQL Data Warehouse.
+
+## Data security Principles & Risk Management
+To ensure the protection of sensitive information in an organization, several security principles must be implemented. These
+principles or measures aim to protect confidential information from unauthorised access, theft, use, disclosure, destruction
+and modification.
+
+### Data Security Principles
+Data security is built on confidentiality, availability, integrity, authenticity, non-repudiation and disaster recovery. This is
+in accordance to Regulation (EU) 2016/679, 2016, p. 51-52 of GDPR. These principles are elaborated as follows:
+
++ Integrity: This ensures that data can't be changed by unauthorised means. It is the principle that guarantees correctness of
+the data. In Databases, integrity can be achieved by implementing checksums or digital signatures to verify the correctness of
+the data.
++ Availability: Authorised users must have access to data whenever they need it. This principle can be achieved by data replication.
++ Confidentiality: Data must be kept secrete with the highest means possible, and access must only be granted to authorised users.
+This applies to data at rest an in transit. To achieve this, data encryption, data masking and secure authentication strategies
+must be implemented.
++ Authenticity: This principle ensures that only authorised users have access to sensitive information. It also ensures that
+users are the rightful owner of their data. This can be achieved via passwords, encryption keys, multi-factor authentication,
+biometric-based authentication etc. By implementing this principle, it is possible to detect unwanted intrusion.
++ Non-repudiation: This principle registers individuals and applications that create and modify data. This is done by keeping
+track of every changes in a log file which can be used during audits.
++ Access Control: This principle ensures that users have access to details of data based on their roles or priviledges. It is
+the principle of *you can only see what you are allowed to see*.
++ Encryption: done
++ Disaster recovery: The ability to retrieve data in case of loss or disaster. This is achievable by creating backups, store backups
+in secure locations and restore backups if needed.
+
+### Risk Management
+Every organization should prepare for undesired events. Risk Management is an activity that (1)identifies, (2)assesses, and 
+(3) prioritises potential risks. After (1), (2) and (3) is done then an appropriate risk mitigation solution is established.
+This can be illustrated in a process as follows
+1. Perform risks analysis to identify potential risks or threats
+2. Prioritise the identified risks or threats according to their probability of occuring. Probability of occuring is associated
+to the the level of damage a risks or threat can cause.
+3. Design mitigation strategy according to the priority of the risks or threats.
+4. Implement and monitor the mitigation strategy. Strategies can also be adopted to new risks of similar types.
+5. Document the risk management plan and mitigation procedure.
+
+**See course book for example scenario of risk management**^
+
+# Distributed Data
+
 
 
