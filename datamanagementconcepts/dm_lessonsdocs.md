@@ -629,6 +629,181 @@ to the the level of damage a risks or threat can cause.
 **See course book for example scenario of risk management**^
 
 # Distributed Data
+Distributed data stems from the ability of a data system like a database management system to distribute its data accross
+multiple servers/nodes/machines, when workloads increase, to ensure system availability and reliability. There are two main 
+approaches that a system can deploy to achieve this. This includes: Data Replication and Data Partitioning.
+
+## Systems's Reliability and Data Replication
+Reliability is the ability of a data-intensive system to continue with running its operations consistently and without 
+failure of the entire system. To achieve this, the system uses redundant components, distributed data storage, and  
+processing frameworks. All these is built on the combination of hardware and software solutions which include:
+1. *Redundant hardware*(multiple devices) to carry out the same task.
+2. *Redundant copies of the same data* for parallel processing and minimize latency when geographically place close to each other.
+3. *Load balancing* for efficient distribution of workloads accross all the nodes of a cluster of nodes.
+4. *Data backup and recovery* to avoid complete data loss if the system breaks down.
+5. *Error handling mechanisms* for automatic detection and management of errors.
+6. *Monitoring and maintenance* to review the system's performance for future adaptability.
+
+According to the **CAP** theorem, distributed data have limitations. Thus it states that a distributive data-intensive system
+can only guarantee two out of the three properties **Consistency, Availability and Partition-Tolerance**.
++ Consistency: Each request is reponded with the most current value or an error.
++ Avaialability: Each request receives a response but the response can not be an error.
++ Partition-Tolerance: The system continues functioning even if some nodes within the cluster of nodes stops communicating with
+other nodes or if packages are not installed.
+
+## Data Replication
+Data replication is a practice in distributed data where redundant copies of the same data are created and stored on different
+nodes to guarantee system's availability. These nodes may be situated in different locations. The advantages of data replication 
+are:
++ Access to same data is possible when some nodes fail
++ Improves performance as data can be created and retrieved in parallel
++ In case of nodes failure, same data can easilly be recovered from other non-failing nodes.
++ Reduced latency as data is efficiently distributed accross other node possibly in different locations.
+
+### Data Replication Strategies
+There are several replication strategies. The choice of a replication strategy should base on the size of data,
+complexity of the situation, acceptable latency, recovery strategy and the choice between availability and
+consistency.
+*Master-Slave* Replication: It has the following properties.
+- Only Master receives change requests.
+- Master has read and write capability
+- Slave only has read capability
+- Master distributes workloads to slaves.
+
+*Multi-Lead* Replication: Has the the following properties
+- Exists several master nodes which inturn are slaves to other nodes
+- Every nodes can perform read and write operation.
+- Every nodes can read from every other node which is vital in case of data recovery.
+- Highly fault tolerant
+
+*Leaderless* replication: Has the following properties:
++ Every node is simultaneously a master and slave.
++ Every node accepts write operations and can replicate this to other nodes.
++ This replication strategy is highly inconsistent.
+
+*Data Replication in Hadoop Ecosystem*
+The Hadoop Ecosystem aggregates different open source technologies which uses the *Hadoop Distribution File System(HDFS)*
+as the source of their data. In HDFS, the same copy of data is stored in blocksizes of 128mb and replicated across other
+nodes of a Hadoop cluster. The master node, called the **Namenode**, has read and write capabilities. As such it receives
+client requests and can read and write in parallel to/from the slave nodes called **Datanode**. The master node is also
+incharge of monitoring the slave nodes to identify failing nodes and to schedule replication task. If a DataNode can't
+fulfil a request due to network failure then the request is redirected to another DataNode. Advantages of HDSF are:
++ It guarantees system's reliabilitly
++ It guarantees System's availability
++ Ensures performance gain as tasks can be executed in parallel.
+
+The following replication strategies are only suitable for cloud environments.
+*Geographic* replication
+Redundant copies of the same data are created and stored in nodes located in different geographic locations. This does
+not only ensure system's robustness but also serve as an effective data recovery strategy espcially in cases of natural
+disasters like floods, earthquakes, landslides etc.
+
+*Cross-region* replication
+Data is replicated across larger geographic regions like continents or sub-continents. Major advantage is that it
+reduces latency as people in the same region are most likely being served with by nodes in their region.
+
+*Zone-redundant* replication
+Data is replicated multiple times within the same zone or region to ensure availability within same region in case of
+partial system failure.
+
+## Data Partitioning
+One other way to provide availability, reliability and processing of data is by partitioning the data set. In this
+technique of distributing data, the dataset is broken into small chunks either vertically or horizontally, and then
+spread across nodes of a cluster. In vertical partitioning, the dataset is split by columns while in horizontal
+partitioning the data is split by rows. The latter can further be classified into logical or physical partitioning.
+In horizontal logical partitioning the data is split by rows and stored within the same node. On the other hand,
+horizontal physical partitioning or **sharding**, the data is split by rows and distributed across nodes that
+are physically separated from each other. The different methods of sharding is discussed as follows:
+
++ *Round-robin*: This method distributes evenly distributes data across all the shards or nodes i.e if a dataset
+of 10 rows is to split across 5 nodes then each node or shard will store 2 rows. This method has performance
+issues when the data to be distributed is unbalanced.
+    - Disadvantag: Reduced performance on unbalanced or skewed data.
+    - Advantage: Distributes unskewed data evenly across all shards
++ *Hash*: A hash function is applied on one or more attributes to calculate a hash value by which the data is partitioned
+across the shards. It is also possible to achieve a balanced distribution of data across all the shards. This is useful
+when storing data by location e.g By zipcodes.
+    - Disadvantag: Finding the right attributes to create the partitions.
+    - Adavantag: Can evenly distribute data across all shards even if the data is skewed.
++ *Range-based*: This method distributes data across all the shards by using **sequential key with equal ranges**.
+Suitable for data that are stored by **timestamps**.
+    - Disadvantage: Uneven distribution of data across shards if the data is skewed
+    - Advantage: Suitable for data with a timestamp or natura range of values.
++ *composite*: This method can combine two or more of the aboved mentioned sharding methods. For instance round-robin can
+be applied then range-based.
+    - Disadvante: Requires more computation to define partitions.
+    - Advantage: Exploite the strengths of the chosen sharding methods
+
+### Data Partition Strategies in Cloud Environments
+So far sharding as a form of horizontal partitioning has been discussed. It is important to note that the sharding methods
+are applicable in open source as well as cloud environments. Example cases in cloud environments can be observed in Azure
+Cosmos DB which can partition data across different geographical locations. Also, Azure SQL Database can partition data
+across multiple databases. In addition to *vertical and horizontal partitioning*, there also exist **directory-base** and
+**geospatial** partitioning. *It is important to note that the concept of data distribution is not limited to databases*.
+For instance, Azure Blob Storage and Azure Data Lake Storage are Non-Database solution that partition data by Containers and
+Folders which can be located in different regions.
++ Directory-base Partitioning: Partitions *data files*, e.g by creation date, across folders in a file hierarchy.
++ Geospatial Partitioning: Partitions data in cloud environments by considering geographical locations. 
+    - Advantage: Users access data in their location or closer to their location
+    - Advantage: Reduced latency in querying or processing data.
+    - Advantage: Takes Compliance and data protection regulations into account.
+    - Advantage: Takes data sovereignty into account.
+
+## Processing Frameworks for Distributed Data
+We've seen that there are several storage possibilities for distributed data. In the same like, processing distributed data
+also require some standards or frameworks. Typically, data processing in distributive environments need to take the following
+criteria into consideration.
++ Data storage solution e.g replication, partitioning, directory-base or geospatial partitioning.
++ Data reshuffling to redistribute workload with the aim to achieve load balancing.
++ Task scheduling for task execution and error handling.
++ Data-base code execution to process the data on flight.
++ Data storage on disk or in-memory to improve performance particularly speed.
++ Fault tolerance to ensure system availability and reliability when part of the system fails
++ Performance optimization achievable by reducing data movements between nodes in a cluster.
+
+### Distributed data processing framework in the hadoop ecosystem
+Ther are several open source data processing frameworks for processing distributed data. Many of these are developed by 
+Apache Software Foundation or belong the Hadoop Ecosystem. Some these frameworks include:
+1. *MapReduce*: This programming paradigm was introduced by google; suitable for large-scale computing and made up of two
+main functions namely **Map** and **Reduce**.
+    - Map: Takes a value as inpute, performs a stateless computation and outputs results as a **key-value** pair sorted
+    by keys.
+    - Reduce: Aggregates values according to the sorted keys.
+Think of MapReduce like *group by x sum y order by x* where Map takes care of order by x sum y while reduce does group by x.
+
+**Disadvantage** of MapReduce: Not suitable for computations requiring complex processing. E.g Machine learning
+**Advantage** of MapReduce: Suitable for descriptive statistics like calculating mean, standard deviation, min, max etc.
+Also good for aggregations, counting.
+**Advantage**: Fault tolerant.
+
+2. *Pig and Hive*: Apache Pig combines the power of a scripting language e.g python, with MapReduce to perform complex
+transformations on an abstract level of the data. Apache Hive does the same with a SQL-like interface rather than a
+scripting language. This interface allows grouping, querying and joining data.
+
+3. *Spark*: This is built on Apache Spark core and uses **in-memory** computation based on *Resilient Distributed Data*.
+RDD are immutable collection of objects, each containing data chunks, distributed across several nodes of a cluster.
+Resilient means spark distributes data by replication to ensure system availability and fast data recovery in case of
+partial system failure. Spark can read data from several data sources like HDFS, S3, RDBMS and NoSQL. Additionally it
+supports many programing languages like R, Python, Java or Scala. One advantage of Spark over MapReduce is that it
+performs several *write and read* operation to and from cluster nodes, and stores intermediate processing steps in a
+**directed acyclic graph (DAG)**. Moreover, Spark can run on a single machine or cluster of nodes, and can also be used
+for *batch and stream* processing Some libraries that are useful in the spark ecosystem include: **spark sql, spark MLlib**,
+**spark Streaming and spark Graphx, PySpark**
+
+4. *storm, Samza, and Flink*: They process distributed data in streams.
+    + Apache Storm: Process data in DAG where data is transfered via the edges and transformations occure in the nodes.
+    + Apache Samza: Similar to Kafka. **read this page 64**
+    + Apache flink: Uses stream and batch processing. **read this page 64** 
+
+### Distributed data processing frameworks in cloud environments
+Cloud processing frameworks are mostly built on the open source solutions described above. Here are some cases:
++ AWS provides **Elastic MapReduce** which can be used to process data stored in partitions on S3.
++ Azure HDInsights uses Hadoop, Spark or Hive to process big data in a scalable and fault tolerant manner.
++ Databricks offers a cloud environment for data ingestion, analysis and machine learning. It uses Apache Spark for
+data processing or transformation. It is equally suitable for big data.
+
+# Data Quality and Data Governance
+
 
 
 
