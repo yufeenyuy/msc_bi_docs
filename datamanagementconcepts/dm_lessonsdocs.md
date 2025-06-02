@@ -385,7 +385,7 @@ Data in order to achieve results. Internal data sources include **ERP or MIS** S
 Nowadays Big Data and Digitilization are taking their peak raising data privacy concerns. As such, sustainable and appropriate
 measures must be taken to protect individuals rights. To develop appropriate measures it is necessary to review the impact of
 (big) data collection, data analysis and digitalization on individuals rights. Ethical principles define the fundamentals for
-handling individuals data during data analysis. The General Data Protection Regulation (**GDPR**) has established ethical
+handling individuals data during data analysis. The General Data Protection Regulation (**GDPR**) is established on ethical
 principles that must be implemented to **protect** individuals rights. The technical implementation of these principles are often
 non-trivial and thus have an impact on information systems. Two modern technological techniques used in data protection are
 **Encryption and data masking**. These techniques must be implemented following a well thought risk management plan that provides
@@ -402,11 +402,9 @@ principles used in the development of legislative regulations. The basic ethical
 (Jobin, Lenca & Vayena, 2019, p.1).
 
 #### Transparency
-The individual (data subject) whose data is collected and stored, and the data handler who stores or processes the data must have
-the same understanding on the **usage** of the data subject's data. Usage in this context entails *data collection, storage and processing*.
-To ensure transparency, clearly written policies should be defined and shared. An example of a scenario that implements transparency are
-cookies on a website. In this scenario policies that protect user's privacy are set by default. If the individual consent to the 
-collection and processing of additional data, then the purpose must be clear to the user.
+The individual and the data handlers must have the same understanding on the *purpose* for collecting, storing and transforming the
+individual's data. To ensure transparency, clearly written policies should be defined and shared. An example of a scenario that 
+implements transparency are cookies on a website. In this scenario policies that protect user's privacy are set by default. If the individual consent to the collection and processing of additional data, then the purpose must be clear to the user.
 
 #### Fairness
 This principles focuses on the **impact** of data handling on the data subjects and their interests. Under no circumstance should data
@@ -417,14 +415,14 @@ for which the data subject consented.
 #### Respect
 This principle focuses on the *indidual* for whom the data is collected. Data managers should primarily consider the data subject's
 individual interets before considering the value that an organization can derive from the collection, storing and processing of the
-data subject's data.
+individual's data.
 
 ### Discussion on the ethical management of data
 Key take aways in this segment are:
 * Unethical handling of data can harm the right of the data subject or lead to loss of control over their data.
 * Data subjects must consent to the use of their data and organizations must limit the use of individual's data within the consented scope.
 * Inappropriate data-sharing: Sharing data with third party stakeholders without the consent of the data subject
-* Privacy preserving transformation or data anonymization: Transforming or removing all personal identifiable information from the data in a way that it cannot beused to identify a data subject using appropriate methods. It is legal to use anonymized data in big data applications without violating regulations. However, there are cases where data anonymization isn't enough as the anonymized data can still be used to identify datasubjects. For this reason, it is advisable to use anonymized data with caution
+* Privacy preserving transformation or data anonymization: Transforming or removing all personal identifiable information from the data in a way that it cannot be used to identify a data subject using appropriate methods. It is legal to use anonymized data in big data applications without violating regulations. However, there are cases where data anonymization isn't enough as the anonymized data can still be used to identify datasubjects. For this reason, it is advisable to use anonymized data with caution
 * Data profiling: The process of finding correlations between data in a database that is required to identify or represent a human or 
 nonhuman (individual or group), or it is the process of using a profile to identify and represent an individual or the use of profile
 to identify and represent an individual as a member of a group or category. Profiling depends on data mining approaches, specifically
@@ -469,9 +467,9 @@ protection principles derived from the ethical principles. The three roles stake
 - Data Controler: Those who store the data and define how the subject's data is collected and processed.
 - Data Processor: Those who collect and process data in the name of and commissioned by the data controler.
 
-#### Data Protection Principles of the GDPR
+### Data Protection Principles of the GDPR
 These principles are built on the ethical principles and defined in (EU) 2016/269 (2016). These principles include
-+ Fairness, Lawfulness, and transparency:
+#### Fairness, Lawfulness, and transparency:
 First and famous, the reason for data collection should be defined on a legal basis. The GDPR considers *consent, public interest and*
 *legitimate interest* as options for legal grounds.
     - Fairness: Subject's data should be handled in a fair and reasonable manner from the data subject's perspective
@@ -480,20 +478,25 @@ First and famous, the reason for data collection should be defined on a legal ba
     obligations e.g Registration in a city after relocation. 
     - Transparency: Data stakeholders should have the same understanding for the purpose of collecting the data subjects data.
 
-+ Purpose Limitation: Data should only be stored and process for its clearly defined primary legitimate purpose. E.g Data collected to fulfil
+#### Purpose Limitation 
+Data should only be stored and process for its clearly defined primary legitimate purpose. E.g Data collected to fulfil
 a delivery should not be used for sending markting advertisements without previously obtaining explicit consent.
-+ Data minimization: Sets the minimum amount of data to be collected for a particular purpose. This is done prio to data collection.
-+ Accuracy: The controller and processor must ensure that the subject's personal data is correct and current. In the case of modification
+#### Data minimization 
+Sets the minimum amount of data to be collected for a particular purpose. This is done prio to data collection.
+#### Accuracy 
+The controller and processor must ensure that the subject's personal data is correct and current. In the case of modification
 requests from the data subject, the controller and processor must be able to make the necessary changes.
-+ Storage Limitation: Data should be stored as long as it is needed for a given purpose. This should be guided by policies, that set the time
+#### Storage Limitation 
+Data should be stored as long as it is needed for a given purpose. This should be guided by policies, that set the time
 frame for storage and when the data should be deleted or anonymized. Typically, this principle should be automated.
-+ Integrity and Confidentiality: The responsibility of data controllers and processors to secure the subject's data and treat it as sensitive
-information. They should protect the data from unlawful access, loss, processing, damage.
-+ Accountability: It is not a principle but emphasises on the need of controllers to adhere to the principles of GDPR.
-+ Exceptions and special cases: These are cases that allow data processing without considering the principles of DGPR. Usally this is
-backed by union or membeer state law. These cases can be as a result of public or legimate interest.
-+ Rights of data subjects: GDPR also describes the rights that data subjects have conerning the collection and processing of their
-individual data. These rights include:
+#### Integrity and Confidentiality 
+The responsibility of data controllers and processors to secure the subject's data and treat it as sensitive information. They should protect the data from unlawful access, loss, processing, damage.
+#### Accountability
+It is not a principle but emphasises on the need of controllers to adhere to the principles of GDPR.
+#### Exceptions and special cases 
+These are cases that allow data processing without considering the principles of DGPR. Usally this is backed by union or membeer state law. These cases can be as a result of public or legimate interest.
+### Rights of data subjects 
+GDPR also describes the rights that data subjects have conerning the collection and processing of their individual data. These rights include:
     - Right to access
     - Right to notice
     - Right not to be subjected to profiling
@@ -502,12 +505,11 @@ individual data. These rights include:
     - Right to know the personal information being collected
     - Right to know the source from which their data is extracted.
 
-### Data Security
-This involves the physical protection of premises or workstations to guarantee data privacy. Data Systems should include
-data minimization, anonymization and restriction to minimize the effect of damage to the data subject's integrity in case of data breaches. 
+#### Data Security
+This involves the physical protection of premises or workstations to guarantee data privacy. Data Systems should include data minimization, anonymization and restriction to minimize the effect of damage to the data subject's integrity in case of data breaches. 
 
-### Anonymization and Pseudonymization
-As earlier stated, anonymization removes all personal identifiable information from the data in a way that it cannot beused to 
+#### Anonymization and Pseudonymization
+As earlier stated, anonymization removes all personal identifiable information from the data in a way that it cannot be used to 
 identify a data subject using appropriate methods. This is useful in for data sharing, data analysis other use cases. There exist
 four categories of attributes that require different anonymization forms. These are:
 - Explicit identifiers: Attributes that can be used to directly identify a data subject e.g email, names.
@@ -516,7 +518,7 @@ four categories of attributes that require different anonymization forms. These 
 - Non-sensitive information: Attributes that store data that is not related to an individual e.g climate data.
 In Pseudonymization, Personal identifiable information is substituted by random identifiers derived from a linkage table.
 
-### Data protection in scientific research
+#### Data protection in scientific research
 In scientific research often process personal sensitive data such as health data, genetic data etc. As a result, they must comply
 to legal data protection regulations such as those provided by GDPR. The most important regulation for scientif research is data
 integrity and confidentiality. Obtaining consent and anonymization are also regulations often required for processing medical data.
