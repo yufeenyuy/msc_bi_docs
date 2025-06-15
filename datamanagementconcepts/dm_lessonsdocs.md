@@ -628,7 +628,7 @@ to the the level of damage a risks or threat can cause.
 4. Implement and monitor the mitigation strategy. Strategies can also be adopted to new risks of similar types.
 5. Document the risk management plan and mitigation procedure.
 
-**See course book for example scenario of risk management**^
+**See course book for example scenario on risk management**
 
 # Distributed Data
 Distributed data stems from the ability of a data system like a database management system to distribute its data accross
@@ -636,15 +636,15 @@ multiple servers/nodes/machines, when workloads increase, to ensure system avail
 approaches that a system can deploy to achieve this. This includes: Data Replication and Data Partitioning.
 
 ## Systems's Reliability and Data Replication
-Reliability is the ability of a data-intensive system to continue with running its operations consistently and without 
-failure of the entire system. To achieve this, the system uses redundant components, distributed data storage, and  
-processing frameworks. All these is built on the combination of hardware and software solutions which include:
+Reliability is the ability of a data-intensive system to continue running its operations consistently and without failure of
+the entire system. To achieve this, the system uses **redundant components, distributed data storage, and distributed data**
+**processing frameworks**. All these are built on the combination of hardware and software solutions which include:
 1. *Redundant hardware*(multiple devices) to carry out the same task.
 2. *Redundant copies of the same data* for parallel processing and minimize latency when geographically place close to each other.
 3. *Load balancing* for efficient distribution of workloads accross all the nodes of a cluster of nodes.
 4. *Data backup and recovery* to avoid complete data loss if the system breaks down.
 5. *Error handling mechanisms* for automatic detection and management of errors.
-6. *Monitoring and maintenance* to review the system's performance for future adaptability.
+6. *Monitoring and maintenance* to reschedule tasks and increase performance.
 
 According to the **CAP** theorem, distributed data have limitations. Thus it states that a distributive data-intensive system
 can only guarantee two out of the three properties **Consistency, Availability and Partition-Tolerance**.
@@ -664,8 +664,8 @@ are:
 
 ### Data Replication Strategies
 There are several replication strategies. The choice of a replication strategy should base on the size of data,
-complexity of the situation, acceptable latency, recovery strategy and the choice between availability and
-consistency.
+complexity of the situation, acceptable latency, recovery strategy and the choice between availability and consistency. 
+
 *Master-Slave* Replication: It has the following properties.
 - Only Master receives change requests.
 - Master has read and write capability
@@ -684,6 +684,7 @@ consistency.
 + This replication strategy is highly inconsistent.
 
 *Data Replication in Hadoop Ecosystem*
+
 The Hadoop Ecosystem aggregates different open source technologies which uses the *Hadoop Distribution File System(HDFS)*
 as the source of their data. In HDFS, the same copy of data is stored in blocksizes of 128mb and replicated across other
 nodes of a Hadoop cluster. The master node, called the **Namenode**, has read and write capabilities. As such it receives
@@ -805,7 +806,234 @@ Cloud processing frameworks are mostly built on the open source solutions descri
 data processing or transformation. It is equally suitable for big data.
 
 # Data Quality and Data Governance
+In this era, companies who have realised that data is **das a und o** rather than a bare biproduct of their business
+activities, are deriving valuable insights from it to improve their operational activities as well as developing their
+business strategies with the aim to provide better products and services to their customers, and to position them
+comparatively better in the market. However, the process of unifying data from different sources into a sink for proper
+analysis and reporting can be a daunting task for many companies. As a result of this, approaches have been developed
+recently to deal with the complexities(ETL/ELT) of handling data and to enable some group of users to only focus on 
+its analysis. These approaches are **Data as a Service (DaaS) and Data Virtualization**. In general *data quality* and
+*data governance* are two key factors to consider when generating or using data. These factors can be implemented with
+or without the use of technology. **Data quality** ensures the correctness and richness of data, which is necessary for
+making data driven decisions. On the other hand, **data governance** define rules, roles, processes and policies to
+safeguard and improve the quality of data. The first phase of the data processing lifecycle is data *ingestion/integration**.
+In both Daas and Data Virtualization, data ingestion and/or integration is a key phase where the *quality of data*, its
+*consistency and consolidation* can managed. To achieve these, the following data integration principles, to implement,
+have been defined.
 
+## Data Integration Principles
+These include:
 
+1. Standardization
 
+Data from one or more sources are transfomred to an agreed **format or structure**. For instance, all columns of
+incoming data should be converted to *strings/text* data types. Another standard could be that all *date fields* should
+be stored in a particular format, such as the ISO format **(YYY-MM-DD)**.
+
+2. Reconciliation
+
+This principle aims to create data **consistency** when integrating data from different sources or with regards to
+a central repository (e.g DWH). Data inconsistencies can come from the source data or as a result of failures or mistakes
+in the data integration process. Issues that lead to data inconsistencies are: broken relationships between tables, missing
+values, duplicates etc.
+
+3. Validation
+
+Under given constrainst, the **accuracy and completeness** of the data is checked. That is, some constraints are applied
+on the data and the results are compared with the existing values of the *truth system*. For example, the revenue from sold
+sport cars generated last month should be X. Constrainst here are *sport cars and last month*
+4. Tramsformation
+
+Converts data into an agreed **schema**. For example, JSON data should be stored as tables.
+
+5. Cleansing
+
+In this principle, *errors* in the data are **detected and removed**. Example of errors include, wrong data entries(
+intentionally or unintentionally storing strings, dates and numerical values in same field), duplicate values, irrelevant
+values.
+6. Enrichment
+
+Adding value to the current data by including **supplementary data** typically from external sources.
+
+7. Privacy
+
+The **protection** of Personal Identifiable Information (PII) and/or Sensitive data. For example, E-Mails, Phone number,
+health information.
+
+***Think of example scenarios in practice where data integration principles can be implemented to improve data quality and***
+***achieve data consistency and consolidation***.
+**Example Scenario: A fintech receives daily reports(json) of its succeful transactions that we completed by its exteranal service**
+**provider. Which integration principles should the fintech adopt in their data integration process?**.
+
+### Technical Tools for Data Integration
+
+First of all, it is important to state that *data quality* is more of a social, particularly communication, than a technical
+challenge. How data is collected, organized, processed, stored and perceived depends strickly on communication. From a technical
+perspective, there are several ETL tools that can be used for data integration. Popular general purpose cloud-based ETL tools
+include: *Azure Data Factory, AWS Glue, Google cloud fusion and Google cloud dataflow.* Other ETL tools suitable for data
+integration include: *Pentaho Data Integration, Talend Open Studio, Informatica PowerCenter, IBM InfoSphere DataStage,* 
+*Oracle Data Integrator (ODI), Apache NiFi, Microsoft SQL Server Integration Services (SSIS), Feature Manipulation Engine(FME) etc*.
+Data reconciliation tools include: *Open Refine, TIBCO Clarity or Winpure*. On the other hand, *Clearbit, Pipl and FullContacht* are
+examples of data **enrichment tools**.
+In the following, some ETL data integration tools will be discussed.
+
+1. Apache NiFi
+
+This is an open source data integration tool that provide many connectors suitable for extracting data from numerous data sources.
+Through its graphical user interface (gui), developers can build and run data pipelines. Apache nifi is highly scalable and can hosted
+on a single node/machine. Apache leverages data objects in the form of **FlowFiles** which form the basics of this product. FlowFiles
+hold the data content as key-pay values as they go through the system. Another function that is used in Apache nifi for orchestrating 
+pipelines is **ZooKeeper**.
+
+2. Azure Data Factory
+This a data orchestration and transformation service offered by Azure. It provides over 90 connectors which can be used to
+integrate data from different sources. Connectors and plugins such as Power automate, Kafka, Apache Spark and Logstash can be used
+to integrate data with Azure data factory. Addtionally, Azure Data Factory can be used to incremental load from on-premise SQL databases
+to cloud data storage.
+
+### Unified data Stores
+Data integration is an end-to-end process. This means that data is extracted from a source system and at the end of the process, the
+data is loaded to a target system typically called the sink. There exist different types of sinks, namely:
+1. Data Warehouse
+    This is a central repository that stores large amounts of structural data in an agreed, and they heavily depend on ETL processes for
+data integration.
+
+2. Data Lakes
+    This is central repository that store large amounts of raw structured and unstructured data.
+
+3. Master Data Management (MDM)
+    This is a *truth* system that stores data, not freequently changed, critical for the functioning of an organization. Because data can 
+come from different sources, this system provides tools for data reconciliation and standardization.
+
+4. Data Federation
+    This is the creation of a **virtual unique logical view** or data model from a combination of data coming from different sources. Usually,
+data federation does not copy data into any central repository.
+
+5. Data Virtualization
+    This is an approach that hides the complexity of handling data by providing a virtual unified interface through which data from one or
+or more sources can be viewed without the data being copied from the original system to a central repository. The difference with data
+federation is that the data from the different sources are not combined.
+
+As already mentionen, Data Virtualization and DaaS are recent approaches that are used to provide ready-made data for analysis to users.
+In the following, Data Virtualization and Data as a Service (DaaS) are discussed.
+
+## Data Virtualization
+This is an approach that hides the complexity of handling data by providing a **virtual unified interface** through which data from one or
+or more sources can be presented in an agreed format and viewed, without the data being physically copied from the original system to a central repository. Informatica Power Center is an example tool that implements data virtualization. This is achieved via data integration and transformation broken down into three(3) major phases or steps described below:
+
+1. Abstraction
+    In this phase, the logical virtual data interface that separates the data from its underlying physical store is created.
+2. Virtual data access
+    The capability of accessing multiple data sources without physically copying the data. This is achievable via pointers on a GUI.
+3. Transformation
+    Converting the data on the fly from one format to an agreed format that is easy to access and analyse.
+
+It is possible to implement data virtualization by *data federation + use of in-memory database and API endpoints*.
+
+### Advantages
+- Eays access to access via logical interface
+- No physical copying of data from sources
+- On-the-fly transformation
+- Easy to integrate new data sources
+
+### Disadvantages
+- Development of logical interface is not trievial
+- Only current state of data can be viewed
+- Slower response time as it is not possible to precompute calues
+
+## Data as a Service
+This is an approach that is used to grant users access to processed high quality data over the network. Typically, the provider
+takes care of data extraction from multiple sources, storage, processing, security and backup. DaaS is scalalbe and thus suitable
+for big data scenarios.
+
+## Advantages
+- It is *cost effective* as users only pay for services they require and developers only pay for resources when they need it.
+- It is scalable thus developers can *flexibly increase or reduce* computational resources based on workload.
+- Users only focus on usage as the provider is responsible for *developing and maintaing* the data infrastructure.
+- Users are not exposed to the complexity handling the data before it is ready for usage
+
+## Disadvantages
+- Users may have difficulties in data interpretation as they don't have information on data and how it is processed.
+- In case of network failure, users will not have access to the data.
+- Data protection from hackers can be challenging for the service provider.
+
+### DaaS Architecture
+Data from previously seen data stores and other data sources are integrated into a unified view using data virtualization.
+Then the developer develops the APIs required for accessing the data via the network. This APIs must be documented and protected
+from unauthorised access.
+***Think of a DaaS application in a real-world scenario***
+
+## Data Governance
+The level of valuable insight that can be derived from data depends on its quality. Data governance focuses on maximizing
+the value of data by assuring data availability, integrity, usability and security. In particular it aims to ensure accuracy,
+consistency, security and compliance with regulations in all data life cycle phases. Data governance thus defines rules, roles,
+processes and policies for data quality management. It is important to differentiate between **data management** and **data quality**
+**management**, as they describe different setups. Data management involves the use of data storage and processing frameworks as
+ well as technical requirement analysis, and the implementation of technical solution thoughout the data lifecyle. On the other hand,
+ data quality management ascertain that data quality is a communication challenge than a technical one. Data quality thus identifies
+ inconsistencies and develope processes to ensure **data accuracy, consistency, relevance and completeness**. 
+
+ ### Data Quality Issues
+There are 3 main sources of data errors that cause data quality issues. These sources include:
+1. Data ingestion/integration.
+2. When writing changes to the target system.
+3. Inadequate tracking of transformations and modifications over time.
+
+### Different Quality Dimensions and Metrics
+when an organization seeks to improve its data quality, they must measure and interprete metrics that will enable them to evaluate
+ the impact of their actions. There exists different data quality dimensions and metrics that can be applied and measured. The
+ following data quality dimensions can be considered in practice.
+ + Accuracy: Evaluates the level at which data is free from errors like typos or other flaws.
+ + Completeness: Measures whether the acquired data is enough to cover the scope of the topic at hand.
+ + Consistency: Measures whether data follow uniform standards thoughout all the analysis.
+ + Validity: Measures the level at which the data follow the rules, constraints, and formats defined by the data policies and standards.
+ + Timeliness: Measures the degree to which the data is available when needed.
+ + Uniqueness: Measures the level of redundant data entries in the system. Ideally, there should not be redundant data in the system.
+
+This data quality dimensions provide grounds for the development of concrete data quality metrics that can be technically implemented
+to assess the quality of data. Some of these technical metrics include:
+- Number of false entries
+- Number of primary or foreign key errors
+- The toal data volume of the system
+- The number of unauthorized accesses in a given time.
+
+### Roles in Data Governance
+Given that data quality management is more of a communicative than a technical challenge, it is important to define roles and
+responsibilities when implementing a data governance project. These will strongly support the measurement of the technical metrics
+and overall, improve data quality. In practice the following roles in data governance have been established.
+
+1. *Data Governance Board (DGB)*: Define policies and procedures related to data management and establish data governance frameworks.
+Stakeholders are made up of people various departments of the organization.
+2. *Chief Data Officer (CDO)*: Responsible for the overall management and strategy of the organization's data assets to ensure that
+data is used efficiently. If there is a data governance board, then the CDO collaborates with them to define policies and standards
+for all data-related processes.
+3. *Data Steward*: Controls and ensures that data policies and standards are implemented throughout the organization.
+4. *Data Owners*: Responsible for managing specific datasets or data processes.
+5. *Data Analyst*: A technical role for analysing data to draw valuable insights necessary for decision making.
+6. *Data USer*: An enduser who consumes the data or data product. This can be a person or an application.
+7. *Data Manager*: A technical role which is responsible for data storage and processing frameworks and cloud architecture.
+8. *Information Security Officer*: Responsible for the implementation of security measures to protect the organization's data.
+
+### Data Quality Management Capability levels
+    As it is already clear, data governance aims to improve data quality. In this regard data management capability levels and
+the **ISO norm 8000-61** provide a framwork that list concrete measurements that organizations can implement to improve data quality.
+These capabilities are in five (5) levels and described as follows:
+
+1. Process Data per Specific use case
+2. Data quality monitoring in work specifications should be done contineously
+3. Train data professionals to obtain skills required to offer required support in data-related tasks, and implement long-term data
+quality plans, policies and standards.
+4. Evaluate the entire data system to measure its effectiveness.
+5. Integrate data quality checks into the organization's operations.
+
+### Top-down, Bottom-up and Hybrid Data Governance Approaches
+
+1. Top-Down: Data governance strategy and goals are defined by top management, and assigned to middle management who are responsible
+for the implementation. Advantage is that top management have a clear vision on the direction the company is being steered towards.
+Disadvantage is that top management may overlook important operational details.
+2. Bottom-up: Data governance strategies are defined and implemented from the operational units. Advantage is that it is fast to
+implement and manage since they are curated to suit the operational units, however it could be too diverse and fail to align with
+the vision of the company.
+3. Hybrid: Top management defines the organization's data governance vision and middle management is responsible to implement this
+as an agile and iterative process under consideration of of functional operational units and their requirements. 
 
