@@ -1037,3 +1037,105 @@ the vision of the company.
 3. Hybrid: Top management defines the organization's data governance vision and middle management is responsible to implement this
 as an agile and iterative process under consideration of of functional operational units and their requirements. 
 
+# Data ModelLing
+An **Entity Relationship Model (ERM)** is an abstract representation of the entities in the real-world and the relationshp betwenn these
+entities. It is the foundation of all *Information Systems* and a useful technique in database design or modelling. An ERM is not
+bonded to any specific proramming language and can thus be used by individuals in different works of life, e.g software developers,
+database designers etc., to develop a structure representing entities and their relationships. There exists several tools that can be
+used to translate an ERM to a data model. For instance, an **Entity Relationship Diagram ERD** can be used to visualize a data model
+derived from an ERM. An ERD represents entities as *boxes* within which the *attributes* and *data types* of these attributes for an
+entity can be described. Data modelling is particular in databases specifically for some reasons including the following:
++ A well developed data model eliminates data anomalies, via *normalization*, like redundancy, delete, updata and insert anomalies. 
+This can significantly improve data quality.
++ A well developed data model facilitates data analysis as it becomes easier to flexibly navigate through the data.
++ A well developed data model also improves database performance as data will be stored efficiently.
+
+## Definition of Key Terminologies in Entity Relationship Model (ERM)
+
+1. **Entity**: These are real-world objects(e.g a Person, House, Plane etc) with the following characteristics.
++ They have a name or can be name e.g A person can be called Wirngoh.
++ They have attributes which represent their properties. Wirngoh has the following attributes: date of birth, weight, heigh. A data type
+is assigned to each attribute depending on the kind of information it stores e.g date of birth is if *date* data type, weight is numeric.
+In an ERD, entities are denoted by boxes. Additionally, it is worth differentiating between *weak* and *strong* entities. Strong entities
+are *independent* while weak entities are *dependent*. Strong entities have a primary key, but its primary key is not a foreign key to another entity. On the other hand, weak entities have a primary key but their primary keys are foreign keys to other entities. Strong
+entities can exist independently from other entities while weak entities exist only when other entities do exist. Example: Consider magma
+and a volcano as two separate entities. Magma can exist without a volcano, but on the other hand, a volcano only exist when magma erupts
+onto the earth surface. In this case Magma is a strong entity while the volcano is a weak entity. If magma is eliminated, then a volcano
+is intuitively eliminated or will never exist. 
+
+2. **Relationship**: These are *meaningful* describtions of the links or association between entities. It is also possible to have to
+relationships that describe links of an entity with itself. In an ERD, *lines* are used to represent relationships. Once a relationship
+is established between objects, cardinalities are set or specified.
+
+3. **Cardinality**: This specifies the number of records or instances of an Entity(A) that can be linked or associated with an Entity(B)
+that are in a relationship. There exists 4 types of relationships that can be described via cardinaties. These are: *one-to-one* relationship denoted as *1:1*, *one-to-many* denoted as *1:n*, *many-to-one* denoted as *n:1* and *many-to-many* denoted as *m:n*. When
+talking of cardinalities, it is important to differentiate between *maximum* and *minimum* cardinalities. These notation of cardinalities
+described represents maximum cardinality. Minimum cardinalities can either be *optional* denoted by *0* or *mandatory* denoted by *1*.
+There are four types of minimum cardinalities which are *optional-option (0-0), optional-mandatory (0-1), *mandatory-optional (1-0)* and
+*mandatory-mandatory (1-1)*. When setting cardinalities, both maximum and minimum cardinalities are considered and it is important to
+mention that minimum cardinalities must always be specified. In databases, mimimum cardinalities are implemented with **triggers**.
+
+4. **Primary and Foreign Keys**: To specify the number of records of an entity that is linked to another entity, it is important that
+a given *entity should be uniquely idenfiable*. A primary key is an attribute of an entity that uniquely identifies this entity. A
+primary key can be one or composition of several attributes of an entity. It can also be generated. Links are created between entities
+by inserting the primary key of an Entity(A) into an Entity(B) as a *foreign key*. 
+
+### Entity Relationshi Diagram Tools
+There are several ERD tools that can be used to create and manage a database schema. Most of these have automatic functionalities used
+export the ERD as well as SQL scripts that are compliant to the defined schema. Example of ERD Tools include: **ERDPlus, Lucidchart,**
+**MySQL Workbench, Microsoft Visio, SmartDraw, Draw.io, ConceptDraw, Dia, Visual Paradigm**. Also most of these tools offer templates
+that can be modified to adapt to a particular use case, and drag-and-drop feature to enable easy creation of ERDs.
+
+## Data Normalization
+Why data normalization in database design?
+First of all, a database is designed based on a developed model that concisely represents a real-world scenario that is being monitored. During the physical implementation of the model, tables are created and relationships between these tables are established through their primary and foreign keys. After a database is designed, it can happen that some tables pose challenges in the usage or handling of data. To ensure the effective functioning of a database with regards to the ACID principle, normalization centralized around **functional** **dependency** is used as a formal way to check whether database fields or attributes are in the right tables otherwise the tables will have to be restructured. 
+
+- *Primary key*: Uniquely identifies every row in a database table. No subset of fields of a primary key is also a key. **seen**.
+- *keys*: A collection or concatenation of two or more attributes to form a key for a unique identification of every row. It is possible that a subset of keys can uniquely identify values of one or more fields that are not part of the keys. In this case it is said that keys functionally determine non-key fields. This is relevant for normalization based on functional dependency.
+- *Functional dependency* is a mechanism used to describe how attributes or fields of a database table depend on each other. In other words, it is a set of field(s) that form a key for which given values of the key can be used to functionally determine the values of other fields in the same table.
+
+As earlier mentioned, normalization can resolve data anomalies like update anomaly, insert anomaly, redundancy and delete anomaly. This
+is achievable by implementing different normalization levels. There are several normalization levels, each suitable for resolving a
+particular type of data storage issue. The levels of normalization presented here are First, Second, Third and Fourth Normal forms, denoted as *1NF, 2NF, 3NF and 4NF respectively*.
+
+### First Normal Form (1NF)
+A table is in this normal form if no field stores or crams multiple values of a piece of information. If a table is not in first normal form, then the following should be done to take it to first normal form: All identified fields storing multiple values are removed alongside with the primary key and placed in a different table so that every multiple value is dissolved into a  row with the corresponding primary key.
+
+### Second Normal Form (2NF)
+A table is in this normal form if it is already in the *first normal form* and there exist no subset of the primary key or key that functionally determine or uniquely identifies the values of the non-key attributes. If a table is not in second normal form, then it should be decomposed in the following way: Remove the subset of the key alongside the non-key fields that it functionally determines and create a separate table for them. This can result to the creation of several other tables.
+
+### Third Normal Form (3NF)
+A table is in this normal form if it is already in the *second normal form* and there is no non-key field that functionally depends on another non-key field. If the table is not in third normal form, then it should be decomposed in the following way: Remove the non-key field that functionally determines other non-key field and put them together in a new table.
+
+### Fourth Normal Form (4NF)
+A table is in this normal form if it is already in the *third normal form* and there there is *no multi-valued dependency* between a
+non-key field and the primary key. To resolve this, create each table for the primary key and every non-key field that cause multi-value
+dependency. All non-key fields without multi-value dependency with the primary key should be on the same table.
+
+### Disadvantages
++ Queries might require joining several tables which could lead to database performance issues especially with the tables much data.
++ Can not be implemented when data model is already in production.
+
+### Advantages
++ Eliminate data storage issues like redundancy.
++ Takes less storage space.
+
+## Star and Snowflake Schema
+These are both multi-dimensional data models that have proved to be good choices for most use cases. The star model or architecture is
+built on a **fact** table sorrounded by **dimension** tables, while the snowflake model split the dimension tables, through normalization, into further **subdimensions**. Facts are measurable key figures central to the organization's core processes and can only be described and interpreted by attributes from the dimension tables, otherwise they lack meaning on their own. A star schema is built by inserting the primary keys of the dimension tables into the fact table as foreign keys. Examples of facts ar: number of orders, sales, cost, number of payback points etc. Attributes include: region, country, product category, colour, customer zipcode. The granularity level at which a fact can be interpreted is determined by the dimension tables.
+
+### Comparison of star and snowflake schemas
++ *Complexity*: Star schema has a simple structure than the complex structure of snowflake schema.
++ *Normalization*: Star schema is denormalized while snowflake model is normalized
++ *Integration*: Inserting new records in star model might be difficult due to denomalized structure which requires constraints to be respected. On the other hand, it is easier to insert new records in snowflake model.
++ *Cardinality and Joins*: Join queries in star schema involve few tables while in snowflake joins might involve several tables which can impact database performance.
++ *Redundancy*: Star model stores redundant data in denormalized structure while snowflake reduces redundancy in normalized structure.
++ *Disk space*: Denomalized strucuture in star models takes more storage on disk than normalized structure in snowflake model.
++ *Consistency*: Redundancy in star model can cause inconsistencies while this is less likely to occure in snowflake model.
+
+These multi-dimensional models are suitable for business intelligence, data warehouses, data marts and OLAP operations on large amounts of data. Star model is a good solution for efficiently analyzing historical records with less complex queries. On the other hand, it is easy to integrate new data records into the normalized structure of snowflake model.
+
+
+
+
+
