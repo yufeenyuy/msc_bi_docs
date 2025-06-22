@@ -1135,7 +1135,83 @@ built on a **fact** table sorrounded by **dimension** tables, while the snowflak
 
 These multi-dimensional models are suitable for business intelligence, data warehouses, data marts and OLAP operations on large amounts of data. Star model is a good solution for efficiently analyzing historical records with less complex queries. On the other hand, it is easy to integrate new data records into the normalized structure of snowflake model.
 
+# Metadata Management
 
+Metadata is *data about data* and is equally the part of data governance that enables usability of a company's data by providing a framework for accurate documentation. The framework define guidelines for *describing, sharing and structuring* data in a way that it can easilly be accessed by different stakeholders at the time of their need. There exist different types of metadata. However, in practice, there is no defined boundary between the different types of metadata.
+
+### Technical Metadata 
+It describes the technical physical features of data sources and security related aspects. This is important for users to know when considering to load data from their sources. Data sources could be file systems and database management systems. Examples of technical metadata about sources include, *drivers, version, network endpoints etc,*. Also *location* such as directories or table names are technical metadata as the provide information about the exact place of the data which can be used to access data. In some cases it is required to map data fields when moving data from one data system to another. This can be implemented with *mapping metadata* which is a type of technical metadata. Technical metadata can further be broken down into the following:
+
+- *Conceptual*: Metadata that provides information to both technical and non-technical stakeholders about the overall scope of the data system. It contains information about the system at an abstract or basic level to enable stakeholders have the same understanding of the expections of the systme. This is typically created at the end of the conceptual phase of a system e.g After creating an *ERM*.
+
+- *Logical*: After the conceptualization of a system, a logical phase follows where *attributes and their corresponding datatypes* for an entity, and the type of relationships between the entities are defined. Thus logical metadata stores information about entities, attributes, datatypes and keys. This information contains business logics to be implemented and it is only necessary for the *development* team. Example is *Entity Relationship Diagram*. Both conceptual and logical metadata are not system specific.
+
+- *Physical*: This is metadata that is system specific and contains information on the nature of data storage. It describes how data is inserted, updated and deleted, and the impact of these operations on existing data. Additionally, it provides information about datatypes, indixes, procedures and how data is distributed in distributed systems.
+
+### Business Metadata
+This metadata focuses on the business side of the organization. It describes data about the structure and business processes of the organization, making it easy for companies to develope meaningful *data catalogs* to structure their data.
+
+### Ownership Metadata
+This metadata provides the list of golden sources i.e highly reliable data sources, and the persons in charge of these sources. Typically, these persons are registered owners of particular data assets. Equally, Data Stewards are assigned to these data assets to oversee the proper implementation of company standards and policies. 
+
+### Classification
+The use of taxonomy and ontology to classify data based on their attributes so that the can easilly be discovered. Taxonomy classifies data into categories while ontology uses relationships and subcategories to classify data.
+
+### Collaboration
+This metadata provide details how different users collaborate with the data. Usually, these details include feedback, ratings and comments on particular datasets
+
+### Operational Metadata
+Provide information on the creation and transformation of data. Information found on this document include dates, owners, volume of data, data processing or analysis.
+
+### Descriptive Metadata
+This type of metadata is necessary for building data catalogs as it contains short to long descriptions of datasets. Other information contained in this type of metadata include tags, keywords, titles, dates and names.
+
+### Structural Metadata
+Describes the framework used to organize the data. It does not provide information about the data itself.
+
+### Administrative Metadata
+Stores information about data creation and acquisition, as well as provide restrictions guideline to enable controlled access to the company's data.
+
+### Preservation Metadata
+Document that stores information about the long-term preservation of data and how data should be accessed. The information stored include file format, technical characteristics etc.
+
+### Provenance Metadata
+It stores information that is required to track data assets from its origin or creation, its ownernship and custody. This is important in data historization.
+
+### Data Lineage Metadata
+Stores information about the data flow of data assets during the data lifecylce(creation, storage, usage, archive and destroy), including data movements and transformations.
+
+### Usage metadata
+Similar to *provenance metadata*. However it also tracks when users access data assest and their interactions with data. This can enable pattern discovery and identification of underused datasets.
+
+### Data Security and Protection Metadata
+Store information how data should be protected and secured to avoid unauthorised data access. This including setting up standards, policies, roles and processes for handling data.
+
+### Data Quality Metadata
+Information about data quality dimensions and metrics are stored in this document. These dimensions are *accuracy, completeness, consistency, timeliness and relevance*.
+
+## Metadata Repositories
+
+Recall that metadata is *data about data*. As a result metadata is also data which has the potential to grow over time. To efficiently manage metadata, it has to be stored in repositories like databases or any other storage systems that can allow data management.Once metadata is properly stored, users can easily search and find them. Additionally, efficient metadata management increases the overall quality of data, its consistency and accessibility. This is also usefull when building applications and informations systems. In practice, most organizations store metadata in a central repository, allowing access to every stakeholder who has the permision to access it. However, there also exists other approaches for storing and managing metadata. Closely related to metadata repository are **data catalogs**. *A data catalog is a tool that provides a searchable and browsable inventory of data assets within an organization*. Data catalogs often store information about *datasets, their description, source, owner and usage*. The principal difference between data repository and data catalog is that, a data repository stores and manages metadata while a data catalog manage specific datasets. In an organization, IT professionals mostly use metadata repositories while others use data catalogs. In essense, a data catalog can be perceived as a sub-category of metadata repository. In the following centralized and distributed approaches of storing and managing metadata is discussed.
+
+### Centralized and Distributed Metadata
+The advantages of centralized and distributed architectures with regard to the CAP theorem also apply to metadata repositories. Another approach that can be used to store metadata is the hybrid architecture. In this approach only the metadata APIs of federate metadata repositories are stored in the central repository along side the consolidated, centralized metadata sets.
+
+## Technical Solutions
+
+There exist both open source and commercial technical solutions as well as cloud solutions for storing and managing metadata. Typically, when a metadata repository is implemented, the data catalogs can be served to users via API endpoints to access the data via search engines or browsers. This allows self-service usage of metadata catalogs.  
+
+### Open Source Solutions
+Examples include: Apache Atlas, Amundsen, DataHub, Netflix Metacat, Magda, OpenMetadata, Select Star, DKAN and CKAN. This examples provide visualization features, access control, search capability and API support.
+
+### Commercial Solutions
+Examples include: Informatica Data Management Cloud and Enterprise Data Catalog(EDC), IBM Infosphere and Data Management Platform, Collibra, and Alation. Many of these provide solutions provide search engines, data lineage tools, and data quality features in addition to previously mentioned features of open source tools.
+
+### Cloud Solutions
+Cloud providers offer data catalog services which smoothly integrate with other services of the respective cloud provide. Example of Data Catalog services provided by Cloud providers include: 
++ Google Cloud platform offers Google Data Catalog. 
++ Microsoft Azure offers Azure Data Catalog
++ Amazon Web Services offers AWS Glue Data Catalog.
 
 
 
