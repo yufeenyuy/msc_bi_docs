@@ -1,72 +1,56 @@
 ## Relational and NoSQL Databases
 
 Nowadays in any Business or Organisation, *Data, Information and Knowledge* are the most crucial assets for their success. Note that Knowledge is
-inferred from Information while Information is inferred from Knowledge. Due to the abondant data that is being generated at a very high rate,
+inferred from Information while Information is inferred from Data. Due to the abondant data that is being generated at a very high rate,
 effective Storing, Managing, Processing and Sharing of Data is of utmost importance.
 
 In this Course, we will cover **Relational and Non-Relational Databases**, their *usage, key components and underlying principles*. In general,
-Databases are complex systems that enable users to store and process Data inorder to make informed organizational or business decisions. They
+Databases are complex systems that enable users to store and process data in order to make informed organizational or business decisions. They
 provide different features and capabilities which is very important to understand before making a choice of a database system with regards to
-the needs and capabilities of an organization or business.
+business requirements.
 
 ### Database Concepts
 
-Atomicity, Consistency, Isolation and Durability i.e ACID as constrainst for Databases. This ensures that relational databases should perform 
+Atomicity, Consistency, Isolation and Durability i.e ACID as a constraint for Relational Databases. This ensures that relational databases should perform 
 their operations correctly even in an event of internal or external failures. This implies that an operation over a given number of transactions 
-must be completed totally, otherwise this operation must be reversed. In relational Databases ACID is the dominant operational constrain whereas 
-BASE(Basically Available, Soft State and Eventual Consistency) constrain NoSQL databases. Lets look at the components of the ACID Principle:
+must be completed totally, otherwise this operation must be reversed. In relational Databases ACID is the dominant operational constrain whereas BASE(Basically Available, Soft State and Eventual Consistency) constrain NoSQL databases. Lets look at the components of the ACID Principle:
 
 1. *Atomicity*: 
 
-The Database System must complete all operations of a transaction otherwise none of the operations. This means that every operation must be handled 
-indivisibly. E.g. Consider a bank transaction of withdrawing and depositing money. If as a result of power outage, money withdrawn can’t be deposited 
-into the destination account, then the money must be returned to the account from which it was withdrawn.
+The Database System must complete all operations of a transaction otherwise none of the operations. This means that every operation must be handled indivisibly. E.g. Consider a bank transaction of withdrawing and depositing money. If as a result of power outage, money withdrawn can’t be deposited into the destination account, then the money must be returned to the account from which it was withdrawn.
 
-2. *Consistency*: 
-Given the same transactions the database must perform the same set operations and in the right order. Consider transactions for transferring money 
-from one account to the other. If money must always be withdrawn before it is deposited then this must apply to all the transaction otherwise the 
-database system is not consistent.
+2. *Consistency*:
+
+Given the same transactions the database must perform the same set of operations and in the right order. Consider transactions for transferring money from one account to the other. If money must always be withdrawn before it is deposited then this must apply to all the transaction otherwise the database system is not consistent. Same rule must apply to all operations.
 
 3. *Isolation*: 
 
-The database system must handle every separate transaction independently from each other. E.g If someone or people make 10 different bank transactions 
-such as sending money, then the database must handle these transactions independently.
+The database system must handle every separate transaction independently from each other. E.g If someone or people make 10 different bank transactions such as sending money, then the database must handle these transactions independently.
 
 4.	*Durability*:
-Once a transaction is recorded and saved it must always be available even if the system fails or affected. This is called persistent storage.
+
+Once a transaction is recorded and saved it must always be available even if the system fails or is affected. This is called persistent storage.
 
 ### Database Structures and Architectures
 
 Depending on the use case the structure and architecture of databases may vary. Typically, dispositive database systems i.e databases used for 
-analysis are different from operational databases systems that are used for executing transactions and performing operations. There exist two 
+analysis are different from operational database systems that are used for executing transactions and performing operations. There exist two 
 types of database systems; namely: OLAP and OLTP
 
 1. *Online Transaction Processing (OLTP)*: 
 
-This is an operational database system that is used to perform transactions are hight speeds, beside maintaining the ACID Principle. This databases 
-system does not need to store data as such analysis of data is not required. Example: When a product is scanned for sale or to be stored, the number 
-of units in stock is reduced or increased almost instantly. 
+This is an operational database system that is used to perform transactions at high speeds, beside maintaining the ACID Principle. This database system does not need to store data as such analysis of data is not required. Example: When a product is scanned for sale or to be stored, the number of units in stock is reduced or increased almost instantly. 
 
 2. *Online Analytical Processing*: 
 
-This is a dispositive database system and thus gives birth to the term Data warehouse. This type of database is used to store and analysis data 
-from which insights can be extracted to drive business decisions. Data stored in these databases typically go through an Extract Transform Load 
-(ETL) process and can be aggregated at different levels depending on the level of granularity in which data needs to be analysed. Analysis is 
-mostly done with the help of Business intelligence tools. Example: The sales department might be interested in analysing the revenue generated 
-by the sales of sneakers in different districts in Germany in a given period.
+This is a dispositive database system and thus gives birth to the term Data warehouse. This type of database is used to store and analyse data from which insights can be extracted to drive business decisions. Data stored in these databases typically go through an Extract Transform Load (ETL) process and can be aggregated at different levels depending on the level of granularity in which data needs to be analysed. Analysis is mostly done with the help of Business intelligence tools. Example: The sales department might be interested in analysing the revenue generated by the sales of sneakers in different districts in Germany in a given period.
 
 ### Data Handling Ethics: 
-Ethics in this context seeks to address the use of data by organizations from a moral point of view especially where no laws apply. Despite data 
-protection acts set by governments e.g the EU General Data Protection Regulation, companies must take responsibility to set guidelines on the use 
-of data to ensure that “the right thing is done when no one is watching”. It is important to note that heavy penalties are associated with the 
-misuse of data as defined in Data Protection Acts, as such companies need to collect, transform and analyse data in a way that it does not 
-harm a person or group of people. The following are some widely accepted principles of data ethics:
+Ethics in this context seeks to address the use of data by organizations from a moral point of view especially where no laws apply. Despite data protection acts set by governments e.g the EU General Data Protection Regulation, companies must take responsibility to set guidelines on the use of data to ensure that “the right thing is done when no one is watching”. It is important to note that heavy penalties are associated with the misuse of data as defined in Data Protection Acts, as such companies need to collect, transform and analyse data in a way that it does not harm a person or group of people. The following are some widely accepted principles of data ethics:
 
 1. *Transparency*:
 
-Data processors like companies or organizations must explicitly inform its data subjects the storage, management, processing and disposition of 
-their data. In the case of data breaches the subject must equally be informed about possible damages as well as measures taken to protect the 
-physical and psychological integrity of the data subject.
+Data processors like companies or organizations must explicitly inform its data subjects on the storage, management, processing and disposition of their data. In the case of data breaches the subject must equally be informed about possible damages as well as measures taken to protect the physical and psychological integrity of the data subject.
 
 2. *Accountability*:
 
