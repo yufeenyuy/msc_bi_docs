@@ -165,6 +165,7 @@ Application of processing frameworks by using cloud solution e.g microsoft azure
 services for batch processing as well as for stream processing frameworks. When chosing resources one needs to 
 consider the supporting programming language, the programming paradigm,the pricing model and available connectors.</p>
 <div style="page-break-after: always;"></div>
+
 1. Batch Processing analytical services in Azure.
     - Azure Synapse is a distributed **data warehouse** offering analytical capabilities
     - Azure Data Lake analytics
@@ -180,7 +181,9 @@ consider the supporting programming language, the programming paradigm,the prici
     - IoT and Events Hubs
 
 The following illustrates out-of-the-box available data sources and sinks for some streaming solution in Azure.<br>
-![Sources](/datamanagementconcepts/img/azure_solutions_for_streamfw_sources.jpg)
+
+![Sources](./img/azure_solutions_for_streamfw_sources.jpg)
+
 
 3. <b>Data Storage</b>
 <p>
@@ -278,7 +281,7 @@ flexible schemas. NoSQL Databases are differentiated from each other based on th
 > python dictionaries. Examples of Key-Value oriented databases include: *Redis, Amazon SimpleDB*. Example situations
 > where these databases are used include: content of shopping cart, Product details in ecommerce.
 
-![key-Value-Oiented-db](/datamanagementconcepts/img/keyvalueoriented_db.jpg "how data is stored")
+![key-Value-Oiented-db](./img/keyvalueoriented_db.jpg "how data is stored")
 
 2. **Document Oriented Databases**
 > These Databases store *object* information in a *collection of key-value-pair*. This is similar to XML, JSON etc  
