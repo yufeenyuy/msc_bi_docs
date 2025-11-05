@@ -946,7 +946,7 @@ data federation does not copy data into any central repository.<p>
 5. Data Virtualization
 <p>This is an approach that hides the complexity of handling data by providing a virtual unified interface through which data from one or
 or more sources can be viewed without the data being copied from the original system to a central repository. The difference with data
-federation is that the data from the different sources are not combined.<p>
+federation is that the data from the different sources not combined.<p>
 
 <p>As already mentionen, Data Virtualization and DaaS are recent approaches that are used to provide ready-made data for analysis to users.
 In the following, Data Virtualization and Data as a Service (DaaS) are discussed.<p>
