@@ -2,9 +2,9 @@
 
 ## Chapter one: Introduction
 
-In today's world very large amounts of varying data are generated, at high speeds, by different sources ranging from machines, setelites through social platforms like linkedin, X etc., including IoT devices, E-commerce platforms and legacy systems. They are resourcesful as they contain valuable insights that can be used to make impactful decisions, however they are difficult to store, manage, analyse and maintain because of they are large and complex. These describe the term **big data**. From the stated description, *big data* has the following characteristics:
+In today's world very large amounts of varying data are generated, at high speeds, by different sources ranging from machines, setelites through social platforms like linkedin, X etc., including IoT devices, E-commerce platforms and legacy systems. They are resourcesful as they contain valuable insights that can be used to make impactful decisions, however they are difficult to store, manage, analyse and maintain because they are large and complex. These describe the term **big data**. From the stated description, *big data* has the following characteristics:
 
-+ Volume: The amount of data generated and available analysis is large requiring special considerations for storage.
++ Volume: The amount of data generated and available for analysis is large requiring special considerations for storage.
 + Velocity: Data ages very quickly because new data is generated much more faster.
 + Variety: Data is heterogeneous in nature as they are generated from different systems often serving different purposes.
 + Value: The Data provides added value or perceived/quantifiable benefits.
@@ -57,6 +57,8 @@ of a **DWH** suggest that a DWH can be observed from two angles, namely: a *narr
 
 In this approach the DWH is designed and developed following a *top-down* workflow. The DWH is composed of a *Central data repository(core dwh)* where data is stored as related tables in *3 Normal Form (normalization)* including the *departmental data marts* that are created and supported by the core dwh. The data marts and associated OLAP cubes are distinctly separated from the C-DWH. It is considered a *data driven* approach because the the C-DWH is developed *without considering the core business requirements or business processes*. As a result it does not provide any standard as to how the C-DWH should be, as this strongly depends on the *company's business, culture, economy and technology*. See image on page 35 of the course book.
 
+![CIF Framework](./img/cif_framework.png "Corporate Information Factory Framework")
+
 #### **Kimball Lifecycle Methodology**:
 
 This approach follows a *buttom-up* strategy and comprise of program/project and managing activities. These activities are used to guide the *design, development, implementation and maintenance* of the DWH or BI Architecture. A dwh developed following this approach is called a *data mart bus architecture*. The data marts are not physically separated from the c-dwh. The steps included in the project are as follows:
@@ -69,6 +71,8 @@ This approach follows a *buttom-up* strategy and comprise of program/project and
 + Design and implement the BI application
 + Deploy, expand and maintain the infrastructure
 
+![Kimbal Framework](./img/kimbal_framework.png "Kimbal Framework")
+
 #### **Linstedt's Data Vault(DV)**
 
 A *Data Vault* by definition is a detail oriented, historical tracking and uniquely linked set of normalized tables that support one or more functional areas of a business. A DV is a hybrid of the CIF and Kimball's approaches. It takes the advantages the strengths of these two approaches and deals with the weaknesses that each of these approaches have. Specifically, it follows the *buttom-up* approach for designing, developing, implementing and maintaining while making use of the *top-down* approach to model the data. 
@@ -80,11 +84,11 @@ Through out the DV architecture process, metrics and metadata is collected. The 
 4. Data marts and cubes: Data segments for departments or group of users.
 
 + **Advantages**
-
 - Only allows insert operations which is faster than update or merge.
 - Supports historization as previous entries are inserted instead of overwriting them.
 - Supports simultaneous data upload in several tables which occurs at quickly.
 
+![Data Vault Framework](./img/datavault_framework.png "DV Framework")
 
 ### RDBMS-Based Data Warehousing
 
@@ -432,14 +436,29 @@ The following is the DWHA of Big Data + Data Vault 2.0.
 
 The efficient functioning of a DWH is non-negotiable to the organization as it serves as a single source of truth for decision making. To overcome latency and shortcomings of relational DWHS, *real-time, closed-loops and active functionalities* can be integrated into the DWH.
 
-1. Real-Time: It strongly reduces latency, to less than a minute, from the moments an event occurs in OLTP systems to the time the data is made available in the DWH. Events are tracked by triggers. Advantages iof Real-Time functionalities include:
+1. Real-Time DWH: It strongly reduces latency, to less than a minute, from the moments an event occurs in OLTP systems to the time the data is made available in the DWH. Events are tracked by triggers. Advantages iof Real-Time functionalities include:
 + reduced latency
 + improved data quality and security due to few updates and data reconciliations
 + cost efficient due to automation possibilities
 + Reduced instances of manual errors
 
-2. Closed-Loop: Similar to real-time functionality and in addition, changes made in DWH are also writen in the corresponding OLTP system. Have the advantages of the real-time functionalities plus bidirectional flow of data between OLTP and OLAP can relect the current state of the business. However, drawbacks include:
+2. Closed-Loop DWH: Similar to real-time functionality and in addition, changes made in DWH are also writen in the corresponding OLTP system. Have the advantages of the real-time functionalities plus bidirectional flow of data between OLTP and OLAP can relect the current state of the business. However, drawbacks include:
 + Aggregated or summarized values may not find corresponding tables or location in oltp systems to perform the updates.
 + Operational and Analytical activities serve different purposes in a company. As such integrating data from dwh into operational systems may have a adverse effect.
 
-3. Active: 
+3. Active: Captures transaction details as they occur and integrates them into the DWH near real-time. As such it is logically consistent data store that provides detail in a single up-to-data view required for strategic, tactical and event-driven decision-making. It supports automated routine task from DWH to OLTP systems. Hence data refreshes can be done in batches or cycles. Tactical queries are short to enable quick actions or decision making in time sensitive environments. Active DWH provide the following functionalities:
+
+- Active Load: Allows data to be loaded continuously in a non-disruptive manner while other workloads continue processing.
+- Active Access: Supports fast and consistent tactical queries, providing recurring decision support information for operational business processes.
+- Active Events: Automatically detects business events and applies business rules to update current and historical data; operational actions can be triggered automatically or presented to users for manual decision-making.
+- Active Workload Management: Enables real-time management of mixed workloads to dynamically optimize system resource utilization.
+- Active Enterprise Integration: Simplifies coordination of applications and business processes across the enterprise.
+- Active Availability: Assesses enterprise-wide downtime impacts and identifies application-specific requirements for availability, recoverability, and performance.
+
+### Practical use cases of DWHs
+Use cases include: 
+- Tactical reporting
+- Integration with big data
+- Natural language processing
+- Auditing and Compliance
+- Data mining Analytics
