@@ -55,7 +55,7 @@ of a **DWH** suggest that a DWH can be observed from two angles, namely: a *narr
 
 #### **Corporate Information Factory**:
 
-In this approach the DWH is designed and developed following a *top-down* workflow. The DWH is composed of a *Central data repository(core dwh)* where data is stored as related tables in *3 Normal Form (normalization)* including the *departmental data marts* that are created and supported by the core dwh. The data marts and associated OLAP cubes are distinctly separated from the C-DWH. It is considered a *data driven* approach because the the C-DWH is developed *without considering the core business requirements or business processes*. As a result it does not provide any standard as to how the C-DWH should be, as this strongly depends on the *company's business, culture, economy and technology*. See image on page 35 of the course book.
+In this approach the DWH is designed and developed following a *top-down* workflow. The DWH is composed of a *Central data repository(core dwh)* where data is stored as related tables in *3 Normal Form (normalization)* including the *departmental data marts* that are created and supported by the core dwh. The data marts and associated OLAP cubes are physically separated from the C-DWH. It is considered a *data driven* approach because the the C-DWH is developed on the basis of the *business requirements*. Considering this, there are other *three* organizational dimensions to take into account when implementing this method. These are: *company's cultural orientation, economy viability and technological infrastructure*. See image on page 35 of the course book.
 
 ![CIF Framework](./img/cif_framework.png "Corporate Information Factory Framework")
 
@@ -63,7 +63,7 @@ In this approach the DWH is designed and developed following a *top-down* workfl
 
 This approach follows a *buttom-up* strategy and comprise of program/project and managing activities. These activities are used to guide the *design, development, implementation and maintenance* of the DWH or BI Architecture. A dwh developed following this approach is called a *data mart bus architecture*. The data marts are not physically separated from the c-dwh. The steps included in the project are as follows:
 
-+ Gathering business requirements (conception phase)
++ Gathering business process requirements (conception phase)
 + Designing the technical architecture (conception phase)
 + Developing a data model (logical phase) 
 + Designing the physical databases (physical phase)
@@ -75,8 +75,8 @@ This approach follows a *buttom-up* strategy and comprise of program/project and
 
 #### **Linstedt's Data Vault(DV)**
 
-A *Data Vault* by definition is a detail oriented, historical tracking and uniquely linked set of normalized tables that support one or more functional areas of a business. A DV is a hybrid of the CIF and Kimball's approaches. It takes the advantages the strengths of these two approaches and deals with the weaknesses that each of these approaches have. Specifically, it follows the *buttom-up* approach for designing, developing, implementing and maintaining while making use of the *top-down* approach to model the data. 
-Through out the DV architecture process, metrics and metadata is collected. The DV employs a *three-tier architecture which separates the raw data from the end user and data mining layers*. This is particularly useful for metadata management e.g source and lineage metadata. A DV is made up of four components, namely:
+A *Data Vault* by definition is a detail oriented, historical tracking and uniquely linked set of normalized tables that support one or more functional areas of a business. A DV is a hybrid of the CIF and Kimball's approaches. It takes the advantages and the strengths of these two approaches to deal with the weaknesses that each of these approaches have. Specifically, it follows the *buttom-up* approach for designing, developing, implementing and maintaining while making use of the *top-down* approach to model the data. 
+Through out the DV architecture process, metrics and metadata are collected. The DV employs a *three-tier architecture which separates the raw data from the end user and data mining layers*. This is particularly useful for metadata management e.g source and lineage metadata. A DV is made up of four components, namely:
 
 1. Source Data: Typically from business processes
 2. Staging area: Temporal storage
@@ -104,11 +104,11 @@ Start by developing a Entity Relationship Diagram (ERD). An ERD is a visual repr
 
 #### Dimensional Modeling
 
-Revisit a *star shape schema* in the course *data management*. Key take aways are dimensional tables that store data in denormalized form and facts which are numerical values interpretable via dimensions.
+Revisit a *star shape schema* in the course *concepts in data management*. Key take aways are dimensional tables that store data in denormalized form and facts which are numerical values interpretable via dimensions.
 
-Another model used for modeling multidimensional data marts is *Application Design for Analytical Processing Technologies (ADAPT). This allows data to be model in form of an OLAP Systems i.e hypercubes. On a hypercube, the dimensions are represented by the Axis. The hypercube allows data to be viewed in different angles by applying various operations like Roll-up, Drill-Down, Slice and Dice. The dimension objects of a cube include:
+Another model used for modeling multidimensional data marts is *Application Design for Analytical Processing Technologies (ADAPT). This allows data to be model in the form of an OLAP System i.e hypercubes. On a hypercube, the dimensions are represented on the Axis. The hypercube allows data to be viewed in different angles by applying various operations like Roll-up, Drill-Down, Slice and Dice. The dimension objects of a cube include:
 
-- Member: This is the value in a dimension e.g If country (e.g Germany) is a dimension, then a dimension value is NRW.
+- Member: This is the value in a dimension e.g If country (e.g Germany) is a dimension, then a dimension value is NRW in the state attribute.
 
 - attribute: This contains information about a dimension value. E.g Information about the president of the state of NRW. The number of industries in each district in NRW would be stored as fact which is a numerical value.
 
@@ -148,27 +148,30 @@ Remember that a DWH is a central repository that stores organization's data nece
 Basically, there exist 3 categories of layer based architectures. These will be discussed in addition to a layer architecture with 5 layers, which is not unusual to have. The 3 categories of layer based architectures are:
 
 1. *Single layer architecture*
-In this type of architecture, *dispositive/analytical system* is not physically separated from the *operational system*. In effect, data acquired from business activities and stored in one or several operative systems is simultaneously used for analytics purposes. This architecture is a real-time system suitable for near real-time data analysis. Disadvantage is that, analytical operations may have an adverse effect on operational activies. Since the same systems are used for both operational activities and analytics, the system may quickly suffer from performance issues.
+
+In this type of architecture, *dispositive/analytical system* is not physically separated from the *operational system*. In effect, data acquired from business activities and stored in one or several operative systems is simultaneously used for analytics purposes. This architecture is a real-time system suitable for near real-time data analysis. Disadvantage is that, analytical operations may have an adverse effect on operational activies. Since the same systems are used for both operational activities and analytics, the system cannot effectively handle several concurrent data streams and may rapidly suffer from performance issues when workloads increase.
 
 ![Single Layer](./img/single_layer.png "Single Layer Architecture")
 
 2. *Two Layer architecture*
 
-It is complex to implement than the single layer architecture because the analytical layer is physically separated from the operational layer or source data. Additionally, the analytical layer builds on the operational layer. The data model in the analytical layer could be different from the data model in the operational layer. All analytical activities to support the functional areas of the business are done on the analytical layer. In practice, there is a staging area between the source systems and the analytical layer and analysis with data mining and/or BI Tools are parts of the analytical tool. A major drawback is that it cannot scale as the company's requirements alongside its data grows. It is important to note that, analytics in not done near real-time.
+It is complex to implement than the single layer architecture because the analytical layer is physically separated from the operational layer or source data. Additionally, the analytical layer builds on the operational layer. The data model in the analytical layer could be different from the data model in the operational layer. All analytical activities to support the functional areas of the business are done on the analytical layer. In practice, there is a staging area between the source systems and the analytical layer. A staging area is a temporal storage where data is processed/transformed before it is moved to the data warehouse or data mart. Once data is moved, the staging area is cleared for the next ETL process run. Drawback with this architecture is that it cannot effectively accomodate organizational growth and analytics in not done near real-time.
 
 ![Two Layer](./img/two_layer.png "Two Layer Architecture")
 
 3. *Three Layer architecture*
 
-This is a modern and widely used architectures by large companies. In this architecture, all the 3 layers are physically separated from each other. The first layer is for operational data while the second layer serves as a *reconciliation* layer where data is migrated and transformed/processed then later moved to the 3rd layer which is the analytical layer. The 3rd layer is the DWH System which contains data marts and multidimensional dwh layer. The difference between the reconciliation layer and the classical layer is that, it stores data permenently. Furthermore, a three layer architecture employs a 3 tier framework. 
+This is a modern and widely used architectures by large companies. In this architecture, all the 3 layers are physically separated from each other. The first layer is for operational data while the second layer serves as a *reconciliation* layer that serves as a standardized enterprise wide reference model between the first layer(source systems) and the 3rd layer (Analytical system). The 3rd layer is the DWH System which contains data marts and multidimensional dwh layer. The difference between the reconciliation layer and the classical staging layer is that, has a data model and stores data permanently. Furthermore, a three layer architecture employs a 3 tier framework. 
 
 ![Three Layer](./img/three_layer.png "Three Layer Architecture")
 
 The tiers of the 3 layer architecture are described as follows: The *Bottom, Middle and Top* tiers. 
 
 + The Bottom Tier
+
 This tier is made up of a relational database system and holds data that has been *cleansed, transformed and loaded* into a staging area from the reconciliatio layer. The bottom tier basically serve as storage and management purposes.
 + The Middle Tier
+
 This tier is the DWH system. It contains data in a structure that is suitable for analytical operations like querying and building reports. Additionally, data marts and MOLAP/ROLAP cubes are equally stored in this tier. This means that operations like summarizing data, slicing and dicing to view data from different perspectives can be performed in this tier.The bottom and middle tier are collectively termed as the *presentation layer*
 
 ![OLAP Cube](./img/olap_cube.png "OLAP Cube")
@@ -176,32 +179,36 @@ This tier is the DWH system. It contains data in a structure that is suitable fo
 + Top Tier
 This is the front-end side of the dwh. It encompasses all the tools or applications that users leverage to interact with the dwh and access the stored data.Tools and applications include: BI apps, dashboards, reports, query tools, analytical and data mining tools.
 
---insert example image here--
+![Three Tier Architecture with Source Systems](./img/three_tier.png "Three Tier Architecture with Source Systems")
 
 4. *Five Layer architecture**
 
-This is a highly scalable architecture and proposed by Systems, Applications and Products (SAP). This architecture also employs an Operational Data Store (ODS), that stores data near real-time. Four layers in this architecture contain an area for data transformation and the upper can directly read data from all the layers beneath them. Beside this, each layer has the following functionality.
+This is a highly scalable architecture and proposed by Systems, Applications and Products (SAP). This architecture also employs an Operational Data Store (ODS), that stores data near real-time. Four layers in this architecture contain an area for data transformation and the upper layer can directly read data from all the layers beneath them. Beside this, each layer has the following functionality.
 
-- First layer (staging): This is the data acquisition layer that temporarily stores data in the exact form as they are in the source system(s).
-- Second layer: It is used for data harminization to improve the quality of data.
-- Third layer: Stores data in granular form. That is, at the lowest transaction level possible.
-- Fourth layer: Data is transformed according to the needs of the business users.
-- Fifth layer: Stores data that is ready for analysis and reporting.
+- First layer (Staging or Acquisition layer): This is the data acquisition layer that temporarily stores data in the exact form as they are in the source system(s).
+- Second layer(Integration layer): It is used for data harmonization to improve data quality and data consistency.
+- Third layer(Propagation layer): Stores data in granular form. That is, at the lowest transaction level possible.
+- Fourth layer(Transformation layer): Data is transformed according to the needs of the business users i.e applying business rules.
+- Fifth layer(Presentation layer): Stores data that is ready for analysis and reporting. It also allows real-time analysis.
 
 ### Component Oriented Architecture
 
 As seen in chapter one, there exist three approaches for designing and developing a data warehouses. These are: The corporate information factory (CIF), Kimball Lifecycle and Data Vault. DWH architectures developed from these approaches are classified as *component oriented architectures* and are briefly described as follows:
 
 1. *Central DWH and Independent Data Marts*
+
 This architecture is developed following the *CIF* approach. The core dwh is built based on the organization's *business requirements*. Thus the c-dwh is also known as the Enterprise dwh. The independent data marts that are used to serve different functional units or specific user groups are built based on the data in the core dwh. The aspect of having a core dwh and independent data marts linked to it, allows this architecture to be referred as the *hub-and-spoke* design. Typically, the core dwh stores data in normalized form(3 NF) while the independent data marts can contain data in normalized, denormalized, aggregated or summarized format. The data marts in this architecture are developed iteratively.
 
 2. *The Data Mart Bus Architecture*
-This architecture is developed following the Kiball lifecycle approach. Unlike the C-DWH and independent data marts, this architecture is built bases on *business processes* taking its business requirements into consideration. Every core business process is supplied with its own data mart. The data marts are made up of dimension tables and store data in denormalized form. The dimension tables store descriptive features aranged in hierarchical order. The fact table contains the metrics or quantities that are being measured and the data is in the lowest granularity level defined. The features of the dimension tables are used to describe measures otherwise the measures, which are only numirical values, will be meaningless. Businesses that share same data may have shared dimensional tables at the level of data marts. Through this, a proper view on the entire enterprise data can be achieved.
+
+This architecture is developed following the Kiball lifecycle approach. Unlike the C-DWH and independent data marts, this architecture is built bases on *business processes* taking its business process requirements into consideration. Every core business process is supplied with its own data mart. The data marts are made up of dimension and store data in (de)normalized, aggregated or summarised form. The dimension tables store descriptive features aranged in hierarchical order. The fact table contains the metrics or quantities that are being measured and the data is in the lowest granularity level defined. The features of the dimension tables are used to describe measures otherwise the measures, which are only numirical values, will be meaningless. Business processes may have shared dimensions at the level of data marts. Through this, a proper view on the entire enterprise data can be achieved.
 
 3. *Data Vault*
+
 It is a hybrid of CIF and data mart bus architecture. 3 NF from CIF and dimensional modeling from data mart bus architecture. Additionally, the structural information used for dwh design are kept separately from the business related contextual and descriptive information.
 
 4. *Big Data Architecture and Data Lake*
+
 Due to the limitations of relational databases and relational dwhs in storing, processing, and analysing large volumes of varying data, big data architectures have emerged to efficiently store, process and analyse huge volumes of semi-structured and unstructured data. To avoid complex structures like having to dispatch several layers, each with its own functionality, big data architectures typically store data in *data lakes*. Data lakes are central repositories that store data in its raw form. The data can be structured, semi-structured or unstructured. Data contained in data lakes can be processed in three stages, namely: bronz, silver or gold stage. Data in the gold stage is usually data ready for analysis and can be queried with big data analytics tools.
 
 ## Chapter three: Data Warehouse Architecture
@@ -224,14 +231,16 @@ Kaufmann, 2019). A database is a component of a database management system which
 ### *ETL Process Components*
 Extract-Transform-Load are the components of an ETL process. Depending on the approach used to design and implement a DWH, these components may be combined slightly differently.
 
-+ *ETL process in CIF*: It makes use of an Integration and Transformation layer(I&T). The I&T are a set of programs or applications used to *capture, transform and move* data from OLTP systems to the core data warehouse (C-DWH) or ODS. Since the DWH is built incrementally, the programs and applications used also change over time. This makes the I&T interface unstable.
-+ *ETL in Kimball Lifecycle*: Remember that the DWH is built from Buttom to top when using the Kimball lifecylcle approach. This means that all business requirements must be known before the DWH is implemented. This is equally important to avoid unexpected events that could potentially affect the development and usage of the DWH. ETL in kimball is made up of four components. These are: **Extracting, Cleaning & Conforming, Delivering, and Managing**. The following factors should be considered during the process of gathering requirements necessary for the development of the DWH.
++ *ETL process in CIF* 
+It makes use of an Integration and Transformation layer(I&T). The I&T are a set of programs or applications used to *capture, transform and move* data from OLTP systems to the core data warehouse (C-DWH) or ODS. Since I&T is built incrementally, the programs and applications used may change over time. This makes the I&T interface unstable. Additionally, the development ofI&T depends on Metadata. In the case of inconsistencies at the level of metadata, the I&T will be impacted which can affect the development of the implementation of the ETL process.
++ *ETL in Kimball Lifecycle* 
+Remember that the DWH is built from Buttom to top when using the Kimball lifecylcle approach. This means that all business requirements must be known before the DWH is implemented. This is equally important to avoid unexpected events that could potentially affect the development and usage of the DWH. ETL in kimball is made up of four components. These are: **Extracting, Cleaning & Conforming, Delivering, and Managing**. The following factors should be considered during the process of gathering requirements necessary for the development of the DWH.
 
-    - Business needs
-    - Compliance
-    - Data Quality
-    - Security
-    - Data Integration 
+    - Business needs*
+    - Compliance*
+    - Data Quality*
+    - Security*
+    - Data Integration*
     - Data latency
     - Archiving and Lineage
     - User delivery Interfaces
@@ -241,18 +250,22 @@ Extract-Transform-Load are the components of an ETL process. Depending on the ap
 The four components of the ETL process suggested by the Kimball approach is detailly discussed as follows.
 
 1. *Extracting Data*
+
 Source systems (e.g RDBMS, ERS etc) form the OLTP systems and are typically physically separated from the DWH. Thus, it is imperative for DWH developers to know and understand all the data sources from which will be extracted, transformed and loaded into the DWH. In a preliminary step, data is extracted from source systems and first of all loaded or writen into the staging system. In this step, data may undergo light transformation. On a broader scope, data extraction consist of *Data Profiling, Change Data Capture (CDC) and Extraction*.
+
 - Data Profiling: In this step, all the data sources are determine and analysed to understand the data, its consistency and structure. Then only the required data sources for the construction of the DWH are considered and further investigated.
 - Change Data Capture(CDC): The DWH stores historical records without duplicates. CDC seeks to achieve this by by capturing only the *Delta*(new or altered) records between the source systems and the DWH target system. Once the Delta is determined, it is processed and written to the DWH. CDC can be implemented via several techniques. These include:
-    + Audit columns: Additional columns in the source systems used to precisely track the *date and times* when a new record is entered or when an existing record is altered. Audit columns are only populated by **triggers**.
-    + Time extracts: Selecting all records whose created date or changed date is greater than or equals to the data of the last extraction. This can be inefficient in case of system interruptions, potentially leading to loading duplicate records in the DWH. This approach is resource intensive.
-    + full diff-compare: The current day's data is compared record-by-record with yesterday's snapshop to determine the delta.
-    + Database log scraping: Snapshots of redo logs are taken at regular time intervals. The transactions in the snapshots are scanned to determine the records that have an impact on the tables necessary for the ETL process.
+    + Audit columns: Additional columns in the source systems used to precisely *track the date and times* when a new record is entered or when an existing record is altered. Audit columns are only populated by **triggers**.
+    + Time extracts: *Selecting* all records whose created date or changed date is greater than or equals to the data of the last extraction. This can be inefficient in case of system interruptions, potentially leading to loading duplicate records in the DWH.
+    + full diff-compare: The current day's data is compared record-by-record with the previous snapshop to determine the delta. This approach is efficient but resource intensive.
+    + Database log scraping: Snapshots of redo logs are taken at regular time intervals. The transactions in the snapshots are *scanned* to determine the records that have an impact on the tables necessary for the ETL process.
     + Message queue monitoring: Message bases transaction systems is constantly monitored to identify transactions that affect tables of interest.
 - Extraction: Here is it important to consider data heterogeneity when developing the extraction process. Based on the source system some of the data could be extracted and transformed in *batches* e.g files, while for other systems, data will be extracted in streams and processed on the flight.
 
 2. *Cleaning and Conformity*
+
 The main aim of this step in the ETL Process is to improve the data quality when data undergoes processing before it is loaded in the DWH. Data conformity guarantees that the data should be in the format that is expected in the DWH target system. This is supported by the creation and maintenance of *metadata* throughout the DWH lifecycle. Data cleansing steps include:
+
 - Validation and Quality Control: Data should be accurate and consistent.
 - Data Aging: Outdated or Stale data should not be extracted from the source systems as it will not create value for the business. This requires filter conditions set by the business stakeholders.
 - Redundant data: Redundant data is identified and only a single unique records are kept.
@@ -260,10 +273,13 @@ The main aim of this step in the ETL Process is to improve the data quality when
 - Incomplete data: Incomplete data can negatively impact the results of analysis. As such strategies for handling missing data must be set and implemented.
 
 3. *Delivering*
+
 Data is physically loaded into the structured target schema of the DWH. Typically, the schema is in normalised form and contain data in granular and aggregated format. The data is also ready for analysis.
 
 4. *Managing the ETL environment*
+
 This is composed by all processes and activities that ensures that the DWH should function reliably, consistently and produce trustworthy data for analytical purposes. Thus the DWH must:
+
 - be maintained
 - be scalable to accomodate changes in the business
 - have a backup and recovery mechanism
@@ -273,25 +289,29 @@ This is composed by all processes and activities that ensures that the DWH shoul
 -- I left out the part of ETL tools as this is detaily handled in the course *Extract-Transform-Load Technologies*--
 
 ### Data Marts
-This is the third component of the DWH. Data marts, usually in denormalized form, contain portions of Data from the DWH which is used to support specific analytical needs of business departments(e.g marketing). Besides being denormalized, each data mart contains all relevant KPIs of the department using it. The fact table contains transactional data along side the metrics used to evaluate the business process of the department. The dimension tables contain features or contextual data. Contextual data is used to describe the metrics or KPIs in the fact tabel. Usually, the fact table is surrounded by dimension tables. These dimension tables represent different business area e.g customers, products, time. Data marts are useful as they allow data from the organization to be aggregated or summarised, and viewed from different business perspectives. It is possible that the dimensions of the same data mart is used to serve different business departments. The key advantages of a data mart are:
+
+This is the third component of the DWH. Data marts, usually in denormalized, normalised, aggregated or summarised form, contains portions of Data from the DWH which is used to support specific analytical needs of business departments(e.g marketing). Besides being denormalized, each data mart contains all relevant KPIs of the department using it. The fact table contains transactional data along side the metrics used to evaluate the business process of the department. The dimension tables contain features or contextual data. Contextual data is used to describe the metrics or KPIs in the fact tabel. Usually, the fact table is surrounded by dimension tables. These dimension tables represent different business area e.g customers, products, time. Data marts are useful as they allow data from the organization to be aggregated or summarised, and viewed from different business perspectives. It is possible that the dimensions of the same data mart is used to serve different business departments. The key advantages of a data mart are:
+
 - Control: Each department is responsible for managing and processing data in its data mart.
 - Cost: It is cost effective as every department can manage its data out of the DWH.
 - Customization: Data marts are customized according to the requirements of the department using it. It allows for summarization, prunning, merging etc.
 
-In data marts, the *primary key (pk)* of the dimension tables are inserted into the fact table as *foreign keys (fk)*. Since the fact table does not have a unique identifier of its transactions, the fk from the dimension tables are combined to form a *surrogate key* that make up the primary key of the fact table. The fact table contain all KPIs which are typically numeric data types. The fact table may also contain *degenerate keys* which uniquely identifies every business event captured by the fact table. An example of a data mart is a *star shape schema*.
+In data marts, the *primary key (pk)* of the dimension tables are inserted into the fact table as *foreign keys (fk)*. Since the fact table does not have a unique identifier of its transactions, the fk from the dimension tables are combined to form a *surrogate key* that make up the primary key of the fact table. The fact table contain all KPIs which are typically numeric data types. The fact table may also contain *degenerate keys* which uniquely identifies every business event captured by the fact table. An example of a data mart is a *star shape  or snowflake schema*.
 
 ### Bus Architecture
+
 Kimball's buttom-up approach suggest a *bus matrix* which should be used to prioritise *business processes and entities*. Business processes are entered as rows while business entities are columns.The bus matrix also enable stakeholders to have an overview of the DWH architecture which is relevant for the design of the architecture. Business processes and entities that relate to each other get an *X* entry in matrix cells. The bus matrix is a simple alternative to the Entity Relationship Diagram (ERD), especially for non-technical stakeholders.
 
 ![Bus Matrix](./img/bus_matrix.png "Bus Matrix")
 
 ## Chapter five: Big Data Frameworks
 
-Traditional storage solutions like relational database management systems and corresponding relational DWHs are suitable for storing and managing large structural data. However, they quickly reach their limits when handling Big Data (Volume, Variety, Velocity, Varacity and Value) due to is semi-structure and unstructure nature. For this reason, new technologies have evolve to collect, store and analyse big data. A typical example Hadoop Distributed File Systems(HDFS) from Apache Software Foundation and Data Lakes. In addition to these storage frameworks, Apache Hive which is a processing framework that allows the transformation of Big Data using SQL-like syntax will also be discussed. As oppose to Apache MapReduce that is suitable for performing summarizations on huge amounts of data, apache hive is suitable for complex transformation tasks used in machine learning scenarios. Apache Hadoop is an open source project currently being further developed by the Apache Software Foundation (ASF). The following are modules are (officially) in development and management by ASF.
+Traditional storage solutions like relational database management systems and corresponding relational DWHs are suitable for storing and managing large structural data. However, they quickly reach their limits when handling Big Data (Volume, Variety, Velocity, Varacity and Value) due to its semi-structure and unstructure nature. For this reason, new technologies have evolve to collect, store and analyse big data. A typical example Hadoop Distributed File Systems(HDFS) from Apache Software Foundation and Data Lakes. In addition to these storage frameworks, Apache Hive which is a processing framework that allows the transformation of Big Data using SQL-like syntax will also be discussed. As oppose to Apache MapReduce that is suitable for performing summarizations on huge amounts of data, apache hive is suitable for complex transformation tasks used in machine learning scenarios. Apache Hadoop is an open source project currently being further developed by the Apache Software Foundation (ASF). The following modules are (officially) in development and management by ASF.
+
 1. Hadoop common: All commonly shared libraries and utilities in support of Hadoop modules
-2. Hadoop Distributed File System: An open source data storage distributed framework that utilizes replication as distribution strategy
-3. Hadoop MapReduce: A distributed data processing module suitable for performing simple calculations(e.g sum, average etc) at high speed on big data.
-4. Hadoop YARN(Yet Another Resource Negotiator): A resource management framwork in distributive computing that also provides the possibility to schedule workloads. For MapReduce it provides scalability and adaptability resources and provide support for managing workloads that are not MapReduce.
+2. Hadoop Distributed File System: An open source file based data storage distributed framework that utilizes replication as distribution strategy
+3. Hadoop MapReduce: A distributed data processing module for large scale computing and suitable for calculating simple statistics like sum, average etc.
+4. Hadoop YARN(Yet Another Resource Negotiator): A resource management framework in distributive computing that also provides the possibility to schedule workloads. For MapReduce it provides scalability and adaptability resources and provide support for managing workloads that are not MapReduce.
 
 Other projects being managed by ASF within the scope of the Hadoop project include: **Pig, ZooKeeper,Spark, Flume, Tez, Mahout, Hive amd HBase**.
 
@@ -299,45 +319,58 @@ Other projects being managed by ASF within the scope of the Hadoop project inclu
 
 #### HDFS as a distributive storage framework
 
-Replicates data on flexible block sizes of 128 MB. The name node acts as the master in a cluster of nodes. The name node consist of a hardware that contains an operating system and name node software. The master node is responsible for managing the file system, control access to the file system, monitor, redistribute and reschedule tasks in case of partial system failure. The name node has the read and write capabilities. Another component of the HDFS beside the blocks and name node is the data node. The data nodes contain an operating system and data node software. They are responsible for storing and replicating data. By default every node keeps three copies of the input files but replication occurs automatically. They are also incharge of fulfiling read and write requests from users, and upon request from the name node, they can delete, resize and replicate blocks. These characteristics of HDFS makes it highly fault tolerant and maximizes throughput. The aim of HDFS is not to reduce latency.
+Replicates data on flexible block sizes of 128 MB. The name node acts as the master in a cluster of nodes. The name node consist of a hardware that contains an operating system and name node software. The master node is responsible for managing the file system, control access to the file system, monitor, redistribute and reschedule tasks in case of partial system failure. The name node has read and write capabilities. Another component of the HDFS beside the blocks and name node is the data node. The data nodes contain an operating system and data node software. They are responsible for storing and replicating data. By default every node keeps three copies of the input files but replication occurs automatically. They are also incharge of fulfiling read and write requests from users, and upon request from the name node, they can delete, resize and replicate blocks. These characteristics of HDFS makes it highly fault tolerant and maximizes throughput but not aimed are reducing latency.
 
 #### Hadoop MapReduce
 
 This a data distributive processing framework suitable for large-scale computing and made up of two main functions namely **Map** and **Reduce**.
-    - Map: Takes a value as inpute, performs a stateless computation and outputs results as a **key-value** pair sorted
-    by keys.
-    - Reduce: Aggregates values according to the sorted keys.
-Think of MapReduce like *group by x sum y order by x* where Map takes care of order by x sum y while reduce does group by x.
+- Map: 
+Takes a value as inpute, performs a stateless computation and outputs results as a **key-value** pair sorted by keys.
+- Reduce: 
+Aggregates values according to the sorted keys. Think of MapReduce like *group by x sum y order by x* where Map takes care of order by x sum y while reduce does group by x.
 
 **Disadvantage** of MapReduce: Not suitable for computations requiring complex processing. E.g Machine learning
+
 **Advantage** of MapReduce: Suitable for descriptive statistics like calculating mean, standard deviation, min, max etc.
+
 Also good for aggregations, counting.
+
 **Advantage**: Fault tolerant.
 
 ![MapReduce](./img/map_reduce_functionality.png "MapReduce")
 
 #### Hadoop YARN
-Include description of YARN architure here
+The following are brief descriptions of the components of a YARN Architecture:
+
++ Resource manager
+This is the master node that receives requests from cliens and allocates them the cluster of nodes. Also monitors the entire system to ensure load balancing and improve performance.
++ Node manager
+Oversees the execution of tasks by nodes within a cluster and reports to the resource manager.
++Application manager
+Cordinates the execution of tasks across multiple containers and instruct the node manager to allocate resources to the containers.
++ Containers
+This is where data is being processed.
 
 ![YARN Architecture](./img/yarn_architecture.png "YARN Architecture")
 
+
 ### Hive
-Hive is a DWH software that supports CRUD(Create, Read, Update, Delete) operations and the management of large datasets in distributed storage environments. Apache Hive combines the power of SQL with MapReduce to perform complex transformations(e.g ETL, machine learning, reporting etc) of data that resides on distributive storage systems like HDFS, HBase. The aim of Hive is to maximize *performance, scalability, fault tolerance, extensibility and loose-coupling with input formats. When using Hive, it is not mandatory to store data in a standard format as hive provides connectors to access data in different formats. There exist connectors for csv and tsv. The query language in Hive is HiveQL which is widely similar to SQL and contains several SQL functions. Additionally this language is extenable as it supports **User Define Functions (UDFs), User Define Tables (UDTs) and User Define Aggregate Functions (UDAFs). HCatalog and WebHCat** are the two main components in Hive and are discussed as follows:
+Hive is a DWH software that supports CRUD(Create, Read, Update, Delete) operations and the management of large datasets in distributed storage environments. Apache Hive combines the power of SQL with MapReduce to perform complex transformations(e.g ETL, machine learning, reporting etc) of data that resides on distributive storage systems like HDFS, HBase. The aim of Hive is to maximize *performance, scalability, fault tolerance, extendability and loose-coupling* which are the essential factors to consider when designing a DWH. When using Hive, it is not mandatory to store data in a standard format as hive provides connectors to access data in different formats. There exist connectors for csv and tsv. The query language in Hive is HiveQL which is widely similar to SQL and contains several SQL functions. Additionally this language is extenable as it supports **User Define Functions (UDFs), User Define Tables (UDTs) and User Define Aggregate Functions (UDAFs). HCatalog and WebHCat** are the two main components in Hive and are discussed as follows:
 
-+ **Hcatalog**: This is the table and data management layer in Hive. On this layer, the data stored in HDFS is presented to users in form of relational tables, which can be queried, though the tables are not related to each other. To facililate data processing like read and write operations, Hcatalog supports tools like MapReduce and Apache Pig.
++ **Hcatalog**: This is the data storage and data management layer in Hive. On this layer, the data stored in HDFS is presented to users in form of relational tables, which can be queried, though the tables are not related to each other. To facililate data processing like read and write operations, Hcatalog supports tools like MapReduce and Apache Pig.
 
-+ **WebHCat**: This offers Web components to HCatalog. For instance, WebHCat provides HCatalog with a REpresentational State Transfer (REST) application programming interface(API).Through this, MapReduce, YARN, Pig or Hive jobs can be accessed or executted on the internet.
++ **WebHCat**: This offers Web components to HCatalog. For instance, WebHCat provides HCatalog with a REpresentational State Transfer (REST) application programming interface(API).Through this, MapReduce, YARN, Pig or Hive jobs can be accessed or executed on the internet.
 
 ### Data Lake
 
-Data lake is one of the *cost effective* developed and widely used solutions to overcome the limitations fo RDBMS in handling Big Data. A data lake is a central repository that *stores data in its raw form*. *Thus it does not impose a rigit schema when storing data*. Most importantly is that *metadata is a major component of data lakes*. As such every data is stored alongside its metadata which has a metadata tag and a unique identifier. This is useful when a particular dataset is being queried by a *stakeholder or an application*. According to Taylor (2023b), a data lake is madeup of the following six (6) layers:
+Data lake is one of the *cost effective* developed and widely used solutions to overcome the limitations of RDBMS in handling Big Data. A data lake is a central repository that *stores data in its raw form*. *Thus it does not impose a rigit schema when storing data*. Most importantly is that *metadata is a major component of data lakes*. As such every data is stored alongside its metadata which has a metadata tag and a unique identifier. This is useful when a particular dataset is being queried by a *stakeholder or an application*. According to Taylor (2023b), a data lake is madeup of the following six (6) layers:
 
 1. Data ingestion layer: Provide links to data sources from which data is loaded in its raw form. Data can be loaded in Batches, Real-time or one-time action.
-2. Date Insight layer: Enables the application of data analysis techniques like machine learning, deep learning etc.
+2. Data Insight layer: Enables the application of data analysis techniques like machine learning, deep learning etc.
 3. Data Distribution storage layer: Allows the system to be scalable which is cost effective.
-4. Data Distillation layer: Allows structured data to be infered from unstructured or semi-structured data. This is facilitates use by stakeholders and applications.
+4. Data Distillation layer: Allows structured data to be infered from unstructured or semi-structured data. This facilitates use by stakeholders and applications.
 5. Data Processing layer: Data can be processed in parallel and in stages based on the needs of the stakeholders.
-6. Data Unified Layer: Allows the system to be monitored, governed and managed. Management of data ensures that data *usability, availability, security and integrity*.
+6. Data Unified Layer: Allows the system to be monitored, governed and managed. Management of data ensures data *usability, availability, security and integrity*.
 
 Furthermore there is a difference between *data lake pond architecture and data lake zone architecture*. The following are the types of data lake ponds.
 - Raw Data: Freshly ingested data in its raw form without metadata.
@@ -351,7 +384,7 @@ The following are data lake zone architectures data have been adopted:
 + Transient loading zone: Contains raw data that are being ingested and under quality assurance.
 + Raw data zone: Deals with data from the transient zone.
 + Trusted zone: Stores standardized and clean data.
-+ Distcovery sandbox: Data from trusted zone ready for data specfic transformations e.g for machine learning
++ Discovery sandbox: Data from trusted zone ready for data specfic transformations e.g for machine learning
 + Consumption zone: Dashboard and reports displaying data in this zone to support decision making.
 + Governance zone: data governance, management and monitoring. Governance aims to implement and monitor data quality standards.
 
@@ -360,34 +393,40 @@ the first layer implements batch for handling complex analytical tasks, the seco
 
 ## Chapter six: Data Warehouse Architecture (DWHA) Types
 
-A DWH Architecture describes the structure of a DWH. It provides guidelines, standards and Services that are needed to effectively link business strategic requirements with the company's systems and applications in order to achieve business objectives. To design the most suitable DWHA for an organization, business requirements, data sources, data types and formats including existing systems must be known.A poorly designed DWH will not be scalable and will not serve its purpose in the organization. The following DWHAs will be discussed: hub-and-spoke, bus data mart, centralized, distibuted, federated, virtual, independent and big data.
+A DWH Architecture describes the structure of a DWH. It provides guidelines, standards and Services that are needed to effectively link business strategic requirements with the company's systems and applications in order to achieve business objectives. To design the most suitable DWHA for an organization, business requirements, data sources, data types and formats including existing systems must be known. This architecture can also have an *operational data store(ODS)*. An ODS, contains data from transaction systems at atomic level which can be used for real-time analysis and also to feed other components(e.g data mart, OLAP CUBE) of this architecture. A poorly designed DWH will not be scalable and will not serve its purpose in the organization. The following DWHAs will be discussed: hub-and-spoke, bus data mart, centralized, distributed, federated, virtual, independent and big data.
 
 1. **Hub-and-Spoke Architecture**
-This architecture is desinged using Corporate Information Factory approach(Top-Down approach), where the Core or Central DWH based on *business requirements* is first of all implemented. The Data model in the C-DWH is usually normalized in 3 Normal Form. Because it is built on business requirements, it is complex and takes time to develope and implement. For this reason it is suitable for large companies who can also aford to disburse the budget required for the complete implementation of this architecture. After the C-DWH is implemented, then any required data mart is built on the C-DWH following an *iterative approach*. Data marts contain consolidated data, from the C-DWH most often in denormalized form, to serve the business needs of a department,functional business area and specific use cases like data mining. The historical Data in the DWH are updated at continous(when specific events occur) or regular time intervals(in batches).A data mart can be modeled using dimensional modelin(e.g start schema) or an entity relationship diagram principles. Example tools to use for modeling include *Application Design for Analytical Processing Technologies(ADAPT), ERD, MERD* etc. The following is the structure of a hub-and-spoke dwh architecture:
+
+This architecture is desinged using Corporate Information Factory approach(Top-Down approach), where the Core or Central DWH based on *business requirements* is first of all implemented. The Data model in the C-DWH is usually normalized in 3 Normal Form. Because it is built on business requirements, it is complex and takes time to develope and implement. For this reason it is suitable for large companies who can also aford to disburse the budget required for the complete implementation of this architecture. After the C-DWH is implemented, then any required data mart is built on the C-DWH following an *iterative approach*. Data marts contain consolidated data, from the C-DWH most often in (de)normalized, aggregated or summarised form, to serve the business needs of a department,functional business area and specific use cases like data mining. The historical Data in the DWH are updated at continous(when specific events occur) or regular time intervals(in batches). A data mart can be modeled using dimensional modelin(e.g start schema) or an entity relationship diagram principles. Example tools to use for modeling include *Application Design for Analytical Processing Technologies(ADAPT), ERD, MERD* etc. The following is the structure of a hub-and-spoke dwh architecture:
 
 ![hub-and-spoke](./img/hub_and_spoke_architecture.png "CIFs hub-and-spoke Architecture")
 
 2. **Data Mart Bus Architecture**
-This architecture is derived by the implementation of Kimball's lifecycle approach. It is a buttom-up approach whereby the business-process data marts are implemented incrementally and asynchronously. Also this architecture is built based on business processes as opposed to CIF that builds based on business requirements. Additionally, it includes a central bus matrix that links to several data marts. A data mart serves stakeholders belonging to a particular business process. With this architecture a company-wide cohesion is achieved as different departments may share dimensions and/or metrics of the same data mart. Transaction data are inserted or updated in the data marts at regular time interval, typically during periods of low activities in the business process. On the other hand, dimension tables are updated base on business events. The dimensions of the data marts can be denormalized, normalized i.e contain aggregated,summarized or atomic values. Slowly changing dimensions are used to update dimension tables. Specifically, *SCD Type1(overwriting), SCD Type2(historization by adding valid_from and valid_to colums) and SCD Type3(Historization by adding one column.). SCD Type3 is suitable for situations where changes are very less expected*. This architecture is fast to implement. Thus it is suitable for companies that want quick solutions at low cost.
+
+This architecture is derived by the implementation of Kimball's lifecycle approach. It is a buttom-up approach whereby the business-process data marts are implemented incrementally and asynchronously. Also this architecture is built based on business processes as opposed to CIF that builds based on business requirements. A data mart bus matrix is used for the development of this architecture. This matrix also helps to identify business processes with shared entities i.e data marts with conformed dimensions.Also there is a document that contains descriptions of the tables in the data marts. As a result an enterprise wide cohesive view of the can be achieved. A data mart serves stakeholders belonging to a particular business process. Transaction data are inserted or updated in the data marts at regular time interval, typically during periods of low activities in the business process. On the other hand, dimension tables are updated base on business events. Slowly changing dimensions are used to update dimension tables. Specifically, *SCD Type1(overwriting), SCD Type2(historization by adding valid_from and valid_to colums) and SCD Type3(Historization by adding one column.). SCD Type3 is suitable for situations where changes are very less expected*. This architecture is fast to implement.
 
 ![data mart bus](./img/data_mart_bus_architecture.png "Kimball Lifecycle Methodology's data-mart-bus Architecture")
 
 3. **Centralized DWHA**
-It does not provide data marts as data from different sources are stored in a *centralized enterprise level cross functional system.* The data in this system is ready for consumption by all departments. E.g Can be used to building dashboards, reports etc. As such the central system must take into account all the requirements of the functional business areas.
+
+It does not provide data marts as data from different sources are stored in a *centralized enterprise level cross functional system.* The central DWH contains a unified model considering needs of the various business units. This ensures uniformity and consistency in the data across the organization. Additionally, this architecture is efficient as the data is accessed from the central repository by all business units. It is beneficial to the company on the long term but it takes time to gather requirements from all business units to develop the central model.  
 
 ![Central dwha](./img/central_architecture.png "Centralized Architecture")
 
 4. **Independent DWHA**
-This architecture only contain individual data marts that independently draw data from the source.This means the C-DWH and/or ODS is completely absent.The individual data marts may be loosely linked, perform their operations(e.g updates etc) and analysis independently from each other. This means that the components and systems of the data marts operate independently from each other. This architecture is used when an organization want to create a DWH within a short time frame. However, its disadvantage is that it leads to data redundancy and is limited in terms of scalability.
+
+This architecture only contain individual data marts that independently draw data from its source. This means the C-DWH and/or ODS is completely absent.The individual data marts may be loosely linked, perform their operations(e.g updates etc) and analysis independently from each other. This means that the data marts operate independently from each other. This architecture is easy to develop and deploy, which creates quick gains to the company. However, its disadvantage is that it leads to data redundancy and is limited in terms of scalability.
 
 ![Independent dwha](./img/independent_datamarts_architecture.png "Independent Architecture")
 
 5. **Federated DWHA**
-This is the creation of a virtual unique logical view or data model from a combination of data coming from different sources. Usually, data federation does not copy data into any central repository.This is to avoid the dealing with the complexity of existing decision supports systems as dwhs, data marts, databases, file systems etc. When a users sends a data request, the data sources in concern are accessed via the logical view and the data is retrieved, transformed and integrated on the fly before it is presented to the user.This means that the data are stored autonomousely i.e in their respective original systems with their data formats or structures.This architectures is mostly used by companies that have merged resulting to the creation of complex decision systems.
+
+This is the creation of a virtual unique logical view or data model from a combination of data coming from different sources. Usually, data federation does not copy data into any central repository.This is to avoid dealing with the complexity of existing decision support systems as dwhs, data marts, databases, file systems etc. When a users sends a data request, the data sources in concern are accessed via the logical view and the data is retrieved, transformed and integrated on the fly before it is presented to the user.This means that the data are stored autonomousely i.e in their respective original systems with their data formats or structures.This architectures is mostly used by companies that have merged resulting in the creation of complex decision systems.
 
 ![Federate system](./img/federated_architecture.png "Federate Architecture")
 
 6. **Virtual DWHA**
+
 Typically, a DWH cannot provide functionalities beyond the scope for which it is developed. As a result, DWH might not evolve to take into account changes that occur in the business. For instance, if a dwh is not developed to provide realtime data integration,then it will not be able to do so. For this cases, a Virtual DWHA is suitable as it provides real-time data integration, analytics and decision support. In data virtualization, a unified logical interface is built between source systems, databases and BI tools. A Virtual DWHA is suitable for organizations who have *standardized raw data and who do not perform complex analytics tasks*. Since companies wouldn't like to change their underlying infrastructure, they incure the cost of maintaining multiple data sources used in the development of the unified logical data interface. As such data is not not physically copied from its sources but can be queried via the unified interface. Data virtualization is done is 3 phases name:
 
 + Abstraction: In this phase, the logical virtual data interface that separates the data from its underlying physical store is created.
@@ -397,12 +436,13 @@ Typically, a DWH cannot provide functionalities beyond the scope for which it is
 ![Virtual dwha](./img/virtual_dwh_architecture.png "Virtual Architecture")
 
 7. **Distributed DWHA**
-The DWHs can reside on nodes of a cluster. However, these DWHs including their data marts can be interlinked since they interconnected via a network. Each data mart is used to serve a particular business are or unit.The data can be stored following replication or partitioning strategies to ensure availability, reliability, reduce latency and improve performance. It is equally scalable and cost effective.
+
+The DWHs can reside on nodes of a cluster. However, these DWHs including their data marts can be interlinked since they are interconnected via a network. Each data mart is used to serve a particular business area or unit.The data can be stored following replication or partitioning strategies to ensure availability, reliability, reduce latency and improve performance. It is equally scalable and cost effective.
 
 ![Distributive dwha](./img/distributive_architecture.png "Distributive Architecture")
 
 8. **Big Data DWHA**
-This architecture is suitable for handling large amount of structured, semi-structured and unstructured data. The data can be stored in distributive file storage systems like Hadoop and also processed using distributive techniques like MapReduce, Pig, Spark and Hive. Two designs can be develop and implemented following this architecture.
+This architecture is suitable for handling large amounts of structured, semi-structured and unstructured data. The data can be stored in distributive file storage systems like Hadoop and also processed using distributive techniques like MapReduce, Pig, Spark and Hive. Two designs can be develop and implemented following this architecture.
 
 - Structured, Semi-structured and Unstructured Data are all stored in a distributive fileystem like Hadoop. Then the data is processed and further stored in a relational database management system(RDBM). Stakeholders and application only access the data in the RDBM for data analysis.
 
@@ -418,8 +458,8 @@ This is concerned with Metadata and the data distribution tools provided by chos
 1. **Azure Distributions**
 Azure Synaps is a massively parallel processing (mpp) database system made of *synaps instances* for data storage. The data is stored in spread accross 60 underlying databases called *distributors*.This ensures data availability and reliability, thus improves performance. The distribution of data in Azure is by the following strategies:
 
-+ Round Robin: This is the default strategy when no other strategy is chosen. It distributes data evenly accross all instances. Suitable for data unskewed data.
-+ Hash: A deterministic algorithm uses a hash function to determine the proportion of data to store accross the instances. Provides good query performance for large tables containing joins and aggregations.
++ Round Robin: This is the default strategy when no other strategy is chosen. It distributes data sequentially and evenly accross all distributors. It provides high performance for data in the staging area especially during the ETL process.
++ Hash: A deterministic algorithm uses a hash function to determine the proportion of data to store across the databases. Provides good query performance for large tables requiring joins and/or aggregations.
 + Replicated tables: Copies of datasets on a synaps instance is duplicated and cached. This method is suitable for small datasets only.
 
 2. **Hadoop Distribution**
@@ -446,12 +486,12 @@ The efficient functioning of a DWH is non-negotiable to the organization as it s
 + Aggregated or summarized values may not find corresponding tables or location in oltp systems to perform the updates.
 + Operational and Analytical activities serve different purposes in a company. As such integrating data from dwh into operational systems may have a adverse effect.
 
-3. Active: Captures transaction details as they occur and integrates them into the DWH near real-time. As such it is logically consistent data store that provides detail in a single up-to-data view required for strategic, tactical and event-driven decision-making. It supports automated routine task from DWH to OLTP systems. Hence data refreshes can be done in batches or cycles. Tactical queries are short to enable quick actions or decision making in time sensitive environments. Active DWH provide the following functionalities:
+3. Active: Captures transaction details as they occur and integrates them into the DWH near real-time. As such it is logically consistent data store that provides detail in a single up-to-date view required for strategic, tactical and event-driven decision-making. It supports automated routine task from DWH to OLTP systems. Hence data refreshes can be done in batches or cycles. Tactical queries are short to enable quick actions or decision making in time sensitive environments. Active DWH provide the following functionalities:
 
 - Active Load: Allows data to be loaded continuously in a non-disruptive manner while other workloads continue processing.
 - Active Access: Supports fast and consistent tactical queries, providing recurring decision support information for operational business processes.
 - Active Events: Automatically detects business events and applies business rules to update current and historical data; operational actions can be triggered automatically or presented to users for manual decision-making.
-- Active Workload Management: Enables real-time management of mixed workloads to dynamically optimize system resource utilization.
+- Active Workload Management: Ensures that the system efficiently uses its resources to manage workloads near real-time.
 - Active Enterprise Integration: Simplifies coordination of applications and business processes across the enterprise.
 - Active Availability: Assesses enterprise-wide downtime impacts and identifies application-specific requirements for availability, recoverability, and performance.
 
