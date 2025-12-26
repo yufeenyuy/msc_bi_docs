@@ -393,3 +393,132 @@ When working with a specific database management system, it is important to expl
 
 
 ## Chapter six: NOSQL DATABASES
+
+NoSQL stands for *Not only SQL* and are a class of databases that offer flexible schemas and scalability for efficient data storage and retrieval. These databases are of great importance especially in the advent of Big Data. Their schemaless functionality make them a great alternative to Relational databases which have a regit or fix schema. In relational databases the schema is determined during write while in NoSQL databases, the schema is determined during read.
+
+### Motives and Characteristics
+
+Before the introduction of the internet, cloud computing, mobile apps development and big data, relational databases hat been in existence and was the major tool for storing and retrieving data in Government and Non-Governmental organizations. These databases were primarily run on premise i.e on servers. To accomodate growing amounts of data that can as a results of business expansions or growth, these databases were developed with the ability to scale vertically. This means that, the servers receive more processors, memory and storage. Vertically scalability is a limitation of relational databases which is caused by their regid schema of storing data strickly in relations. To overcome this limitation in the advent of the internet era and big data generated at unprecidented rates from several applications including social media, NoSQL databases with a more flexible schema which supports both vertical and horizontal scalability were developed. In horizontal scalability, more servers can comfortably be added to handle large loads without performance losts. The introduction of NoSQL databases have pushed developers to think and act beyond the limitations of relational databases, and as results are expected to innovate and develop much more faster by taking advantage of the strengths of NoSQL databases. The aspect of fast development relate with the fundamentals of agile development for achieving quick gains or making quick progress which adapts to rapid changing environments.
+
+### Importance of NoSQL Databases
+
+This is sorrounded around the Consistency, Availability and Partition(CAP) theorem and the ability of NoSQL databases to handle semistructure and unstructured types of data as well as Big Data. For instance, Availability Partition (AP) Systems are always reachable or available even in the event of network failures. For an application built on AP, users will most likely have issues related to the service not being reachable. Additionally, there are five major evolving trends that support the use of NoSQL databases by companies nowadays. These trends are described in the following images.
+
+--insert image here--
+
+### How NoSQL Works
+
+In NoSQL databases, data is partitioned or distributed accros multiple databases instances that are connected via a network with no shared resources. For high availability, data is replicated or redundant copies of same data are stored on one or more database instances within the same cluster of nodes. This is called inter-cluster replication. This ability is built in NoSQL databases and are automatically triggered. Automatic failovers ensures that the system stays reachable in the event of network failure. This means that the system can continue performing read and write operations even when one or more nodes in a cluster fails. In relational databases, replication is supported but often requiring a separate software. E.g in PostgreSQL replication is possible with the use of Citus. If an instance fails, the application can forward requests to active nodes. Moreover, it is possible to easilly deploy nodes of a cluster in different geographical locations or zones. This ensures that users can be served by nodes that are closest to them. The ability to replicate data and to deploy nodes flexibly in different locations improves the reliability of the system and increases performance. Because of these aspects i.e flexible schema, horizontal scalability, handling big semi and/or unstructured data, replication/partitioning and increased performance, there is a growing shift from relational to NoSQL databases by startups to large companies, espcially those active in the digital space. NoSqL forster agile development. The following image shows how replication looks like in NoSQL applications.  
+
+--insert image here--
+
+### Benefits of NoSQL Databases
+
+There are several benefits that comes when working with NoSQL databases. A few a described as follows:
+
++ *Schema independence*: In NoSQL developers do not need to develop a data model before they start loading data in them. This is why they are schemaless or have flexible schemas. This means that data, semi-structured or unstructured, can be stored without being concerned how the database operates internally. It is only during retrieval that developers or users must know how and what data they want to retrieve. Data retrieval depends on the NoSQL database being used. On the other hand, relational database stores data in relations/tables. This means that a data model, where data will be stored, must be physically implemented before data in loaded in them. The schema in NoSQL is infered during read operations while in relational databases it is infered during write operations. 
+
++ *Scalability*: NoSQL databases support horizontal scaling which allows computional resources to be flexibly and easilly added or removed based on workloa. Horizontal scalability is cost efficient and unlimited as opposed to vertical scalability where at some point it becomes inpracticable to increase processing power, memory or storage. 
+
++ *Performance*: Throgh replication, and efficient data storage and processing frameworks, user requests can be fulfilled by nodes closest to them. Automatical failover capabilities of NoSQL systems guarantees the reliability of the system. Overal system reliability and availability increase system performance.
+
++ *High availability*: Through scalability as a data distributive capability and for availability tolerance systems as described by the CAP theory, NoSQL databases are highly available even in the event of partial network failure.
+
++ *Global availability*: Nodes can be easilly be deployed in different geographycal regions or zones. This ensures that users in particular regions are served by nodes closest to them, reducing latency.
+
++ *Flexible data modeling*: NoSQL Databases allow developers to use data types that are most suitable to the application use case. This is because each class of NoSQL database is built for a particular sets of problems. This flexibility promotes agile product development.
+
+### Classes of NoSQL Databasess
+
+There are four classes of NoSQL databases, each with its particular strengths. These four categories are shown in the following image.
+
+--insert image here--
+
+### Key-Value Store and Modeling
+
+Key-value store, key-value model or key-value databases are used interchangebly to refere to a category of NoSQL databases that employ an associated array, like maps or python dictionary, internally for the storage of data. Data is stored as *key-value* pairs where a unique key is associated to only one value. A Key can be any unique identifier like *filename, Uniform Resource Identifier or a hash value* while a value, which is the desired content being stored, can be an image, link, string, number or any other complex entity linked to a key stored in a database. Keys are used to directly retrieve values while values can be stored on blob, which eliminates the need for indexing. In general, key-value stores lack a query language but offer functions like *push, get, and delete* to perform CRUD operations i.e store, retrieve and update, typically via APIs. They can support both vertical and horizontal scalability. Vertical scalability can be achieved by avoiding locks, latches and low-overhead server call. This will enable these databases to be kept in RAM and minimize the effect of the ACID principles ensures the persistent storage of data. Horizontal scalability is achieved via partitioning, replication and auto-recovery. This allows the system to handle large amounts of data with little response time(low latency) i.e without significant performance lose, and ensuring system reliability.For these reasons Key-Value stores are suitable in e-commerce platforms.
+
+Key-Value models do not support joins or complex queries. However, the data stored in key-values could have relationships. As a result, it important for developers to consider relationships and how they can be implemented when storing data in key-value models. A straigth forward approach is to use denormalization where related data  are stored together as key-value pairs or on separate key-value stores. Alternatively, a hybrid approach, where data is stored on both key-value database and ralational database. Thus maximizing the potentials of both DBMS. As already mentioned, key-value databases can store data of different types including text, images, json etc. Thus they can handle both semi-structured and unstructured data types due to their flexibility regarding schemas. *KVMod* is a model-driven approach (MDA) specifically used for modelling data in Key-Value databases. Related to this is a *KVDesign* which is a tool developed for automating the modeling process in key-value stores. KVMod is also a *software development methodology* based on the use of models and model transformations. It separates the business logic or functionalities of an application from the technical implementations using a platform-independent model(PIM). The business logic is modeled using *computation independent model (CIM)* while the technicalities are modeled using *Platform specific model (PSM)*. These 3 levels of abstraction are similar to the modeling procedure discussed in relational databases. At each level of the modeling process, KVMod uses metamodels and leverages a series of model transformations to move from one model to the other. This approach aims at conceptualising the model and provide a query which automatically generates a logical and physical model for key-value systems via a series of mapping rules. In addition to the entities and relationships conceptualised, it is important to understand how entities are handled in run time. This can be modeled using *platform independent data metamodel (pidm)* and *key-value logical metamodel(kvlm)*. The following images illustrate *KVMod Trasformation process* and a *Key-Value Logical Metamodel* respectively.
+
+--kv logical metamodel--
+
+--kvmod transformation process--
+
+1. *Creation of a conceptual data model, which conforms to the PIDM*: It uses a UML-Like syntax to define entities, attributes and relationships and a SQL-Like syntax for queries. This enables the integration of data structures and access queries.
+
+2. *Transformation into a Key-Value logical data model, which conforms to the KVLM*: Hier the PIDM is translated into an intermediate meta-model that is specific to key-value databases. For each access request, collections are created containing fields according to the requirements of the queries.
+
+3. *Optimization by merging collections*: Similar collections are merged to avoid redundancy and improve efficiency.
+
+4. *Model-to-text transformation*: For the physical implementation specific to key-value like Redis, the KVLM is tranformed to the required code. The transformation contains the definition of data structures and indexes in the target language of the DBMS.
+
+#### Data Aggregation in key-value stores
+
+Given that data is stored as a collection of key-value pairs recording every pair of related entries where the key is a unique idenfier of a particular value, it becomes challenging to effectively aggregate values like in relational databases. Howerver, there are seveal techniques that can be used to aggregate values in key-value databases. To illustrate data aggregation in key-value stores, key-value store called **Redis** will be used.
+
+#### Redis
+
+Redis is an in-memory and highly distributed key-value store widely used for data aggregation. Its simple and flexible data model makes it easy to store and manipulate data. The key-value pairs of data can be accessed via the key which is always a string. The values can take different data types like numbers, strings, hash, sets, list and ordered sets etc. Operations like adding, updating, retrieving, deleting can be performed using functions provided by Redis. Due to its high performance and scalability, it is used in for the development of real-time applications, caching, messaging and session management. Other features provided by Redis support multiple data structures, atomic operations, persistence options and cluster support. Also APIs and Client Libraries are available to ease integration with a variety of programming languages and frameworks. In an ordered set, each key is associated with a floating point which is a score used by Redis to sort all the elements of the set. Keys with same score are sorted lexically. For more complex operations requiring joins, it is advisable to use relational databases. However, Redis provides aggregate functions that can be used to calculate simple summaries like sum, average, mean etc. Before peforming aggregations, data must first be queried. Redis provides the following functions, that can be used to aggregate data after querying.
+
+- ZRANGEBYSCORE: Retrieves a set of values, based on their score, from a sorted set.
+- ZUNIONSTORE: Takes multiple sorted sets and perform a union operation then store results on another sorted set.
+- ZINTERSTORE: Takes multiple sorted sets and performs an intersection between them, then store results in another sorted set. 
+- SMEMBERS: Retrieve all members in a set.
+- SINTER: Performs an intersection operation on multiple sets
+- SUNION: Performs a union operation on multiple sets.
+- SCARD: Returns the number of elements in a set
+
+For complex aggregations, Redis can use Redis pipelines or Lua Scripting. In Redis pipelines, the data to be aggregated must first be queried, filtered then passed to an aggregation function. Filtering may consist of several transformations commands like grouping and reducing, sorting, limiting etc. To retrieve or extract data from stored in Redis, the following functions can be used:
+
+- GET
+- MGET
+- HGET
+- HMGET
+- LRANGE
+- SMEMBERS
+- ZRANGE
+
+#### Drawbacks of Redis Data Modeling
+
+- Provides limited support for complex data structures like sets and ordered sets
+- Complex aggregations requiring joins must be done out of Redis increase work overhead
+- As an in-memory database it stores data in RAM which is optimal for data retrieval but storing large amounts of data above available memory becomes a challenge.
+- When persisting data in disk, data could be lost if system fails before data is persisted. This can occur when data to be stored is high.
+- As compared to other NoSQL databases like Cassnadra and MongoDB, its scalability or sharding feature is not optimal.
+
+### Example of Key-Value databases
+
++ Amazon Dynamo DB: Most used and trusted key-value database with high number of users. Besides being capable of handling high number of requests on a daily, it also provides a variety of security options.
++ Couchbase: Supports SQL-like querying and text searching.
++ Riak: Prefered database for creating applications
++ Aerospike: Open source and real-time db that handles billions of exchanges
++ Berkeley DB: High performance open source DB with scalability.
+
+### Amazon Dynamo DB
+
+This is a key-value store is a database that leverages consistent performance irrespective of the scale. It is a fully managed multi-region, multi-master database that provides built-in security, backup and restore features, in-memory caching, and reliable single-digit milisecond latency. Through distributed storage and processing, DynamoDB can handle huge volumes of Data including updates.  Although, there is no restriction in the number of items, attributes or number of items including all its attributes, the total size of an item cannot exceed 400 KB. In DynamoDB, items consist of a primary or composite key and a variable number of attributes. A table in DynamoDB is a collection of items which is similar to a collection of rows in relational databases. There are no limitations in the number of rows that can be stored in a table.
+
++ *Advantages of Key-Value Stores*
+    - Support different data types e.g strings, numbers, images etc.
+    - Support vertical and horizontal scalability which provides high throughput.
+    - Low latency improves system reliability.
+
++ *Disadvantages of Key-Value Stores*
+    - Does not have a query language.
+    - Values can only be retrieved via keys.
+    - Queries cannot be transfered between databases.
+
+
+### Document Stores
+
+Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each record is stored with its associated data within the document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. Its flexible structure allows parts, sections, keys to be switched around. Documents store ther The following image illustrate the structure of a document store.
+
+--insert image here--
+
+
+
+
+
+
+
+
