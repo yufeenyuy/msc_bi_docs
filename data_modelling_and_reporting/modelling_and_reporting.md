@@ -1,5 +1,7 @@
 # Data modelling and Reporting
 
+*Work in progress*
+
 A great course to learn the fundamental concepts and practical applications of Data Modelling and Reporting.
 
 ## Chapter one: Basic Concepts
@@ -511,7 +513,9 @@ This is a key-value store is a database that leverages consistent performance ir
 
 ### Document Stores
 
-Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each record is stored with its associated data within the document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. Its flexible structure allows parts, sections, keys to be switched around. Documents store ther The following image illustrate the structure of a document store.
+Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each record is stored with its associated data within the document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. Its flexible structure allows slots, parts, sections and keys to be switched around.The fields in a document store are optional but can take various types of documents. Their flexibility make them robust which is essential in big data environments. However, flexible schema pose a challenge in enforcing rules as oppose to relational databases. The following images illustrate the structure of a document store.
+
+--insert image here--
 
 --insert image here--
 
