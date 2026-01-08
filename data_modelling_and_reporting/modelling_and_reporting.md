@@ -513,16 +513,352 @@ This is a key-value store is a database that leverages consistent performance ir
 
 ### Document Stores
 
-Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each record is stored with its associated data within the document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. Its flexible structure allows slots, parts, sections and keys to be switched around.The fields in a document store are optional but can take various types of documents. Their flexibility make them robust which is essential in big data environments. However, flexible schema pose a challenge in enforcing rules as oppose to relational databases. The following images illustrate the structure of a document store.
+Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each entity, with its associated data, is stored within a document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. These data strucures allow data to be stored hierarchically or in nested form. Theire flexible structure allows slots, parts, sections and keys to be switched around.The fields in a document store are optional but can take various types of documents. Their flexibility make them robust which is essential in big data environments. However, flexible schema pose a challenge in enforcing rules as oppose to relational databases. The following images illustrate the structure of a document store.
 
 --insert image here--
 
 --insert image here--
 
+Document databases have two main characteristics that set them apart. These are:
+
+1. Flexible: The data structures used for data storage don't impose a fix schema and exhibit object oriented properties as each document can be understood as an object. Moreover, these data structures are used by object oriented programming languages. This means that, dvelopers can *intuitively* map documents to objects. These data structures are typically light weight and language independent. Thus making them ideal for data transmition and storage data without conflicts. Documents can store data in various formats including: *key-value, tables, timeseries, geospatial etc*. Some documents databases, however, allow schema validation or schema lockdown. Their flexibiliy is ideal for developers as it supports agile product development since developers must not develop a sophisticated data schema or model before they can start product development. This avoids data normalization which often lead to complex joins during data aggregation or retrieval. Thus making them adaptable to changes in development. 
+2. Scalability: Horizontal scalability, in particular, allow document databases to support high read and write operations without performance lose. Additionally, horizontal scalability is cost efficient as opposed to vertical scalability in relational databases. This is because, horizontal scalability, nodes can be added and removed based on work load.
+
+The following properties or features of Document stores make them preferable over relational datbases in some use cases.
+- Flexibility: Flexible data structures like JSON, BJSON etc. can store in nested or hierachical form. The flexilibilty of the data structures allow parts or sections of the data fields to be moved around without the need to change the data model unlike in relational databases.
+- scalability: Aggregated databases support horizontal scalability. This means that data can be stored and processed in parallel. As a results, high read and write operations can be executed, which is important in big data context.
+- Performance: Their flexibility and scalability make them robust. This means that read and write operations can be processed without lost in perfomance.
+
+### Data Aggregation in Document Stores
+
+In Document databases, data stored in its data structured are transformed and aggregated based on the aggregation framework provided or supported by the database management system. By leveraging the aggregation framework, data can be prepared for analysis(e.g dashboard or reports) by transorming and aggregating stored data via several stages that can be linked together to form a pipeline. Each stage in the tranformation or aggregation process performs particular task, and the output of one stage is used as the input of the next or another stage. The different stages could include the following:#
++ Match: filters data based on given criteria
++ Project: Reshapes the data by excluding or including unwanted fields or by adding calculated fields
++ Group: Aggregates data by specific fields(e.g keys) then summarise the data. Often leads to data reduction.
++ Sort: Output is sorted based on given fields.
++ Limit: This stage limits the number of douments to be returned.
++ Facets: Several results are returned by groups or catagories involved in the *group stage*
+
+### Data Extraction in Document Stores
+
+Document databases often provide a query language or API which is used to first of all query documents based on given criteria then retrieving the data stored in their data structures. This is how data is extracted. After data extraction, further data processing steps can be leveraged. The following approaches are commonly used for querying document databases.
+
++ Querying by key: Documents are retrieved based on specific keys or given set of keys.
++ Querying by value: Documents are retrieved by values that match specific values of a given fields or sets of fields.
++ Querying by range: Documents that fall within or outside a given range are retrieved. Suitable for date or datatime fields.
++ Full text search: Documenent containing exact matches of text values in a field or sets of given fields are retrieved.
++ Aggregation: Development of data pipeline as discussed in the later.
+
+It is possible to extract and analyse data from document databases using connectors provided by Business Intelligence Tools. The connectors in BI tools simplify data extraction which significantly reduces the time for developing complex data aggregation pipelines using aggregators provided by document database management systems. Additionally, BI tools provide data visualization features. Thus simplifyign the entire data analysis process from data extraction. Some connectors allow data to be retrieved using SQL-like approach. For instance, power bi provides a BI connector for MongoDB. This connection can be established via *Java Database Connectivity (JDBC) or Open Database Connectivity (ODBC)* drivers, allowing data to be retrieved in a structured way. The following image illustrate shows a structural illustration of the connection.
+
+--insert image here--
 
 
+### MongoDB
+
+This is a data aggregation database that offers a flexible data model for storing and retrieving data. Data is stored as documents where every document can be structured differently. This means that each document can have its own set of fields and values. It provides a handful of aggregation functions or operations that can be used to develop data transformation and aggregation pipelines to support data analysis. The stages described in the later are supported in MongoDB.
+
+The following code determines the average price of products in every product category.
+
+db.products.aggregate([
+{ $group: { _id: null, avgPrice: { $avg: “$price” } } }
+])
+
+### Drawbacks of MongoDB Data Modeling
+
++ MongoDB is not ACID compliant. Thus does not guarantee data consistency and integrity espcially when dealing high number of write operations.
++ Its flexible schema which can store data in different formats like in hierarchies or list, increases the complexity for deriving a reasonable data model in the event of data migration to relational databases.
++ MongoDB does not support join operations which in some cases can reduce the ability to draw meaningful insights from the data because of the difficulty in establishing relationships between documents.
++ MongoDB heavily leavarges indexing for optimized data querying. However, indexes are data structures that require updates when data changes and they also consume a considerable amount of disc space.
++ The opon source version provide limited functionalities and support. Enterprise and premium features are costly.
 
 
+### Column Family Stores
+
+In wide column stores, data is stored vertically instead of horizontally like in relational databases. This arrangement enables the efficient storage and retrieval of data. Since data is stored in columns, this allows data compression as data in a column are of same data type. Columns with no entries or only null values are not stored, improving data storage as opposed to row based data storage in relational databases where columns in a table must have the same number of entries, irrespective whether the rows are empty or not. Additionally, data stored in columns can be efficiently stored in disk as each column can be stored in the same location as opposed to relational databases where values of a column are spread accross several locations on disk. This possibility to aggregate data into column families is optimal in distributing computing as data in a column family can be stored in a single node. Thus improving data retrieval. Column family stores consist of schemaless *key spaces*, similar to schemas in relational databases, that contain information about the structure and organization of data in the column store database. Within key spaces, there can exist several *column families*. Column families are a collection of columns, typically those that are frequently queried together, that a logically stored together. A column family should be considered as a table like in relational databases. Since data is stored in columns in wide column stores, every row must not have the same number of columns or entries. Key spaces and column families must have their identifiers. Similarly, the first column in a column family is a *row key*. Row keys are like primary keys in a relational model. To track changes made on column entries, there exist a timestamp column key. Despite the fact that they are efficient in data storage, scalability and data retrieval, they are not suitable for online transaction systems. Rather, they are suitable for analytical systems. Column keys are the column names which are used to query entire columns. The following images demonstrate how data is stored in wide column stores.
+
+--insert first image here--
+
+--inser second image here--
+
+#### Data Aggregation in the context of Apache Cassandra
+
+An example of Wide Column Store NoSQL database that structures data as key spaces -> Column families -> Row keys and Column keys is Apache Cassandra. This database is scalable and optimal for data storage and retrieval. It provides a query language called Cassandra Query Language (CQL). This language is similar to SQL and suitable for performing complex queries like filtering, aggregating, sorting etc. Some aggregation operations commonly used in Apache Cassandra include:
+
++ Batch Operations: Allows the execution of multiple updates, inserts or delete operations in a single batch.
+
++ Counters: Allow values in columns to be increased or decreased.
+
++ Secondary Indexes: Allows creation of indexes to speed up queries
+
++ Aggregation functions: Allows data to be summarised. E.g functions include avg, sum, mean, min, max etc.
+
++ Materialized views: Alows creation of denormalised views which are optimal for specific use cases.
+
++ Time-to-Live: Allows columns to be deleted after a given time period
+
+#### Data Extraction in the context of Apache Cassandra
+
+Data can be retrieved in Cassandra via several approaches including the following:
+
+1. CQL Queries: Cassandra support CRUD operations that can be implemented using CQL. When retrieving data, the column family name, column keys and filter criterias are specified.
+
+2. Bulk Loading: Through its *COPY* feature, data can be loaded q<uickly from *csv* files to a table in Apache Cassandra. Other third party tools like Apache Spark and DataStax Bulk Loader can also be used to for bulk loads.
+
+3. Exporting to csv: The COPY feature also allows data to be exported from a table to a csv file. This is useful for creating data backups or for performing data analysis on the exported data.
+
+4. Apache Spark: This is a distributed data processing framework that can be integrated to cassandra for data extraction. It provides APIs that can be used to connect to data tables and retrieve data. It supports complex data processing and transformations like data aggregations, machine learning and graph analysis.
+
+5. Secondary Indexes: These can be created on non key columns and used to optimize query performance.
+
+#### Drawback of Data Modeling in Apache Cassandra
+
++ Does not support ACID priciple
++ Does not support subqueries and joins
++ The maximum column value in the database is 2GB and the maximum column familiy size is 64GB.
++ Lacks detail documentation. As such users must look for solutions/explanations via third parties.
+
+### Graph Databases
+
+The Entity-Attribute-Value model is the foundation of graph databases. In a graph model, *nodes* represent entities while *edges* represent relationships. Nodes store all information about an entity while edges store the relationship type. The edges can be *directional or undirectional*, and there is no restriction on the number of relationships an entity is allowed to have. A Relationship must have a name and could represent different types of relationships like parent-child, is-friend-of etc. Graph databases can handle structured, semi-structured and unstructured data, and any kind of relationships. Since nodes and edges are stored in graph databases, this leverages high query performance as compared to relational database where complex joins may impact the system negatively. Through edges, it is possible to traverse or navigate the graphs. This is particularly important in analytical scenarios. Graph databases are mostly used in developing social networks(e.g X, Meta etc.), recommendation systems, and fraud detection systems. This is because relationships and near real-time analysis of large amounts of data are of particular interest in these systems. Addtionally, graph databases are flexible and scalable making highly adatable(e.g incorporating new relationships) and cost effective, respectively. *semantic graph models* are a specific type of NoSQL databases that leverage *Resource Description Framework (RDF)* triplestore to integrate data from multiple sources, establish relationships between entities and extract insights. Semantic graph models can be used for knowledge discovery in existing as well as new data. The following image illustrate a graph database model.
+
+--insert image here--
+
+#### How Graph databases work
+
+They are straight forward as shown in the image above. The two main components of a graph database are:
+
+1. Nodes: They store entities and their properties.
+2. Edges: Store relationships which can be birectional, unidirectional or undirectional. The number of relationships that can be modelled is limitness.
+
+#### Example of Graph Databases
+
+Graph databases are the least used in the class of NoSQL databases. However, some of them are being widely used in production systems. Examples of these include:
+
+1. **Neo4j**
+- Most used graph database developed in jave
+- Efficient for fraud detection and center data management
+- It is open source
+- Cypher is its language similar to DQL in SQL but tailored for graphs
+- Support other languages like python, java, javascript and .NEET
+
+2. **RedisGraph**
+- Graph is a modul in Redis (a key-value NoSQL store).
+- High performance as data is stored in-memory or directly on the RAM.
+- Support indexing which enhances query performance.
+- Cypher is the query language
+- Prefered by programmers and data scientist due to its flexibility.
+- Used in cases requiring high performance
+
+3. **OrientDB**
+- It is multi-model database that supports graphs, document, key-value and object oriented model.
+- Developed in Java and is open source.
+- Suitable for use cases with multiple data models
+- Ensures data consistency and reduces the complexity in handling data from different data models
+- Does not support Cypher.
+
+#### Data Modelling in Neo4j
+
+In graph data modelling, nodes and edges are used. Nodes store entities or objects with their proporties or attributes while edges model relationships which are connections between the nodes. The model is in a form of a network allowing navigation through the edges. For this reason graph databases are optimized for querying and are suitable for applications that require complex joins and analsis. Modelling in Neo4j involves defining a graph schema that specifies entities, relationships, properties as well as constraints and validation rules.
+
+The following steps are involved in graph Neo4j graph data modelling:
+
+1. Identify entities and relationships: Examine the domain to understand relationships. Based on the understanding of the scope, identify entities, relationships and how the entities are related.
+2. Define node labels: Nodes of the same type should be labeled. This facilitates the application of constraints to specific labels.
+3. Define relationship types: Relationships can also be labeled to ease the implementation of constraints and validation rules.
+4. Define properties: These are key-value pairs that can be used to store extra information about the nodes or relationships. These properties can also be used in queries and analysis.
+5. Define Indexes: Index improve query performance which ensures that entities or relationships can be searched efficiently using propoerties.
+6. Model Cardinality: Cardinalities define the number of relationships between nodes. one-to-one, one-to-many and many-to-many are acceptable cardinalities in Neo4j.
+7. Model Inheritance: Nodes can inherit properties and constraints from other nodes. This is optimal in the context of reuseability.
+
+#### Aggregation of Data in Neo4j
+
+Cypher query language provides several functions that can be used to aggregate and summarise data based on certain criteria. Aggregation can be done on nodes, relationships, groups of nodes or relationships. Some of these functions include:
+
++ COUNT: Returns the number of items in a collection or the number of distinct values in a property.
++ SUM: Returns the sum of a collection or property values
++ AVG: Returns the average value of a collection or property values
++ MIN: Returns the minimum value of a collection or property values
++ MAX: Returns the maximum value of a collection or property values
+
+To perform aggregation, the *MATCH* clause is used to specify nodes or edges of interest while in the *RETRUN* clause, the aggregation function is specified and results of the calculation are retrieved. In the *WHERE* clause, data is filtered before aggregation is performed.
+
+#### Data Extraction in Neo4j
+
+In Neo4j data can be retrieved from the graph data model using Cypher, Neo4j browser, Neo4j drivers or APIs. However, Cypher is the most common used language and it allows users to retrieve data by specifying criteria corresponding to specific nodes or relationships. This declarative language has a simple syntax similar to SQL and its queries are executable on Neo4j browser, Neo4j drivers and APIs. The retrieved data can be used for visualizations, reporting and other data analytics tasks. The following are some of the Clauses or Keywords used in Neo4j for data extraction.
+
++ MATCH: clause used to find nodes or edges that match a certain pattern
++ WHERE: clause used to filter data based on certain criteria
++ RETURN: claused used to specify the aggregation function which determines the data that should be returned.
++ ORDER BY: clause used to Sort data based on certain criteria
++ LIMIT: clause used to limit the result to be returned by the query
++ WITH: clause used to chain multiple queries together and pass data between them.
+
+#### Drawbacks of Neo4j
+
+Developing a graph data model is not trivial because of aspects that include the following.
+
+1. Requires detailed understanding of graph theories and graph databases
+2. Scalability is not fully exploited if the use case is not suitable for graph databases
+3. Query performance can be affected by large number of nodes or relationships being queried
+4. It is a commercial tool which requires licensing. Thus may not be affordable for small businesses
+5. Data consistency and integrity is not guaranteed as in relational databases.
+
+#### Graph Structure
+
+Beside knowing the different graph databases and models (e.g RDF) it is crucial to understand certain aspects of graphs such as *shapes, characteristics and density*.
+
++ **Graph Shapes**
+
+Shapes have 3 propertie, namely;
+
+1. Random: Every node has the same chance of being connected to another.
+2. Small-World: A graph may contain several cluster with high degrees. Thus, reducing the average short path within the graph.
+3. Scale-free: An entity is allowed to have as many relationships as possible.
+
++ **Graph Characteristics**
+
+The following are the 4 main properties of a graph: **connected & disconnected, directional & undirectional, weighted & unweighted, tree & spanning tree**.
+These properties are explained in the following image.
+
+--insert image here--
+
++ **Graph Densitiy**
+
+The key take aways here are the calculations for *maximum density and actual density* as well as the difference between densed and sparsed graphs. A densed graph is results when there are several edges and a sparse graph results when there are few edges in the graph. Maximum density occurs when every node has edges to every other node in the graph.
+
+--insert image of formula here--
+
+#### Benefits of Graph Databases
+
+## Chapter 8: Data Reporting
+
+Data reporting is the process of collecting, analysing and present information in a structural format to leverage insight that support decision making. Data reporting enables stakeholders like executives, managers and analyts to understand trends, identify patterns and monitor key performance indicators to support decision making. For this reason data reporting should be performed on *accurate, complete and current data* to ensure concise decision making. Data reporting can be done in form of *dashboards, reports, charts and other visualizations*. Data reporting is an important component in data analysis and plays a vital role in planning, performance evaluation and decision making in many fields including *business, health, education, and scientific research*. Data reporters require both technical and communication skills to collect data from different sources, analyse and communicate insights to the right audience(e.g managers, employees of a department, investors, customers etc). A data warehouse is a central repository for storing structural data. The stored data is topic oriented, integrated, time variant, durable and aggregated/summarised. Thus it can serve as a single source of truth for data validation and verification during data reporting. Business Intelligence tools can be used to access data in a data warehouse for data reporting. According to 
+
+### Categories of Reporting
+
+According to Sharda et al.(2014) there is a variety of data reporting categories which include:
+
+1. Information reporting: This type of reporting aims at educating stakeholders about the organization as it provides general information about the organization such as its history, mission, vision and its activities.
+
+2. Operational reporting: Provide information about day-to-day business operations that include sales figures, production statistics, customer interaction etc. This type of reporting aims at monitoring and controling business operations and to identify areas that need improvement.
+
+3. Project and Progress reporting: This tracks the progress and performance of specific projects or initiatives. The information typically tracked include project's goal, timeline, budget, milestones as well as challenges that arise.
+
+4. Analytical reporting: Aims at providing insights on the performance of the business by analysing data and spotting trends. In most cases, data being analysed is collected from different sources like financial systems, sales systems, marketing data etc, and stored in a consolidated in a central repository called a data warehouse. Data in the data warehouse can then be retrieved and analysed to generated insights with BI tools.
+
+5. Statuary reporting: It aims at creating transparency in the maintenance of compliance regulations and legal requirements by stakeholders. This type of reporting takes into account financial statements, tax and other regulatory filings.
+
+6. Strategic reporting: Aims are communicating an organization's long-term vision, goals and objective based on information from market trends, strategic positioning and market competitors.
+
+7. Internal and External reporting: Internal reporting focuses on communicating information within an organization based on financial reports, project updates and perfomance metrics. On the other hand, external reporting focuses on communicating information to external actors like investors, customers and regulatory agencies.
+
+### Application Areas of Data Reporting
+
+Data reporting is essential as it allows executives, managers and analyst to evaluate the status of business units or enterprise. Data reporting find uses cases in several domains including the following:
+
+1. Market and Product Analysis: Managers can use data reports to support their decisions on the introduction of a new product or service in the market. Market analysis reports can also be used to support strategic decisions regarding the opening of new branches in other locations(e.g city, country or region). 
+
+2. Customer Analytics: This type of analysis focuses on customer purchasing behaviour and demographics. Through this analysis companies can understand customer needs and determine the likelihood that a customer or group of customer will purchase a product or subscribe for a service
+
+3. Financial Reporting: This type of analysis is used to determine the financial status of the company. Date reporting is performed on data from accounting and controlling systems and often include financial statements, balance sheet and cash flow.
+
+4. Research Reporting: The aim of this type of reporting is to answer a predefined research question based on data collected from a series of measurement readings. The purpose of the analysis of the data is to arrive at a new finding that will enable researchers to answer the research question. This kind of analysis is typically performed in science, and research & development institutions.
+
+5. Performance Monitoring: This kind of analysis evaluate and presents the performance of business operations in different functional areas of the company.
+
+### Reporting Tools
+
+According to (Greenacre,2016), data reporting is the process whereby companies organize and analyze data to make critical strategic decisions.To do data reporting is strongly recommended to have good communication skills and familarise yourself with reporting tools that can enable you to gather business data, analyse and present this to your audience in a structured and understandable format via graphs and visuals. For instance a Customer Relationship Management (CRM) analyst may use marketing reporting tools to gather and analyze data, based on the company's key performance indicators, from various sources that include e-commerce platforms, social media channels, email accounts and websites. Performance management tools are similar to Business Intelligence tool, however, they differ in their capacity to establish key performance indicators found in the company's data. For the selection of a business intelligence or data reporting tool for your business, it is important to consider the following factors:
+
+* The size and complexity of your data.
+* The data sources
+* Your reporting requirements e.g real time or interval analytics
+* Your budget
+* etc.
+
+In addition to the factors in the latter, it is strongly recommended to consider the features of the business intelligence or data reporting tools as well because the reporting tool should be able to meetup to the reporting requirements. The following image illustrate the key features to consider about the data reporting tool.
+
+--insert image here--
+
+Some widely used business intelligence or data reporting tools include: *microstrategy, Tableau, Microsoft Power BI, Google Data Studio, SAP Crystal Reports, SAS Visual Analytics, QlikView, Looker, Salesforce Reporting, IBM Cognos Analytics, Pentaho, Whatagraph, Reportei, Hive, Wrike, Proworkflow, ThoughtSpot, Zoho Analytics*. The listed tools is not exhaustive.
+
+### Layout and Format
+
+Though *layout* and *format* are used interchangeably when visually presenting data using a reporting tool, they have different meanings in the context of data reporting.
+
++ Layout: This is the general arrangement of elements in a report. Elements here include, charts, graphs, cards, tables etc. Data reporting tools often provide features for page orientation, margin and column widths adjustments, alignment options etc. These features can be used to organize elements within a report or bi tool canvas. A well organized layout increases visibility making it easier for users to navigate the report.
+
++ Format: This refers to the way individual data points appear within the report. Font & Style, colors, highlights & shading, interactivity, conditional formating etc are all part of formating. Good formating enables users to quickly spot trends and changes in the report.
+
+The following are examples of commong layouts and formats:
+
+1. Table: It is used to present numerical data in a structured form i.e column and rows. This allows data points to be easilly compared. Example of numerical data are: sales figures, survey results etc.
+2. Matrix: ...
+3. Chart and Graph: Used to visually present data to facilitate the identification of trends, patterns and outliers. Frequently used charts include bar charts, column charts, area charts, pie charts, line and scatter plots.
+4. Dashboard: A graphical representation of KPIs and Metrics that reflex a snapshot of a company's or project's status. They are built by a combination of charts & graphs, tables and other visual elements. The following are types of dashboards observed in practice.
+    - Sales Dashboard: This dashboard is used to track sales performance, revenue and other sales related KPIs. Specifically, sales volum, number of sales transactions, number of new users, customer demographics etc. may be displayed.
+    - Marketing Dashboard: This is used to track marketing performance and the effectiveness of marketing campaignes. For a marketing campaigne, the following data can be displayed: number of generated leads, cost per lead, conversion rate of generated leads, return of investment (ROI) of the campaign.
+    - Finance Dashaboard: This is used to track the financial performance of the company. This could include account receivables, account payables, cashflow, collection etc. In account receivables, data that can be displayed include Days Sales Outstanding (DSO), Average Days Delinquent (ADD), Best Days Sales Outstanding (BDSO), number of successfull payments, number of successfull collections etc.
+5. Infographics: This layout approach is used to present complex data in a more engaging and memorable form. Icons, illustrations and other design elements are used to ease comprehension of the content being presented. The following are types of infographics.
+    - Timeline: used to visualise progression over time. E.g The evolution or history of a company or progress of a project, over time, with key instances can be visualized.
+    - Comparison infographics: Used to compare two or more things side-by-side. E.g compareing features of different products or benefits of different services.
+6. Texttual Reports: Used in Research and Academia, they are used to provide detail explanations and recommendations based on insights from data analysis.
+7. Business Reports: Provide detailed information about business operations based on financial figures, sales figures etc. Also used to provide recommendations on potential future improvements. 
+8. Research Reports: Used to present the result of research finding including data analysis, methodology and conclusions.
+
+### Automated Data Reporting
+
+Automated reporting, a management tool, is the use of software and reporting tools to generate reports automatically without the need for manaul intervention. During automation the process of collecting & transforming data, analysing and presenting insights in an understandable format is covered. This tool creates and shares reports to different stakeholders periodically without the need for manual work. In the case of data warehousing, the ETL process is automated. This means that data, from a variety of sources, is automatically extracted, transformed and loaded into a core data warehouse for analysis purpose. Based on the data in the core data warehouse, reports can then be generated either via reporting tools that access the data or by producing generated reports as files. These reports can be shared with stakeholders via emails, webs or self-service. Automated reports can equally be used to track financial performance, customer behavior, monitor KPIs and measure performance, at regular time intervals, and identify patterns and trends. As the volume of generated data keeps increasing, leveraging automated reports is a great way for companies to increase productivity, reduce or eliminate manual work while still analysing their data to make informed decisions. 
+
+### SQL Reporting
+
+This is data reporting that is done by using SQL to query a database and build reports on the results of the queries. SQL reporting tools such as SQL Server Reporting Services (SSRS), Oracle Reports and Crystal Reports are used to create, manage and share reports. You may explore SQL Server Reporting Services.
+
+## Chapter 9: Online Transactional Processing(OLTP)
+
+OLTP is a form of *data processing* designed for transactional applications like banking systems(e.g online banking, ATMS etc),order processing in e-comerce etc to enable them to *process their transactions almost instantaneously or near real-time*. Trasaction processing applications also known as *online transaction processing systems (OLTPS)* usually process their transactions in a centralised systems. They posses the capability of reliably handling a high number of concurrent user transactions while prioritising *data consistency, integrity and accuracy*. Because of the large amounts of transactions they are expected to process, OLTPS must have high processing power, memory and storage. Addtionally, a key characteristic of OLTPS database is *transaction atomicity*. This means that a transaction is *indivisible*; This means that the action of processing a transaction can either lead to *success, failure or cancelation*. Thus, intermediate states are not acceptable. Remember the ACID principle governing transactions in relational database management systems. Because of these, OLTPS are widely used by businesses to perform day-to-day transactions such as purchases, orders, updating inventory etc. Transactions processed by OLTPS are typically initiated, by users, from the front end of the application. OLTPs are built on the *three tier architecture* which includes: **presentation, application and the data** tier.
+
+### Transactional Data
+
+Transactional data are information about business activies. These data are used by *operational systems* like *Enterprise Resource Planning (ERP), Supply Chain Management (SCM), Human Resource (HR)* Transactional data may have a define set of attributes including char,strings, integers, floats, hexadecimal. Like in the latter, example of transactional data are *invoices, orders, activity records, deliveries, storage, travel records, insurance claims, credit card payments etc*. The following image shows categories into which transactional data fall.
+
+--insert image here--
+
+### Data Model of a Transactional System
+
+A data model in an OLTPS is a way of organizing and structuring data involved in transactional processing. These Systems are crucial for the fulfilment of operational activities. As such their data models must ensure that transactions are processed completely and accurately. The data model may contain entities or objects (e.g patients, doctors etc.), relationships (e.g n:m), constraints(e.g a patient may not visit more than one medical doctor at the same time of the day.). Constraints are rules defined by the business stakeholders that must be respected and implemented at the level of the physical model. These rules ensure data consistency and integrity.Additionally, the data model must contain a schema. A Schema defines the structure of the database and how the data is stored. For instance, an entity must have a name, defined number of attributes as columns with their associated datatypes and the relationships between the entities. Transactional data can be differentiated into **Master data and Movement data**. Master data(also called critical data) is set to be static i.e mostly stay unchanged e.g customer data, while movement data(transactions) are records generated by the core business events(e.g a patient uploading their blood presure values into the system). Transactional or operational data are often extracted from transactional or operational systems then transformed and ingested in analytical systems e.g DWH, where they are analysed to support decision making. The following images illustrate tables for master and movement data as well as enterprise data comprised of transactional and analytical data.
+
+--insert image here--
+
+### Key Selection Criteria
+
+The data model in OLTPS may constitute several tables connected via primary and foreign. As such, several joins operations could be involved in queries to retrieve data. For this reason, the selection of a primary key for the tables is crucial for the performance and functionality of the OLTPS. A primary key is an attribute of a table that uniquely idenfies every record. In relational databases, it is used to enforce entity and referential integrity. The primary key attribute must be *stable, unique and must not accept NULL values*. There are different types of primary keys including: single attribute primary key, composite primary key and surrogate keys. Surrogate keys are integers or UUIDs that are automatically generated and incremented when new entries are entered in a table. Primary keys are indeces that enhance query performance. This emphasises the need for carefully chosing primary key attributes. The following are selection criteria to consider when defining a primary key for tables in a data model.
+
+1. Uniqueness: unique identification of rows
+2. stability: Should not be subjected to frequent changes to avoid breaking relationships.
+3. simplicity: Straightforward and easy to comprehend to facilitate troubleshooting
+4. scalability: Should not be constraint by limits.
+5. performance: Enhance query performance during data retrieval
+6. multitenancy: 
+7. availability: Guarantee data accessibility and minimize downtimes.
+
+### Technology Choices
+
+Considering the volume of data is expected to be processed by OLTP systems and their importance in day-to-day business of an organization, the choice of a technology is vital their *performance, scalability and reliability*. Consider the following classes of technology when creating an OLTP system:
+
+1. Database management systems (DBMS): This system is central to the OLTP System and directly influences Performance, scalability and reliability. Examples of DBMS are: PostgreSQL, MySQL, Oracle, MS SQL Server etc.
+2. Programming language: The choice of the programming language significantly impacts the performance and scalabilty of the OLTP system. The chosen programming language should also be supported by the chosen DBMS.
+3. Application framework: Frameworks facilitate the development of the OLTP system as it provides pre-built components for standart functions like *user authentication and data validation*. Examples of popular frameworks for OLTP systems are: Springboot, .NET, Django etc.
+
+Before making a decision on the technology to use in creating an OLTP system, the following factors can be used to compare the technologies.
+
+1. Performance
+2. Scalability
+3. Reliability
+4. Security
+5. Cost
+6. Integration
 
 
 
