@@ -1,28 +1,66 @@
 # Data modelling and Reporting
 
-*Work in progress*
-
 A great course to learn the fundamental concepts and practical applications of Data Modelling and Reporting.
 
 ## Chapter one: Basic Concepts
 
-A data model is an abstraction of the reality that is composed of the representation of entities, the structural relationshit that exist between them and the interpretation of of the of interaction between the entities with regards to the real world. Data modelling is the process of developing a data model. This usually occurs via several iterations or stages primarilly based on business requirements from concerned business stakeholders as input. Data modelling is a central part of online processing systems, online analytical systems and data stocks. Understanding data and its different types are vital aspects of data modelling. Another important aspect of data is reporting which is a process of presenting data in a structured format to facilitate information retrieval and insights. The following image present the different types of analyses, however, the focus of this course is on *report oriented analyses*.
+A data model is an abstraction of the reality that is composed of the representation of entities, the structural relationshit that exist between them and the interpretation of of the of interaction between the entities with regards to the real world. Data modelling is the process of developing a data model. This usually occurs via several iterations or stages primarilly based on business requirements from concerned business stakeholders as input. Data modelling is a central part of online processing systems, online analytical systems and data stocks. Understanding data and its different types are vital aspects of data modelling. Another important aspect of data is reporting which is a process of presenting data in a structured format to facilitate information retrieval and insights. The following image present the different types of analysis in Business Intelligence, however, the focus of this course is on *report oriented analyses*.
+
+![](./img/types_of_analysis_in_bi.jpg "Types of Analysis in Business Intelligence")
+
+### Types of Data
+
+1. *Structured Data*
+
+This is data that can be stored by both relational and non-relational database management systems. In relational databases, structured data is stored in relations. On the other hand, NoSQL family of databases store structured data based on their individual properties. For instance, structured data is stored in Dcoument stores as documents where each document is a key-value pair that could be nested. Example of structured data is: User master data stored in a relational database.
+
+2. *Semi-structured Data*
+
+These data do not fit into a table structure without prio transformation. Typically, they contain details, like tags, that allow them to be described and converted into a format that can be stored into a relational database. As such, semi-structured data are basically stored in NoSQL databases because of their flexible structure. Because of their flexible structure and light weight, they can be stored in large amounts which is perfect in big data scenarios. Examples of semi-structured data include XML, JSON, YAML, csv. 
+
+3. *Unstructured Data*
+
+These data completely lack a structure that describes them and do not provide any details that allow them to be converted into (semi)-structured data.Because of their lack of structure they cannot directly be stored in relational databases. They are readable and easy to understand by humans, however, they require special transformations before they can be stored. Beside their complexity, they are heavier than (semi)-structured data. As such they require much storage capacity and processing capacity. For these reasons they are mostly stored in NoSQL databases that provide features like scalability to handle large work loads. For efficient data storage management, unstructured data are serialised before they are stored. During retrieval, they are deserialized into their original format. Example of unstructured data include: images, videos, audios, feeds, files like pdf, word, jpg etc.  
 
 ### Big Data
 
+Visit course book for details on the 5Vs of data. These are:
+
+1. Variety: Different types of data from hetegeneous data sources
+2. Volum: Data being generated in large amounts
+3. Velocity: Data being generated and transmitted very fast
+4. Varacity: Noise in data that need to be ignored or removed. That is unwanted data.
+5. Value: Quantifiable insight derived from data to support decision-making.
+
 ### Batch Data Processing
+
+In production, this is a type of processing that handles several tasks simultaneously. However, batch processing can be split into *simultaneous, sequential and concurrent*.
+
++ Simultaneous batch processing: When a particular resorce e.g a node, is used to perform several tasks simultaneously.
++ Sequencial batch processing: A node handles similar cases of an activity almost at the same time.
++ concurrent batch processing: A node handles cases of an activity that may overlap.
+
+Batch data processing has the following general charaterisitics
+
+- Suitable for ETL processes in the context of Data warehousing
+- The amount of data to be processed is large but can be estimated
+- Processing is scheduled to ensure it occurs regularly at given times
+- It is suitable for complex data transformation or calculations.
 
 ### Stream Data Processing
 
-### Relational Databases
+The following are key characteristics of stream data processing.
 
-### NoSQL Databases
+- Data processing occurs at near real time
+- Size and nature of data is not known
+- Suitable suitable for applications requiring quick data processing and analysis.
+
 
 ## Chapter two: Data Modeling Life Cycle
 
 Data modeling is the process of identifying a business problem, then gather and explore details, which is usually implicit and unstructured, related to the problem and developing and explicit model for this problem where the model must be validated, tested before it is deployed and documented.Thus, data modelling is the first step towards the development of any information system. The transformation of implicit knowledge to explicit knowledge occurs is three phases, namely: *conceptual, logical and physical*. Knowledge management in itself is the contineous generation of new knowledge, sharing this accross the organization and directly embedding this into technoligies, systems and products. The conceptual, logical and physical phases involved in data modelling form the data model life cycle covering *five* steps which are: **Business understanding, Acquire and Explore data, Model & Validate, Build & Deploy, and Test, Release and Document**. The following is an illustration of the data modeling life cycle.
 
---insert image here--
+![The Data Modeling Life Cycle](./img/data_modeling_lifecycle.jpg "Data Modeling Life Cycle")
 
 Regardless on the type of data(structured, semi-structured or unstructured), data modeling strongly depends on the storage system(operational, dispositive or data lakes) where the data model will be deployed. Additionally, data modeling considers the IT infrastructure, strategic planning and business activities.
 
@@ -185,10 +223,13 @@ This model was developed to handle the limitations of the hierachical model. Spe
 
 **explore and explain the following network models**
 
---insert two images--
+![](./img/network_model.jpg "Network Data Model Representation")
+
+![](./img/network_model1.jpg "Example of Network Model Database")
 
 **Difference between Hierarchical Data Model and Network Data Model**
---insert image here--
+
+![](./img/hierarchical_vs_network_model.jpg "Difference between hierarchical and network model")
 
 ### Object Oriented Model
 
@@ -199,7 +240,7 @@ Also refered as object-oriented database model(PostgreSQL is an example of a DBM
 **Purpose of Object-Oriented Model**
 The purpose of this model is to levarage the possibility to test a physical entity before building it. Through visualization, the structure and behaviour of the objects can be examined before it is implemented. The following images show the construct of an object-oriented model and an example of an object-oriented model.
 
---insert image of fundamental features of object-oriented here--
+![](./img/fundamental_features_of_objectoriented.jpg "Fundamentals of object-oriented model")
 
 The fundamental features are elaborated as follows:
 + Encapsulation: Technical details are separated from the information required by the user.
@@ -211,7 +252,7 @@ The fundamental features are elaborated as follows:
 
 The following diagram is an example of an object-oriented data model
 
---insert image here--
+![](./img/object_oriented_model_example.jpg "Object oriented model example")
 
 - The customer base, name and region are entities
 - The customer base is the parent class while the name and region are child classes
@@ -226,7 +267,7 @@ In an era where data plays a crucial role in decision-making for businesses, rel
 
 This first phase in relational database design is primarily concerned in *providing* a clear and understandable visualization of the *System's structure and requirments*. The structure is an abstract representation of the real-world which is being modelled while the requirments include the system's capabilities and functionalities regarding the defined business objectives. An Entity Relationship Diagram (ERD) is a tool that is widely used to visualise the structure of the system or conceptualise the system. An ERD is also refered to as an Entity Relationship Model (ERM). Through Visualization, an understanding of the existing entities, their relationships and interdependencies in the system is enhanced. Thus this is the common ground for all parties involved in the development of the relational database model. Additionally, an ERD is software independent and provide the foundation for the logical development of the relational model. The main components of an ERD are: *entities, attributes and relationships* and the following symbols are used to differentiate these components.
 
---insert image here--
+![](./img/erd_symbols.jpg "ER Diagram Symbol")
 
 + Entities are represented by rectangles
 + Relationships are represented by diamonds
@@ -251,7 +292,8 @@ These are characteristics or features that describe an entity. There exist *simp
 + derived attributes are often not provided in the model but can be determined from existing attributes through data manipulation or processing. E.g The bodyMass Index (BMI) is a person's attribute that is not directly collected but can be calculated from the weight and height of a person.
 
 The following is a visual representation of the student entity with its attributes.
--- insert image here--
+
+![](./img/erd_attributes.jpg "Entity-Attribute Relationship for Student example")
 
 3. **Relationships**
 
@@ -260,9 +302,9 @@ The connections that exist between entities or data tables in a relational datab
 - one-to-many or many-to-one
 - many-to-many
 
-
 Example ERDs modeling these relationships can be found in the course book.The following image shows an ERD modeling a many-to-many relationship. 
---insert image here--
+
+![](./img/many_to_many.jpg "Many-to-Many Relationship visual")
 
 The later present upper bounds of cardinalities. Cardinalities in a relationship determine the number of instances of an entity that is associated to other instances of other entities. However, it is important to specify lower bounds or minimun cardinalities in relational modeling. *Minimum cardinalities can only be zero or one, where zero stands for optional and one for mandatory*. In a model between a person and number of registered vehicles, a person *can* have zero or many registered vehicle but a vehicle *must* be registered to a person. This is an example of a optional-mandatory minimum cardinalities relationship. The word *can* implies optional while the word *must* imply mandatory.
 
@@ -270,7 +312,7 @@ An alternative tool to an ERD is the Unified Modeling Language (UML). The follow
 
 The transition from business objectives or requirements to ERD require collaboration between all stakeholders involved in the development project of the relational model. A key activitiy in during the translation of business objectives into an ERD is the identification of entities, their attributes and the relationship that exist between them. Stakeholders involved may include among others: end users, business analysts, database designers etc. The ERD serves as basis in the logical and physical phase.
 
---insert uml here--
+![](./img/uml_modeling.jpg "The conceptual data model")
 
 ### Logical Phase
 
@@ -291,7 +333,7 @@ In this phase, the ERDs developed in the conceptual phase is translated into a s
 7. Documentation: Document the logical ERD detaily. This includes precise description of tables, attributes, relationships and constraints. This is useful for the development team during the physical implementation of the model.
 
 The following image is an example of a model developed in the logical phase.
---insert image here--
+![](./img/logical_phase_model.jpg "The Logical Data Model")
 
 ### Physical phase:
 
@@ -311,11 +353,11 @@ It is in this phase that the logical model is technically implemented on a speci
 
 The steps to follow when creating a physical model are listed on the following image.
 
---insert image here--
+![](./img/criteria_in_physical_modelling.jpg "Steps in Creating a Physical Data Model")
 
 The following is an example of a physical model that can be implemented in a specific database management system.
 
---insiert image here--
+![](./img/physical_model.jpg "The Physical Data Model")
 
 ## Chapter five: Data Extraction Using SQL
 
@@ -333,13 +375,13 @@ SQL is a uniserval computer language used to manipulate and retrieve data in rel
 
 The following image summarises the SQL components.
 
---insert image here--
+![](./img/sql_components.jpg "SQL Commands")
 
 ### SQL Constraints
 
-Remember that relational databases are governed by the ACID principle which relational database management systems must adhere to. The SQL commands discussed in the later and other SQL keywords including **PRIMARY KEY, FOREIGN KEY, CHECKS* NOT NULL etc.** play a vital role in the enforcement of the ACID principles. SQL constraints ensure data consistency, validity and reliability of the system. Beside SQL constraints, it is important to know that, the data management system determines how SQL statements or queries are effectively processed. This means that in the execution process, the system can deploy *query dispatcher, optimization engines, classic query engine and SQL query engine*. In addition, a classic query engine can handle all types of query including sql queries, whereas sql query engines cannot do the same. The following image shows a simple architecture how SQL qeeries are processed.
+Remember that relational databases are governed by the ACID principle which relational database management systems must adhere to. The SQL commands discussed in the later and other SQL keywords including **PRIMARY KEY, FOREIGN KEY, CHECKS* NOT NULL etc.** play a vital role in the enforcement of the ACID principles. SQL constraints ensure data consistency, validity and reliability of the system. Beside SQL constraints, it is important to know that, the data management system determines how SQL statements or queries are effectively processed. This means that in the execution process, the system can deploy *query dispatcher, optimization engines, classic query engine and SQL query engine*. In addition, a classic query engine can handle all types of query including sql queries, whereas sql query engines cannot do the same. The following image shows a simple architecture how SQL quseries are processed.
 
---insert image here--
+![](./img/sql_process_architecture.jpg "Simple Diagram of an Architecture for Processing SQL")
 
 SQL processing is linked to SQL query performance. Higher performance is of utmost importance to organization especially when dealing with large amounts of data. There are 3 ways that can be used to improve sql query performance.
 
@@ -363,7 +405,13 @@ When creating objects like tables on a database, eacht attribute or column must 
 
 The following images show data types supported in SQL server.
 
---insert images here--
+![](./img/datatype_numeric.jpg "Numerical data types")
+
+![](./img/datatypes_strings.jpg "String data types")
+
+![](./img/datatypes_date.jpg "Date data types")
+
+![](./img/datatype_misc.jpg "Other data types")
 
 Other operators supported in SQL include arithmetic, comparison and logical. Following images show some of these operators.
 
@@ -373,7 +421,7 @@ Logical operators include: *ALL, AND, ANY, BETWEEN, EXISTS,IN, LIKE, NOT, OR, IS
 
 Aggregate functions are used to summarise data. Summarising data is a great way to reduce the amount of data being analysed and it also provides quick insights like exposing trends. Aggregate functions can be used to return single values or values by categories. When categories are involved then the data must be group by the categorical variable. The following image shows aggregate functions supported in SQL server.
 
---insert image here--
+![](./img/aggregate_functions.jpg "Aggregate functions")
 
 ### Querying Multiple Tables
 
@@ -389,7 +437,7 @@ Storing denormalised data in one or few tables can cause data redundany even tho
 
 The following images provide a visual explanation of the different join operations using two tables. The shaded areas represent the returning rows. Note that join are not limited to two tables and could also be used with Filters(WHERE clause) and Aggregate functions including Groupings.
 
---insert image here--
+![](./img/sql_joins.jpg "Types of Joins in SQL")
 
 When working with a specific database management system, it is important to explore the data types it supports. This is mostly provided in the documentation. For postgresql you can visit https://www.postgresql.org/docs/current/datatype.html.
 
@@ -406,13 +454,13 @@ Before the introduction of the internet, cloud computing, mobile apps developmen
 
 This is sorrounded around the Consistency, Availability and Partition(CAP) theorem and the ability of NoSQL databases to handle semistructure and unstructured types of data as well as Big Data. For instance, Availability Partition (AP) Systems are always reachable or available even in the event of network failures. For an application built on AP, users will most likely have issues related to the service not being reachable. Additionally, there are five major evolving trends that support the use of NoSQL databases by companies nowadays. These trends are described in the following images.
 
---insert image here--
+![](./img/nosql.jpg "Major Five Trends in NoSQL DBs")
 
 ### How NoSQL Works
 
 In NoSQL databases, data is partitioned or distributed accros multiple databases instances that are connected via a network with no shared resources. For high availability, data is replicated or redundant copies of same data are stored on one or more database instances within the same cluster of nodes. This is called inter-cluster replication. This ability is built in NoSQL databases and are automatically triggered. Automatic failovers ensures that the system stays reachable in the event of network failure. This means that the system can continue performing read and write operations even when one or more nodes in a cluster fails. In relational databases, replication is supported but often requiring a separate software. E.g in PostgreSQL replication is possible with the use of Citus. If an instance fails, the application can forward requests to active nodes. Moreover, it is possible to easilly deploy nodes of a cluster in different geographical locations or zones. This ensures that users can be served by nodes that are closest to them. The ability to replicate data and to deploy nodes flexibly in different locations improves the reliability of the system and increases performance. Because of these aspects i.e flexible schema, horizontal scalability, handling big semi and/or unstructured data, replication/partitioning and increased performance, there is a growing shift from relational to NoSQL databases by startups to large companies, espcially those active in the digital space. NoSqL forster agile development. The following image shows how replication looks like in NoSQL applications.  
 
---insert image here--
+![](./img/replication_in_nosql.jpg "Replication and Reliablility in NoSQL")
 
 ### Benefits of NoSQL Databases
 
@@ -434,7 +482,7 @@ There are several benefits that comes when working with NoSQL databases. A few a
 
 There are four classes of NoSQL databases, each with its particular strengths. These four categories are shown in the following image.
 
---insert image here--
+![](./img/classes_of_nosql.jpg "Types of Non-Relational Databases and their Features")
 
 ### Key-Value Store and Modeling
 
@@ -442,9 +490,10 @@ Key-value store, key-value model or key-value databases are used interchangebly 
 
 Key-Value models do not support joins or complex queries. However, the data stored in key-values could have relationships. As a result, it important for developers to consider relationships and how they can be implemented when storing data in key-value models. A straigth forward approach is to use denormalization where related data  are stored together as key-value pairs or on separate key-value stores. Alternatively, a hybrid approach, where data is stored on both key-value database and ralational database. Thus maximizing the potentials of both DBMS. As already mentioned, key-value databases can store data of different types including text, images, json etc. Thus they can handle both semi-structured and unstructured data types due to their flexibility regarding schemas. *KVMod* is a model-driven approach (MDA) specifically used for modelling data in Key-Value databases. Related to this is a *KVDesign* which is a tool developed for automating the modeling process in key-value stores. KVMod is also a *software development methodology* based on the use of models and model transformations. It separates the business logic or functionalities of an application from the technical implementations using a platform-independent model(PIM). The business logic is modeled using *computation independent model (CIM)* while the technicalities are modeled using *Platform specific model (PSM)*. These 3 levels of abstraction are similar to the modeling procedure discussed in relational databases. At each level of the modeling process, KVMod uses metamodels and leverages a series of model transformations to move from one model to the other. This approach aims at conceptualising the model and provide a query which automatically generates a logical and physical model for key-value systems via a series of mapping rules. In addition to the entities and relationships conceptualised, it is important to understand how entities are handled in run time. This can be modeled using *platform independent data metamodel (pidm)* and *key-value logical metamodel(kvlm)*. The following images illustrate *KVMod Trasformation process* and a *Key-Value Logical Metamodel* respectively.
 
---kv logical metamodel--
+![](./img/kv_logical_metamodel.jpg "Key-Value logical data model")
 
---kvmod transformation process--
+
+![](./img/kvmod_transformation_process.jpg "Key-Value transformation model")
 
 1. *Creation of a conceptual data model, which conforms to the PIDM*: It uses a UML-Like syntax to define entities, attributes and relationships and a SQL-Like syntax for queries. This enables the integration of data structures and access queries.
 
@@ -515,9 +564,10 @@ This is a key-value store is a database that leverages consistent performance ir
 
 Document oriented Databases are also called Document stores, Document databases or aggregated databases. They store collections of documents where each entity, with its associated data, is stored within a document. Thus, documents are central to documents databases. It is assumed that documents encode encapsulated information into a standard format. Observed formats in practice include: JSON, XML, YAML or BJSON. Documents can be understood as objects. These data strucures allow data to be stored hierarchically or in nested form. Theire flexible structure allows slots, parts, sections and keys to be switched around.The fields in a document store are optional but can take various types of documents. Their flexibility make them robust which is essential in big data environments. However, flexible schema pose a challenge in enforcing rules as oppose to relational databases. The following images illustrate the structure of a document store.
 
---insert image here--
+![](./img/documentstores.jpg "Document stores database")
 
---insert image here--
+
+![](.//img/document_store_structure.jpg "Example of Document stores structure")
 
 Document databases have two main characteristics that set them apart. These are:
 
@@ -549,10 +599,9 @@ Document databases often provide a query language or API which is used to first 
 + Full text search: Documenent containing exact matches of text values in a field or sets of given fields are retrieved.
 + Aggregation: Development of data pipeline as discussed in the later.
 
-It is possible to extract and analyse data from document databases using connectors provided by Business Intelligence Tools. The connectors in BI tools simplify data extraction which significantly reduces the time for developing complex data aggregation pipelines using aggregators provided by document database management systems. Additionally, BI tools provide data visualization features. Thus simplifyign the entire data analysis process from data extraction. Some connectors allow data to be retrieved using SQL-like approach. For instance, power bi provides a BI connector for MongoDB. This connection can be established via *Java Database Connectivity (JDBC) or Open Database Connectivity (ODBC)* drivers, allowing data to be retrieved in a structured way. The following image illustrate shows a structural illustration of the connection.
+It is possible to extract and analyse data from document databases using connectors provided by Business Intelligence Tools. The connectors in BI tools simplify data extraction which significantly reduces the time for developing complex data aggregation pipelines using aggregators provided by document database management systems. Additionally, BI tools provide data visualization features. Thus simplifyign the entire data analysis process from data extraction. Some connectors allow data to be retrieved using SQL-like approach. For instance, power bi provides a BI connector for MongoDB. This connection can be established via *Java Database Connectivity (JDBC) or Open Database Connectivity (ODBC)* drivers, allowing data to be retrieved in a structured way. The following image shows a structural illustration of the connection.
 
---insert image here--
-
+![](./img/bi_connector_for_document_stores.jpg "BI Connector Components")
 
 ### MongoDB
 
@@ -577,9 +626,9 @@ db.products.aggregate([
 
 In wide column stores, data is stored vertically instead of horizontally like in relational databases. This arrangement enables the efficient storage and retrieval of data. Since data is stored in columns, this allows data compression as data in a column are of same data type. Columns with no entries or only null values are not stored, improving data storage as opposed to row based data storage in relational databases where columns in a table must have the same number of entries, irrespective whether the rows are empty or not. Additionally, data stored in columns can be efficiently stored in disk as each column can be stored in the same location as opposed to relational databases where values of a column are spread accross several locations on disk. This possibility to aggregate data into column families is optimal in distributing computing as data in a column family can be stored in a single node. Thus improving data retrieval. Column family stores consist of schemaless *key spaces*, similar to schemas in relational databases, that contain information about the structure and organization of data in the column store database. Within key spaces, there can exist several *column families*. Column families are a collection of columns, typically those that are frequently queried together, that a logically stored together. A column family should be considered as a table like in relational databases. Since data is stored in columns in wide column stores, every row must not have the same number of columns or entries. Key spaces and column families must have their identifiers. Similarly, the first column in a column family is a *row key*. Row keys are like primary keys in a relational model. To track changes made on column entries, there exist a timestamp column key. Despite the fact that they are efficient in data storage, scalability and data retrieval, they are not suitable for online transaction systems. Rather, they are suitable for analytical systems. Column keys are the column names which are used to query entire columns. The following images demonstrate how data is stored in wide column stores.
 
---insert first image here--
+![](./img/column_store_vs_row_store.jpg "Column-Oriented Databases Vs. Row-Oriented Databases")
 
---inser second image here--
+![](./img/aggregate_in_column_stores.jpg "Example of Aggregate-Oriented Database")
 
 #### Data Aggregation in the context of Apache Cassandra
 
@@ -622,7 +671,7 @@ Data can be retrieved in Cassandra via several approaches including the followin
 
 The Entity-Attribute-Value model is the foundation of graph databases. In a graph model, *nodes* represent entities while *edges* represent relationships. Nodes store all information about an entity while edges store the relationship type. The edges can be *directional or undirectional*, and there is no restriction on the number of relationships an entity is allowed to have. A Relationship must have a name and could represent different types of relationships like parent-child, is-friend-of etc. Graph databases can handle structured, semi-structured and unstructured data, and any kind of relationships. Since nodes and edges are stored in graph databases, this leverages high query performance as compared to relational database where complex joins may impact the system negatively. Through edges, it is possible to traverse or navigate the graphs. This is particularly important in analytical scenarios. Graph databases are mostly used in developing social networks(e.g X, Meta etc.), recommendation systems, and fraud detection systems. This is because relationships and near real-time analysis of large amounts of data are of particular interest in these systems. Addtionally, graph databases are flexible and scalable making highly adatable(e.g incorporating new relationships) and cost effective, respectively. *semantic graph models* are a specific type of NoSQL databases that leverage *Resource Description Framework (RDF)* triplestore to integrate data from multiple sources, establish relationships between entities and extract insights. Semantic graph models can be used for knowledge discovery in existing as well as new data. The following image illustrate a graph database model.
 
---insert image here--
+![](./img/graph_model.jpg "Example of Social Network Graph")
 
 #### How Graph databases work
 
@@ -721,13 +770,13 @@ Shapes have 3 propertie, namely;
 The following are the 4 main properties of a graph: **connected & disconnected, directional & undirectional, weighted & unweighted, tree & spanning tree**.
 These properties are explained in the following image.
 
---insert image here--
+![](./img/graph_properties.jpg "Graph Properties and its Representation")
 
 + **Graph Densitiy**
 
 The key take aways here are the calculations for *maximum density and actual density* as well as the difference between densed and sparsed graphs. A densed graph is results when there are several edges and a sparse graph results when there are few edges in the graph. Maximum density occurs when every node has edges to every other node in the graph.
 
---insert image of formula here--
+![](./img/graph_density_formula.jpg "Density formula in Graphs")
 
 #### Benefits of Graph Databases
 
@@ -779,7 +828,7 @@ According to (Greenacre,2016), data reporting is the process whereby companies o
 
 In addition to the factors in the latter, it is strongly recommended to consider the features of the business intelligence or data reporting tools as well because the reporting tool should be able to meetup to the reporting requirements. The following image illustrate the key features to consider about the data reporting tool.
 
---insert image here--
+![](./img/key_features_of_reporting_tools.jpg "Key Features of Data Reporting Tools")
 
 Some widely used business intelligence or data reporting tools include: *microstrategy, Tableau, Microsoft Power BI, Google Data Studio, SAP Crystal Reports, SAS Visual Analytics, QlikView, Looker, Salesforce Reporting, IBM Cognos Analytics, Pentaho, Whatagraph, Reportei, Hive, Wrike, Proworkflow, ThoughtSpot, Zoho Analytics*. The listed tools is not exhaustive.
 
@@ -823,13 +872,13 @@ OLTP is a form of *data processing* designed for transactional applications like
 
 Transactional data are information about business activies. These data are used by *operational systems* like *Enterprise Resource Planning (ERP), Supply Chain Management (SCM), Human Resource (HR)* Transactional data may have a define set of attributes including char,strings, integers, floats, hexadecimal. Like in the latter, example of transactional data are *invoices, orders, activity records, deliveries, storage, travel records, insurance claims, credit card payments etc*. The following image shows categories into which transactional data fall.
 
---insert image here--
+![](./img/transactional_data_examples.jpg "Types of Transactional Data")
 
 ### Data Model of a Transactional System
 
 A data model in an OLTPS is a way of organizing and structuring data involved in transactional processing. These Systems are crucial for the fulfilment of operational activities. As such their data models must ensure that transactions are processed completely and accurately. The data model may contain entities or objects (e.g patients, doctors etc.), relationships (e.g n:m), constraints(e.g a patient may not visit more than one medical doctor at the same time of the day.). Constraints are rules defined by the business stakeholders that must be respected and implemented at the level of the physical model. These rules ensure data consistency and integrity.Additionally, the data model must contain a schema. A Schema defines the structure of the database and how the data is stored. For instance, an entity must have a name, defined number of attributes as columns with their associated datatypes and the relationships between the entities. Transactional data can be differentiated into **Master data and Movement data**. Master data(also called critical data) is set to be static i.e mostly stay unchanged e.g customer data, while movement data(transactions) are records generated by the core business events(e.g a patient uploading their blood presure values into the system). Transactional or operational data are often extracted from transactional or operational systems then transformed and ingested in analytical systems e.g DWH, where they are analysed to support decision making. The following images illustrate tables for master and movement data as well as enterprise data comprised of transactional and analytical data.
 
---insert image here--
+![](./img/master_and_movement_data.jpg "Master and Transactional Data")
 
 ### Key Selection Criteria
 
@@ -859,6 +908,53 @@ Before making a decision on the technology to use in creating an OLTP system, th
 4. Security
 5. Cost
 6. Integration
+
+## Online Analytical Processing (OLAP)
+
+OLAP is a technology widely used in BI and Data Analytics to organize and analyse large amounts of multidimensional data, from various sources, to support complex and ad-hoc business decion-making. OLAP Systems are mostly used in data Warehousing. A data warehouse is a central repository for storing structural data integrated from different sources. This allows users to easilly and flexibly access data to perform complex analytical tasks and generate reports. OLAP databases are not optimized for data analytics as they are purposely built for the extraction of business intelligence information and to address the limitations of transactional databases. For this reason, querying OLAP databases is time consuming and labour intensive. In OLAP systems, data are organized and stored in *multidimensional cubes* where *each dimension* of the cube is made up of at least two attributes arranged in hierarchical order. These dimensions are used to sort and analyse the data facts from different perspectives in support of data driven decion-making. For example, dimensions in a sales cube could be *time, location, product and salesperson*. OLAP cubes provide techniques that allow users to analyse facts to obtain valuable insigts from the data. Some of these operations incude: **roll-up, drill-down, slice, dice, and pivoting**. Additonally, users can explore data by performing operations like *aggregation, summarization, filtering and ranking* on the data in OLAP cubes. 
+
+### Structure of an OLAP Cube
+
+An OLAP cube is a multidimensional database that lies at the center of an OLAP system. The cube is made up of *dimensions, facts and cells*, and the data are stored as arrays. This arrangement enables efficient data processing and analysis giving them an edge over traditional databases. The dimensions are categorical attributes arranged in hierarchical order, used to navigate the cube and describe facts. Facts are numrical value that are measured or calculated. Facts are stored in cells and cells are intersecting points for the dimensions. SQL and other reporting tools can be used to query, report and analyse data stored in multidimensional cubes. However, this leads to performance loss with increasing amounts of data. For this reason efficient querying techniques via roll-up, drill-down, slice, dice and pivoting are available for OLAP systems. Other operations like aggregation, filtering and ranking are equally available. OLAP Systems are filled with data from different sources, thus allowing users to analyse these data simultaneously. OLAP cubes can also be divided into one or more cubes known as *Hypercubes*. Using microsoft technologies, Microsoft SQL Server Analysis Services (SSAS) can be used to create a Cube. A cube can be built from data in a data warehouse (dwh), which get their data from OLTP(source systems) databases like MS SQL Server. Reporting tools like SQL Server Reporting Services(SSRP) can then be used to create dashboards, reports, scorecards and perform other forms of analysis. The following image illustrates a simple architecture that can be used to create an analytical systems.
+
+![](./img/architecture_with_olap.jpg "Example of General DWH Infrastructure with Architecture")
+
+### Basic Analytical Operations supported by OLAP cubes
+
+There are five basic techniques used for analysing data in OLAP cubes. These include
+
+* Slice
+
+![](./img/slice.jpg "Slice operation")
+
+* Dice
+
+![](./img/dice.jpg "Dice operation")
+
+* Drill-down and Roll-up
+
+![](./img/drilldown_rollup.jpg "Drill-down and Roll-up operation")
+
+* Pivoting
+
+![](./img/pivoting.jpg "Pivot operation")
+
+
+### How to prepare data for OLAP
+
+The following steps should be considered when developing a multidimensional cube or star schema for analysis purpose.
+
+1. If the cube will get its data from a dwh, then create a dwh first.
+2. Define attributes for each dimension and how the attributes should be ordered in each hierarchy. Also, define the measures that should be included in the multidimensional cube or star schema
+3. Clean and transform the data e.g remove duplicates, correct or remove errors, filter the data, set data types.
+4. Create the cube or tables for the facts and dimensions
+5. Integrate data into the cube. ETL tools can be used for data integration
+6. Schedule update or refresh.
+
+### Types of OLAP Systems
+
+There are many types of OLAP Systems but the three common ones are: Relational OLAP(ROLAP), Multidimensional OLAP(MOLAP), and Hybrid OLAP(HOLAP). The each of them have their strengths and weaknesses. ROLAP stores detailed data in relational databases as tables, while MOLAP stores aggregated data in cubes and HOLAP stores detailed data in relational databases and aggregated data in cubes. HOLAP exploits the strength of both ROLAP and MOLAP. The following images show the different types of OLAP systems and their comparisons.
+
 
 
 
