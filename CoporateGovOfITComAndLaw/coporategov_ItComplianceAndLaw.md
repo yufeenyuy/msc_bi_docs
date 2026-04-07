@@ -113,11 +113,11 @@ This standard is made up of 3 main risk management sections which are, *principl
 + Human and cultural factors: Human factors include management override, mistakes and other weaknesses and strengths. Culturally generally refers to the organization culture(siloed, flat, open command hierarchy, etc).
 + Continual improvement: Continuous improvement over time is a specific goal. This principle is common to other frameworks likt *ITIL and Six Sigma*.
 
---inset image iso_31000-2018_eight_risk_principles--
+![Sources](./img/iso_31000-2018_eight_risk_principles.png)
 
 *ISO 31000:2018 Risk management Framework*
 
---insert image here--
+![Sources](./img/iso_31000-2018_risk_management_framework.png)
 
 The management framework of the ISO 31000:2018 is made up of six components as seen on the image above.
 These six components are described as follows:
@@ -168,11 +168,11 @@ This standard also suggest best practices, which are not mandatory, for *Informa
 
 There are also six annexes (Annex A through Annex F). The annexes are detailed instructions on how to perform a risk assessment. The Risk Assessment process of this standard is made up of eight steps. These are presented in the following image.
 
---insert image here--
+![Sources](./img/iso_27005-2018_risk_assessment_process.png)
 
 The following image illustrates the Risk Treatment process suggested in ISO 27005:2018.
 
---insert image here--
+![Sources](./img/iso_27005-2018_risk_treatment_process.png)
 
 Elaboration of **Context Establishment**
 
@@ -330,7 +330,7 @@ ISO/IEC 27001:2018 in other words ISO 27001 is the ISO/IEC Information Security 
 
 Laws and Regulatory bodies mandate companies to be IT Compliant among others. The following figure shows a three phase(Requirement, Implementation and Test) action-oriented plan that companies can adopt in the implementation of rules to be IT compliant.
 
---insert image here--
+![Sources](./img/measure_oriented_it_compliance_process.png)
 
 The phases of the action-oriented IT compliance process are discussed below:
 
@@ -373,24 +373,412 @@ The different groups of stakeholders and their requirements are listed below:
 
 After the requirement analysis phase i.e the compilation of company specifications and definition of measures is done, the implementation of the defined measures are initiated in this phase.The first step in this phase is the selection of measures to implement bases on the expected risk. It is recommended to perform a cost-benefit analysis before selecting or disqualifying a measure. In the case a measure will not be implemented due to risk acceptance, the reasons for arriving at this decision should be documented. Control mechanisms like guidelines, procedures, organisational structures or instructions for action should be introduced to measure the efficiency and effective of the measures. The following shows a possible decision tree that can be used to evaluate measures.
 
--- insert image here--
+![Sources](./img/decision_for_evaluating_measures.png)
 
 3. IT compliance: Examination of the Measure Stage
 
 This phase is concerned with testing the measures, procedures and other control mechanisms to assess the level of efficiency and effectiveness of the implemented measures. This step is relevant for quality assurance. The following table presents activities that can be used during testing.
 
---insert image here --
+![Sources](./img/activities_within_the_framework_of_the_review_of_measures.png)
 
 ## Unit 4: Basic IT Protection According to BSI
 
+In a technology driven world, companies of all sizes depend on IT Systems. In the event, that the IT system is compromised, e.g system failure, DDoS etc, several activities could go wrong in the company including the following:
+
++ Loss of availability: System becomes inaccessible for all employees resulting in the inability to perform routine or strategic task.
++ Loss of confidentiality: Personal Identifiable Information or coporate critical information may is breached, which can damage the reputation of an individual or company
++ Loss of integrity: Individual's information may be altered or falsified thus making them incorrect. This may lead unexpected charges, false deliveries, wrong identity etc.
+
+For these reasons, it is very relevant for companies to build secure IT systems. IT security is the protection of information stored digitally, on paper and in our heads. Information Security Management (ISM) is an approach that involves the planning and controling of tasks required to *information security*. ISM includes an emergency and crisis management system also called *Disaster Recovery (DR) or Business Continuity Plan (BCP)*. Such systems are set to go live to keep a business running in the case of emergencies or disaster, until the system is put under control by safe hands. The IT-Grundschutz of the German Federal Office of Information Security(BSI) provides support for the design of crisis or emergency management systems. IT-Grundschutz (Basic Protection) contains a contruction kit which helps in identifying and applying security measures based on the basic IT security requirements. This kit has a success rate of 80% and in cases where security needs to tightened, then the IT-Grundschutz can be fortified with extensive measures. This IT-Grundschutz is applicable for companies of all sizes as it can be adjusted to the company's requirements. Companies can be IT-Grundschutz compliant by being ISO-27001 as this proofs that the company has implemented sufficient IT-Security measures.
+
+### Overview and Structure of IT-Grundschutz
+
+The IT-Grundschutz was created in the mid-1990s and in 2017 it was modernised by updating its Catalog. As a result the It-Grundschutz is replaced by the *IT-Grundschutz Compendium*. This acts as an encyclopedia for IT security best practices. In the meantime, companies are still allowed to operate on the IT-Grundschutz security guidelines. The BSI has published three documents on the IT-Grundschutz which are:
+
+- BSI standard: Recommended methods, processes, procedures and approaches are described here.
+- IT-Grundschutz compendium: Components and their hazards and security requirements are described here.
+- Supplementary docs like guide to basic security. This is available free of charge on the BSI website.
+
+1. **The BSI Standards**
+
+In the modernisation process, BSI 100-x was replaced by BSI 200-x with the exception of 100-4.
+
++ BSI Standard 200-1: This is the management system for information security.
+    - This defines the general requirements of an ISMS for the IT-Grundschutz approach. These requirements are within the framework of ISO/IEC 27001 and takes into account several suggestions of the ISO/IEC 27002.
++ BSI Standard 200-2: IT-Grundschutz methodology.
+    - This standard contains tried-and-tested instructions for implementing an ISMS in practice and in accordance with BSI standard 200-1. It also provides the procedure for the development of a company's IT-Security infrastructure.
++ BSI Standard 200-3: Risk analysis based on IT-Grundschutz
+    - This standard an effective and efficient method for conducting a supplementary security analysis.
++ BSI Standard 100-4: Emergency management
+    - It describes a method for establishing an emergency management system. It is based on BSI standard 100-2 and supplements it where necessary.^
+
+### IT-Grundschutz Catalog and IT-Grundschutz Compendium
+
+Basically, the IT-Grundschutz provides three types of catalogs which are: *Component catalog, threat catalog and measures catalogs*. Althaugh the IT-Grundschutz has be replaced by the IT-Grundschutz compendium, these catalogs have been modified and embedded into the It-Grundschutz catalog. These three components are described as follows:
+
+1. **Component Catalog**
+
+Components like IT, Network, Infratructure and security management are described in this catalog.
+
+2. **Threat Catalog**
+
+This catalog contain descriptions of threats that could arise from unexpected events(absence of staff) or intentional acts(destruction of equipment).
+
+3. **Measures Catalog**
+
+This catalog contains description of measures that are used to address threats. However, they were eliminated from the IT-Grundschutz during modernisation. As a result, the IT-Grundschutz compendium now allows specification of requirements to be met within the individual components of the total 80 components. These requirements are generic and abstract than measures, thus creating more freedom as to how components are protected. However, the IT-Grundschutz compendium provides less assistance in this task.
+
+The compendium is divided into the follow parts:
+
++ Role definition
++ Glossary
++ Elemental threats
++ components
++ Process components
++ System components
+
+The building blocks of the compendium are assigned to one of ten layers classified in process and system components.The process modul is implemented once for the entire organisation while the system modul is implemented once for each system. These layers are listed in the image below:
+
+![Sources](./img/process_and_system_components.png)
+
+### Approach to IT Governance
+
+Protective measures are formalised IT Security programs with approved policies and procedures put in place by organisations. This measures are should be reviewed annually. For the successful implementation of these protective measures, a well planned and control IT security process must be followed. This plan and control IT security process for implementing protective measures follow six steps which are:
+
+1. Structural analysis: The main component (e.g IT systems) of the IT network are recorded and their relationships to one another are noted.
+2. Determining the need for protection: The level of damage that could arise from loss of *availability, confidentiality and integrity* is ranked(normal, high, very high) to determine the need for protection. Qualitative measurements are used to be able to assess the level of damage an event can cause based on the capabilities of the company being assessed. These qualitative measures can be interpreted as follows:
+    - normal: the level of damage is limited and manageable
+    - high: the level of damage can be considerable
+    - very high: the level of damage can reach existential or catastrophic levels.
+3. Modeling (selection of security requirements): The relevant security requirements are selected based on the of the structural analysis.
+4. IT-Grundschutz check: A review conducted to determine the requirements that have been met.
+5. Risk analysis: A supplementary risk analysis is performed in the event of high risk. As a result, additional measures may be required.
+6. Implementation: The selected measures are implemented to meet the requirements
+
+The visual representation of these steps is shown on the following image
+
+![Sources](./img/security_concept_for_standard_protection.png)
+
+### Usage Example of IT Governance
+
+**Read example in course book!**
+
+## Unit 5: Introduction To IT Service Management
+
+**Atlasian** is the company that produces *Jira, Trello, Bitbucket and other project & service management solution*. They define **ITSM** as *the manner in which IT teams manage the end-to-end delivery of service to customers*. The end-to-end service delivery includes all the development stages along side the hardwares used for a software development project. Stages include: *initial planning, development/operations (DevOps), quality control, test, production/rollout and change management. Hardware include: drives, servers, mobile devices etc.
+
+According to *ServiceNow**, a top ITSM solutions provider, *ITSM* is the *planning, delivery, and suuport of IT services via a mix of people, processes and technology(ServiceNow, n.d)*. In a wake to improve customer satisfaction and improve IT services, ServiceNow has integrated AI & ML in the ITSM solution products to assist in common help desk tasks like phone calls and determining shortages in IT resources.
+
+According to Atlasian, there are seven core ITSM processes covering all ITSM activities regardless of the technology level(manual or automated). These prcesses are presented on the image below.
+
+![Sources](./img/the_seven_itsm_core_processes.png)
+
+These processes are described as follows:
+
+1. *Service request management*
+
+Also known as servicedesk/helpdesk, it focus on the procedure of receiving and responding to request. Best practice is leveraging chatbots or self-service options to maintain uniform responses to similar requests.
+
+2. *Service catalog*
+
+This is a helpdesk web page with links to self-service solutions, accessible only by employees, a group of users, or members of an organization/institution, for common issues/problems and helpdesk contact information. The service catalog helps reduce the number of incidents the IT or helpdesk team receive. Hence, creating more time for IT and the helpdesk to focus on more serious issues.
+
+3. *Knwoledge, policy, and procedure*
+
+This is a knowledge base created for the collection, maintenance, distribution and sharing of information throughout an organization. It could be accessible to everyone or restricted based on factors like organizational culture, employee rank/position, identity access management (iam) policy/procedure. To avoid creating redundant solutions, a company should not be overly strick on granting access to the knowledge base. A knowledge base typically stores information like digital or paper artifacts, shared documents, proprietary software, client list, revenue/pricing data, compensation data, standard forms, templates, contracts/SLAs etc,.
+
+4. *Indident Management*
+
+The main aim of an incident management tool is to minimize system down times that could arise from hardware, software or system issues preventing employees from performing their duties. For instance, inappriopriate software installations or updates could throw an error blue screen preventing an employee from being able to login into the conpany's network. Incident management is also available as self-service or helpdesk, and its performance is measured by the reduction rate of the overall number of incidents.
+
+5. *Problem Management*
+
+This involves attepts to solve known and unkwon problems which cannot be resolved by the normal incident management. All problems should be logged and tracked as they progress toward closeout or completion.
+
+6. *Asset Management*
+
+IT Asset management is the core process for keeping track and maintaining the inventory of IT assets used in an organization. Assets include hardware, software, and data. IT asset management is a lifecycle that starts with asset acquisition through deployement and use, then ends at disposal at the end of an assets life.
+
+7. *Change Management*
+
+Due to situations like increasing workloads in an organisation or technological improvements, an organisation may have to change, upgrade or modify its systems. This is done in the process of change of management.
+
+### What is ITIL V4?
+
+Information Technology Infrastructure Library is initially a britisch government best practice for efficient use of resource and waste management in IT service delivery. Today it has been adopted by the private and public sector as the standard or framework for providing best practices in ITSM. The first version was published in 1989 and the latest version was released in 2019. ITIL V4 is composed of five major parts collectively known as *Service Value System (SVS)*. These components are:
+
+A. Service Value Chain (SVC) which has six activities or steps
+B. seven guiding principles
+C. a collection of 34 ITIL practices, broken down into three subject areas which are: *general management practices, service management practices, and technology management practices*
+D. governance, and
+E. continual improvement
+
+#### A. Service Value Chaing
+
+Additionally, ITIL V4 also contains a service model which is based on four dimensions of service management. The following figure illustrates the ITIL Service Value Chain concept with six service value chain activities.
+
+![Sources](./img/svc_concept.png)
+
+These six service value chain activities are described as follows
+
+1. *Plan*
+
+In this activity, input requirements are gathered. Inputs could be elements required by law or regulations(e.g data minimisation). The output includes the engaged activity to maintain gathered requirements. For instance, taking measures to maintain service level agreements.
+
+2. *Improve*
+
+Monitoring and measuring performance and quality levels to check for improvements. Input include performance reports and output could be a report detailing all identified issues requiring follow-up.
+
+3. *Engage*
+
+These are specific activities from vendors/employees/customers aimed at communicating or creating awareness towards **value, demand, requirements, reporting, improvements and performance**.
+
+4. *Design and transition*
+
+This activity incorporates stakeholder requirements or needs into the service, or product and ensuring that expectation related to delivery deadline, quality standards and allocated budget are met.
+
+5. *Obtain/build*
+
+This activities entails getting resources required to build a product or service then actually building the product/service. At every step of the building process, testing must be done. Interactions with suppliers and quality control are critical for ensuring that stakeholder expectations are being met accordingly at each progress step or milestone. Contracts and communications with vendors and clients are basic elements of this activity.
+
+6. *Deliver and support*
+
+In most cases, this is the final service value chain activity and it consist of delivering the product/service to the customer. Additional services of this activity is providing quality customer service and acceptable response time for support issues.
+
+#### B. ITIL V4's Seven Guiding Principles
+
+![Sources](./img/itil_seven_guiding_principles.png)
+
+These principles are best practices which act as a code of ethics and are also found in othe frameworks and standards apart from ITIL. These principles are described as next:
+
+1. *Focus on value*
+
+The service provider should add value to a service through quality improvements.
+
+2. *Start where you are*
+
+Make use of current tools and avoid trying to invent the wheel.
+
+3. *Progress iteratively with feedback*
+
+Create feedback loops at every major level of the product/service development to create room for identification of issues and improvements. This also helps to keep every active stakeholder in the development process upto date ensuring that all parties have the same level of understanding.
+
+4. *Colloborate and promote visibility*
+
+The development process should be charactirised by information sharing and collective support. No one should have monopoly of knowledge. Also ensure that everyone feels appreciated and motivated.
+
+5. *Think and work holistically*
+
+The development process should be transparent, clear an visible to every stakeholder.
+
+6. *Keep it simple and practical*
+
+Eliminate every possible redundancies in the development process and keep only those steps or behaviours that add value or enrich the product development life cycle. Example, eliminate unnecessary meetings
+
+7. *Optimize and automate*
+
+Where possible, manual work should be replaced via automations. As a result resources could be redirected to other areas.
+
+#### C. ITIL Management Practices
+
+Unlike the distinction between governance and management activities as discussed in COBIT 2019, the key entity terms in ITIL management are: **general management practices, service management practices and technical management practices**. 
+
+![Sources](./img/itil_v4_34_total_management_practices.png)
 
 
+#### D. What is SVC for governance?
+
+pass
+
+#### E. What is SVC for continuous improvement?
+
+Continuous improvement is represented by a flowchart of questions and answers which act as a guide for maintaining or improving service quality. This is illustrated in the following figure:
+
+![Sources](./img/svc_continuous_improvement_flowchart_process.png)
+
+**The four dimensions in ITIL 4**
+
+1. *Organisation and people*
+
+- Examination of soft and hard skills
+- Aligning people to the organisation's goals
+
+2. *Information and Technology*
+
+- Data driven services
+- Automation for quality improvement and efficiency
+
+3. *Partner and Suppliers*
+
+- Selecting a vendor
+- Monitoring and measuring the performance of the selected vendor's services/products with respect to contract requirements
+
+4. *Value Streams and Processes*
+
+- Quality must be of expected standard at all levels from processes to the entire product/service. I.e the parts should be as good as the whole.
+
+![Sources](./img/itil_v4_four_dimensions.png)
+
+In an organization, the IT Service manager is in charge of handling the ITIL V4 responsibilities. The person incharge of ITIL tasks should be familiar with the firms service catalog and should have at least one IT certification.
+
+### What is ISO/IEC 20000-1:2018?
+
+This global standard for ITSM was created by the British International Organaisation for Standardisation (ISO). ISO is an independent non-governmental organisation with a membership of 165 national standards. Unlike ITIL, this standard requires *mandatory items* i.e what one must have or do. This standard can also act as a complementary to the ITIL standard. This means that an organisation may start its ITSM journey with ISO and later on complement with ITIL to implement ITIL best practices.
+
+#### Structure and Contents
+
+The ISO 20000-1:2018 is comprised of 10 clauses, 59 total processes and requirements for writen evidence to support actions taken to comply with the clauses and processes.
+
+![Sources](./img/iso_20000_1_2018_service_management_system.png)
+
+The ISO 20000-2018 uses the Service Management System Model (SMS), which includes the following 10 clauses with their respective processes. The SMS starts with chapter/clause 4 and goes through to chapter/clause 10. These chapters or clauses are described as follows:
+
++ Chapter 1: scope
+    Defines the scope of SMS
++ Chapter 2: Normative references
+    There are no citations which act as requirements
++ Chapter 3: Terms and definitions
+    Standard terms taken for IEC encyclopedia and ISO online platform.
++ Chapter 4: Context of the organisations
+    This clause integrates the SMS concept with stakeholder needs via the following processs:
+    - 4.1 Understanding the organisation and its context
+    - 4.2 Understanding the needs and expectations of stakeholders
+    - 4.3 Determine and document the scope of the SMS
+    - 4.4 The service management system
++ Chapter 5: Leadership
+    This clause expects an organisation to have a formal leadership structure in place for service management, and includes the following processes:
+    - 5.1: Leadership & commitment: an approved budget item
+    - 5.2 Policy: Policies must be written in a document
+        - 5.2.1 Establishing the SM policy
+        - 5.2.2 Communicating the SM policy
+    - 5.3 Organisational roles, responsibilities and authorities.
++ Chapt 6: Planning
+    An organisation must have an formal program to address service risks/opportunities and includes the following processes:
+    - 6.1 Actions to address risks and opportunities
+    - 6.2 Service management objectives and planning to achieve them
+        - 6.2.1 Establish objectives
+        - 6.2.2 Plan to achieve objectives: "How are we going to do this?".
+    - 6.3 Plan the service management system
++ Chapter 7: Support for the SMS
+    This clause requires an organisation to dispose resources to support SMS. This includes producing, maintaining/protecting, and updating related documents. The following processes are included:
+    - 7.1 Resources: Ensure that the budget has allocated resources
+    - 7.2 Competence: Ensure that an experienced team is available
+    - 7.3 Awareness: Get the word out!
+    - 7.4 Documented information: the entire 7.5 ensures that the program formalised with a budget.
+    - 7.6 knowledge: Part of a formal program
++ Chapter 8: Operation of the SMS
+    Details for operating an organisation's SMS program are provided by this clause and overlaps with other clauses for some processes:
+    - 8.1 Operational planning and control
+    - 8.2 Service portfolio
+    - 8.3 Relationship and agreement
+    - 8.4 Supply and demand
+    - 8.5 Service design, build and transition
+    - 8.6 Resolution and fulfillment
+    - 8.7 Service assurance
++ Chapter 9: Performance evaluation
+    This clause is concerned with the performance of the service management program and how this can be improved.This includs monitoring, audits, review and reporting.
++ Chapter 10: Improvement
+    Management actions to improve service when measured against the company's objectives.
+
+### Other ITSM Frameworks and Standards
+
+Apart from ITIL and ISO 20000, other ITSM assessment tools exist which can drive an organisation toward increased efficiency and cost savings in its service delivery. Examples include
+
+1. *TOFAG Framework*
+    The open group architecture framework sterms from the U.S Department of Defense IT Management framework. 
+Its focus is on enterprise-level workflows and enterprise architectures.
+
+2. *MOF*
+    The Microsoft Operations Framework has similarities with ITIL and focuses on the entire IT life cycle
+incorporating MS solutions frameworks best practices. It is often used with microsoft products and includes a version for cloud services.
+
+3. *FitSM*
+    This is an open souce free ITSM standard created through a grant from the european commission. It focuses
+on ITSM effectiveness.
+
+4. *Six Sigma*
+    Created by motorola, it focuses on quality and minimisíng defects in products and services. This framework is suitable for large organisations and is very popular with many Fortune 500 corporations.
 
 
+## Unit 6: IT Law
+
+### Overview of Relevant Lawss
+
+1. Electronic commerce law (e-commerce law)
+
+    - Regulates buying and selling of goods and services on the internet
+    - In Germany Every website or webshop must have an Impressum according to the Telemediengesetzt
+    - Impressum contains contact details like name, physical address, and two contacts.
+    - Customer has the right to withdraw from a sale transaction without explanation(exception in health and safety cases or custom-made items). i.e return policy. 
+    - Customer personal data is crucial and must be handled with care.
+
+2. Data protection, protection of minors, and general criminal regulation
+
+    - Lowest age for special protection in the context of IT in the world is 13 but IT laws extends this to 16.
+    - In most countries the is restriction on internet access to children.
+    - Collection of PII for minors requires explicit consent from parents or legal guidians.
+    - YouTube was fined 170 m us dollars in 2019 for collecting minors PII without explicit consent of parents
+
+3. Domain law
+
+    - Protects domain name infringement
+    - Infringement can be in the form of cybersquatting or typosquatting
+    - Cybersquatting occurs when someone acquires and registers a domain that is already registered. This activity is illegal.
+    - Typosquatting occurs when a domain name is slightly altered to divert users to the unintended site.
+
+4. Competition law
+
+    - Laws that prevent the creation of monopolies or ends existing monopolies to encourage competition in business
+
+4. German Telemedia Act
+
+    - Telemediengesetz mandates video posting websites to provide a formal reporting system for reporting violations. e.g ads targeting children, ads promoting criminal content.
+    - This law mandates every website in germany to have an impressum
+    - Every website must provide liability resolution and liability for content on their website
+    - All providers of services on the internet with the exception of those listed on the next point are uplarge to monitor data transmitted or stored by the providers and must monitor for illegal activities
+    - access providers, service providers, caching providers, telecommunication providers and hosting providers
+
+5. Legal requirements for handling emails
+
+    - Email archives should be establish as a means of preserving evidence. This is required by banks and healthcare
+    - Emails shouls be encrypted before being sent out externally or prohibit the sharing of senitive data via email.
+    - The UWG(Gesetzt gegen den unlauteren Wettbewerb) stricktly regulates email marketing in germany.
+    - The UWG define restrictions on email marketing including explicit consent, right to withdraw consent, and accuracy of product claims/statements.
+    - The GDPR and EU's e-privacy must be considered in direct marketing in Germany.
+
+6. IT security/breach notification law
+
+    - Breach notifications are actions to be taken to protect personal data from unauthorised access when a breach occurs.
+    - Users are also informed about the breach within a specified time frame 
+    - The GDPR defines a 72 hours time frame for controlers to report breaches to applicable data protection authority, from the time the breach was detected.
+    - In some countries like the U.S attempted unauthorised access to data must be reported
+    - Remember the roles of Controler, Processor and data subject as defined in GDPR.
+    - Many breach notifications and privacy laws require data privacy and data security which are the two basic elements of cybersecurity.
+
+7. Intellectual property protection (IP)
+
+This field of law protects inventors and creators of scientific, commercial, or artistic inventions or expressions. IP protects patented inventions, trademarks, copyrighted material, softwarem hardware, AI and blockchain applications. Laws that fall under IP include the following:
+
+    - 7.1 *Patent Law*: Protection of discovery or invention from theft for a period of time. Inventor must show basic information about the invention and must register this against a fee by a patent office. If a patent is violated, the inventor can sue and get financial benefits if successful. Example of patent offices or firms are: Worl Intellectual Property Organisation (WIPO), U.S. Patent and Trademark Office (USPTO).
+    - 7.2 *U.S. patent law*
+    - 7.3 *German patent law (Patentgesetz)*: This is the german patent law. To obtain a patent, designation of the sole inventor, examination process and fee is involved. If approved, the patent is valid for 20 years from the filling date. For technical inventors, a utility model german patent is granted for a period of ten years from filling. The European Patent Office grants patents which are recognised in Germany.
+    - 7.4 *Copyright*: Software use also covers user rights. Software protection can range from very strict(protection by copyright, license or trademarks) to very open(software is either free, almost free and is available as open source, freeware or shareware). A copyright protects and expression of an underlying work. Copyright for software and web-based apps protects the source code, object code and related materials such as help notes and user manuals. Copyright infringement is often known as piracy.
+    - 7.5 *Creative common licenses*
 
 
+8. IT contract law
 
+Generally called *Service Level Agreement* and is concerns both vendor and client in protecting data exchange between them. The following are the types of IT Contracts.
 
+    - 8.1 *Software contracts*
+    - 8.2 *Contracts for work and services*
+    - 8.3 *Warranty and guarantee*
+    - 8.4 *Terms and conditions*
+    - 8.5 *Contractual penalties*
+    - 8.6 *Acceptance of software*
+    - 8.7 *Outsourcing contracts*
 
+### Privacy
 
-
+Visit GDPR in the course *concepts in data management*
+ 
