@@ -1,0 +1,41 @@
+ 
+{"respondent" : 
+                {
+                    "Respondent_id" : "Automatically filled with specific length",
+
+                    "Location" : {
+                                    "Region of Origin" : "select a region",
+                                    "Current location" : "current location"
+                                },
+
+                    "Demographics" : {
+                                    "Age Group" : "select age range",
+                                    "Gender" : "select gender",
+                                    "Employment status" : "unemployed, employed, student, retired or other",
+                                    "Occupation" : "private sector, public sector, self-employed, other" 
+                                },
+
+                    "Medical booklet" : {
+                                    "Do you have a medical booklet?" : "Yes/No",
+                                    "How many medical booklets do you have?" : "enter number",
+                                    "How often do you use your medical booklet in a year?" : "enter frequency",
+                                    "Why don't you have a medical booklet?" : "select reason",
+                                    "Is a digital medical booklet a good idea?" : "Yes, No or don't know",
+                                    "Would you be willing to use a digital medical booklet?" : "Yes/No"
+                               },
+
+                    "Healthcare" : {
+                                    "Do you usually seek healthcare?" : "Yes/No",
+                                    "Where do you usually seek healthcare?" : "List of options",
+                                    "Where do you buy your medicines?" : "List of options"
+                                },
+
+                    "Health insurance" : {
+                                    "Do you have a health insurance?" : "Yes/No"
+                                },
+
+                    "Highest level of education" :  "select from given options" 
+                
+                }
+}
+

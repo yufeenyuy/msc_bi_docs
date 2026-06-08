@@ -1,0 +1,53 @@
+Survey Questions and Dependencies
+
+Components:
+
+Component: Respondent
+Questions:
+1. Respondent_id: Automatically filled with specific length
+
+Component: Location
+Questions:
+2. Region of Origin: select a region
+3. Current location: current location
+
+Component: Demographics
+Questions:
+4. Age Group: select age range
+5. Gender: select gender
+6. Employment status: select employment status
+
+Component: Medical booklet
+Questions:
+7. Do you have a medical booklet?: Yes/No
+8. How many medical booklets do you have?: enter number
+9. How often do you use your medical booklet in a year?: enter frequency
+10. Why don't you have a medical booklet?: select reason
+11. Is a digital medical booklet a good idea?: Yes, No or don't know
+12. Would you be willing to use a digital medical booklet?: Yes/No
+
+Component: Healthcare
+Questions:
+13. Do you usually seek healthcare?: Yes/No
+14. Where do you usually seek healthcare?: List of options
+15. Where do you buy your medicines?: List of options
+
+Component: Health insurance
+Questions:
+16. Do you have a health insurance?: Yes/No
+
+Component: Education
+Questions:
+17. Highest level of education: select from given options
+
+Dependencies:
+- 8. How many medical booklets do you have?: enter number
+  Depends on '7. Do you have a medical booklet?: Yes/No' == 'Yes'
+- 9. How often do you use your medical booklet in a year?: enter frequency
+  Depends on '7. Do you have a medical booklet?: Yes/No' == 'Yes'
+- 10. Why don't you have a medical booklet?: select reason
+  Depends on '7. Do you have a medical booklet?: Yes/No' == 'No'
+- 14. Where do you usually seek healthcare?: List of options
+  Depends on '13. Do you usually seek healthcare?: Yes/No' == 'Yes'
+- 15. Where do you buy your medicines?: List of options
+  Depends on '13. Do you usually seek healthcare?: Yes/No' == 'Yes'

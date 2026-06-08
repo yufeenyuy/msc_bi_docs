@@ -22,7 +22,7 @@ IT governance is a component of a firm's overall corporate governance program an
 
 ## Unit 3: IT Compliance
 
-When a data breach occurs and goes gets to the public, the organization suffers multiple set backs which may include:
+When a data breach occurs and gets to the public, the organization suffers multiple set backs which may include:
 
 - Reputation: Organization is negatively perceived
 - Trust: Shareholders, Partners and customers become reserved towards the company
@@ -38,7 +38,7 @@ In IT context, IT governance seeks to minimize or eliminate risk whereever it is
 + Unauthorised access to Data
 + Data breaches.
 
-All thes can make cause much lost to the company ranging from denial of service, data deletion, loss in reputation as well as finance.
+All these can make cause damage to the company ranging from denial of service, data deletion, loss in reputation as well as finance.
 
 **IT Compliance and IT Governance**
 
@@ -47,7 +47,7 @@ The central point of IT Governance is *Risks and Control*. Risk and Control is g
 2. Perform *risk assessment* to identify threats or weaknesses that can harm the organization. Risk assessment is an activity undertaken to systematically examine and test an organization's risk and vulnerability level.
 3. Rank identified threats according to the level of damage it can cause to the organization. This could be via quantitative(score ranging from 1 to 10) or qualitative(low, medium, high) measures.
 4. Design risk mitigation, avoidance, acceptance or transfer solution
-5 Implement designed solution while taking cost into consideration. This is where threats are being handled.
+5. Implement designed solution while taking cost into consideration. This is where threats are being handled.
 6. Document mitigation, avoidance, acceptance or transfer approach for future use in similar situations. 
 
 In IT Governance, Risk is defined as the *effect of uncertainty on objectives*. But according to **NIST**,
@@ -77,9 +77,9 @@ There are six control types:
 Controls do not inherently eliminate risk, actions or events. This is because they are subject to factors that make them vulnurable. The drawbacks of controls include:
 
 + Human erros which arise from unintentional mistakes.
-+ Fraudulent activities which are made to to fulfil personal or joint endeavors or as a result of opportunities derived from shared password, unguarded valuables or unlocked cash drawers.
++ Fraudulent activities which are made to fulfil personal or joint endeavors or as a result of opportunities derived from shared password, unguarded valuables or unlocked cash drawers.
 + collusion, which is an agreement among two or more individuals to commit fraud. Also called conspiracy.
-+ Management may use their position to override or cancel effective control systems. This may be for persoanl or legitimate reasons. For instance, a manager may bypass rules to create transactions.
++ Management may use their position to override or cancel effective control systems. This may be for personal or legitimate reasons. For instance, a manager may bypass rules to create transactions.
 + Access creed, which is a situation where an employee can still actively use their credentials from a previous role at the same or different company to access systems are possible perform fraudulent activities. This can lead to undesired *segregation of duties*, as the right of legitimate person for the role may be compromised. Segregation of duties is a procedure that seeks reduce collusion by spliting responsibilities between two or more employees.
 
 **Inherent Risk and Residual Risk**
@@ -100,7 +100,7 @@ The COSO is a risk control framework that requires "tone at the top" directed at
 
 ### ISO 31000:2018
 
-This standard is made up of 3 main risk management sections which are, *principles, framework and process*. It provides a set of best practices and guideliness, instead of mandatory requirements. First created in 2009 and last released was in 2018. This standard provides 8 principles which revolve around *value creation and protection*.
+This standard is made up of 3 main risk management sections which are, *principles, frameworks and processes*. It provides a set of best practices and guideliness, instead of mandatory requirements. First created in 2009 and latest release was in 2018. This standard provides 8 principles which revolve around *value creation and protection*.
 
 *ISO 31000:2018 Risk Principles* 
 
@@ -109,8 +109,8 @@ This standard is made up of 3 main risk management sections which are, *principl
 + Customized: The risk management system must be customized to fit the input and outcomes of the organization.
 + Inclusive: All stakeholders must be involved in the formalized risk managment process. This is supported by the IT service management standards/frameworks like ITILV4 or ISO-1:20000.
 + Dynamic: Risk management program must adapt to new risks as they are evolving. E.g handling deep fakes.
-+ Best available information: Quality(current and comprehensive) of information relating to risk is importanct.
-+ Human and cultural factors: Human factors include management override, mistakes and other weaknesses and strengths. Culturally generally refers to the organization culture(siloed, flat, open command hierarchy, etc).
++ Best available information: Quality(current and comprehensive) of information relating to risk is important.
++ Human and cultural factors: Human factors include management override, mistakes and other weaknesses and strengths. Culture generally refers to the organization culture(siloed, flat, open command hierarchy, etc).
 + Continual improvement: Continuous improvement over time is a specific goal. This principle is common to other frameworks likt *ITIL and Six Sigma*.
 
 ![Sources](./img/iso_31000-2018_eight_risk_principles.png)
@@ -141,18 +141,23 @@ These six components are described as follows:
 This standard provides six activities that should be incorporated into an organization's policies, procedures, and practices. These activities are contained in section six of the standard and described below:
 
 **6.2 communication and Consultation**: The organization's risk should be communicated to stakeholders especially if it concerns management's decision process. Consulation on the other hand is the involvement and participation of stakeholders and other experts parties in risk-related decision-making, with the aim to include all experts, and assign roles and responsibilities.
+
 **6.3 Scope, context, and criteria**: Risk management is tailored to the unique goals, desired outcomes and relevant risk areas of the organization. This process is further broken into small subprocess described as follows:
     - **6.3.1 Defining Scope**: Questions should be asked to define the scope of operation. E.g Are ther laws and regulations that require certain elements within our risk management program?
     - **6.3.2* External and Internal context**: The risk management program should align with the internal and external operational environment of the organization.
     - **6.3.3 Defining risk criteria**: The risk criteria are fairly unique to each organization as it takes into account the industry type, competitors, regulators/regulatory burden, threat surface, corporate culture, goals, outcomes, stakeholders, management style and geographic locations. The risk criteria should change as the organization changes. It should incorporate directions for how risk criteria is measured/scored and reviewed.
+
 **6.4 Risk assessment**: This is composed of risk identification, risk analysis and risk evaluation.
     - **6.4.1 Risk identification**: Ask questions that will simplify the identification of risk. E.g what is the organization doing to capture risk, and how are they identified?. What controls are in place to minimize the event of not capturing risk?. Where is risk coming from?. Where in the organization do threats and vulnerabilities lurk?
     - **6.4.2 Risk analysis**: What is the level of risk? Consider the likelihood and impact of negative outcomes and how effective the current inventory of controls is.
     - **6.4.3 Risk evaluation**: This is the result made after obtaining information from risk identification and risk analysis. Potential decision could be: do nothing or conduct further test to obtain more information about risk.
+
 **6.5 Risk treatment**: Steps taken to address risk. This involves the following:
     - **6.5.1 Selection of risk treatment options**: Perform a cost benefit analysis on treatment options. Potential treatment could be: risk acceptance, risk transfer, risk avoidance and risk sharing.
     - **6.5.2 Preparing and implementing risk treatment plans**: The details for the selection of a treatment plan are documented formally including information regarding the selection that was made, who made the selection, were there alternatives, and when the treatment will take place and its costs.
+
 **6.6 Monitoring and review**: The performance of the risk management program as well as its results are evaluated. Formal reviews and remidiation of shortcomings are documented and communicated to all relevant stakeholders.
+
 **6.7 Recording and reporting**: This activity involves the communication of risk events, when a set threshhold is reached or exceeded, to internal and external stakeholders. This can be done at regular time intervals.
 
 ### ISO/IEC 27005:2018
