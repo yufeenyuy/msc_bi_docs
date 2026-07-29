@@ -34,7 +34,7 @@ Considering the usecase, it can be determined that the management did not consid
 
 Depending on the size of an organisation, there are various strategic levels which play different roles when creating a strategic plan.
 
---insert image here: strategic levels--
+![Strategic Levels](./img/strategic_levels.png "Strategic Levels")
 
 + Corporate Level (Upper Management): This level defines the *vision, mission and purpose* of the organisation. It also evaluated/analyse the performance and growth potential of the *Strategic Business Units (SBUs)* to make adequate decisions regarding the budget for the SBUs. Usually, SBUs with a better cut obtain a higher budget.
 + Strategic Businss Units (SBUs): This is a business unit that could act independently from other company's business units in the market place. Each business unit is allowed to perform a SWOT analysis of their business unit and share the results of their analysis with the upper management as this can contribute to the overall strategic plan.
@@ -78,7 +78,7 @@ In planning the implementation of the strategic plan, it is important to analyse
 
 # Unit2: The Strategic Environment
 
---insert image here--
+![Case Study](./img/case_study_chapter_2.png)
 
 According to the case study, making a strategic decision requires consideration of the environment where the strategy will be implemented. To assess the environment key questions need to asked and answered. Examples as on the case study.
 
@@ -88,7 +88,7 @@ According to the case study, making a strategic decision requires consideration 
 
 The interaction between an organisation and its environment is bidirection. This means that they both impact each other. From an organisational perspective, its business environment can be classified into Macro -and Micro. Microenvironmental factors include *competitors, suppliers, customers and substitute products* while the Macroenvironmental factors include *Political, Economic, Social, Technological, Environmental(Ecological) and Legal i.e PESTEL*. The Company is always at the center while the microenvironment is always closer to the company.
 
---insert image here --
+![Macor and Microenvironments](./img/macro_and_microenvironment.png)
 
 The PESTEL Analysis is a *strategic and quantitative* method used by companies of different sizes and category to analyse the macroenvironmental factors to enable them make strategic decision. This analysis also considers changing environmental conditions that may negatively or positively impact the organisation in the future.
 
@@ -140,7 +140,7 @@ Porter developed this five forces based on the following assumptions:
 
 **Elaboration of the components in the five forces model**
 
-1. Buyers/Customers
+1. **Buyers/Customers**<br>
 
 Here it is important to highlight that a buyer is not always the consumer. A buyer can make the purchase while he/she is not the consumer e.g A child can subscribe and pay for news letters for his/her parents while the child does not read news letters. Typically, a powerful buyer is one who purchases in large amount. Powerful users have the capability to infleunce the price of a product.
 A buyer has purchasing power over an organisation when
@@ -151,7 +151,7 @@ A buyer has purchasing power over an organisation when
 - product/service is not of high value to the customer
 - customer can make the product/service themselves
 
-2. Competition
+2. **Competition**<br>
 
 The intensity of competition in the market is reflected on the prices of the products/services of the businesses acting in the market. This is because high or intense competition lower prices which reduces product/service margins and thus reduce the profit an organisation makes. Margin is the difference between production cost and sales price.
 
@@ -162,8 +162,7 @@ Competition is felt in the market when competition exhibit the following charact
 - the business sector shows little growth, and therefore, an increase in sales is only possible if business is taken away from a competitor
 - products or services offered in the market are undifferentiated an therefore, all companies compte on price.
 
-3. New market entrants
-
+3. **New market entrants**<br>
 In some market segments, when a new business enters a market, the existing markets tend to perceive this as threat. This does not only increase competative pressure on existing business but it might force them to adjust to accomodate new entrants. To secure their market share, control price levels and protect their customer base, existing business may use one or serval threat barriers to stop or control the entrants of new businesses in their market segment. 
 Potential market entry barriers include:
 
@@ -175,16 +174,14 @@ Potential market entry barriers include:
 - high switching cost
 - patents and licenses which protect the intellectual property of organisations
 
-4. Substitutes
-
+4. **Substitutes**<br>
 When the product/service of a company can be substituted by a cheaper or effective product/service, then the company will loose in sales revenue which can reduce their profit. The product/service of a company can be threatened by a substitute product depending on:
 
 - the degree of customer loyalty of the company
 - the intensity of customer relationship
 - the switching cost
 
-5. Suppliers
-
+5. **Suppliers**<br>
 These are all the supply sources that an organisation require to produce its intented product/service. Suppliers provide inputs which could be in form of material, technology, human resource etc. The inputs are then used by the company to produce their product/service. Suppliers with stronger bargaining power can increase the prices of their supplies. By doing so, the margin between production cost and sales price of the dependent will reduce, which can significantly reduce their profit. Powerful suppliers exhibit the following characteristics:
 
 - the market is dominated by few large suppliers
@@ -296,7 +293,7 @@ Values are fix and form the basis for every strategy that the company creates. V
 
 It is not mandatory to have a mission, vision or a value statement. However, goals are the reasons why a business is created. In an organisation, goals are specific to each layer or department, as illustrated on the following image.
 
---insert goal hierarchies here--
+![Goal Hierarchies](./img/goal_hierarchies.png "Goals Hierarchies")
 
 **Group level**
 
@@ -320,7 +317,7 @@ The major activities that occure at this level are related to marketing. Conside
 
 Companies use a positioning map to compare themselves with competitors based on a target group or audience. This map is made up of two axes that map the specific attributes/metrics used for comparison. Depending on the measured values of the metrics or perception of the attributes by the audience, the company places itself and the compatitors at specific points on the map. Some metrics that can be measured include: price, quality, customer satisfaction and company image. To maintain a strong position in the market, companies need to achieve high values for the attributes used for comparison. Companies should avoid changing the core market that gives secures them a strong position in the market. Xerox had a strong market position for selling copying machines untill they decided to make huge financial investments to sell personal computers. To develop an effective positioning strategy, the organisation should perform a SWOT analysis, and also use quantitative and qualitative methods to monitor and assess market changes like trends. The following is an example image of a positioning map for *Palace Hotel*.
 
---insert image here--
+![Positioning Map](./img/positioning_map.png)
 
 ## What Information Does the Company Need?
 
@@ -334,7 +331,7 @@ To perform this thoroughly, companies need to record quantitative data. This kin
 
 An organisation can divide its market into segments where each segment consist of customer that have similar needs and preferences. B2C and B2B are two major market segments that can be described based on the following criteria.
 
---insert market segment here--
+![Market Segmentation](./img/market_segment.png)
 
 ## What Capabilities Does the Company Have?
 
@@ -346,7 +343,7 @@ The SWOT Analysis is a method wided used by companies to assess their capabilite
 
 The Analysis of all the SWOT factors enable the organisation to understand their capabilities which is useful in determing the strategic possibilities that an organisation has and also helps them to answer the question whether the strategic possibilities align with the identity or goal. The SWOT analysis can also be used to assess the strength and weaknesses of other organisations relative to the organisation. The opportunities an threats of the SWOT analysis focuses on the market trends. As a result, this part of the analysis can be supported by the PESTEL analysis and Porter's Five forces.
 
---Use SWOT to analyse nwa medicals--
+--**Use SWOT to analyse nwa medicals**--
 
 In addition to the SWOT analysis, it is recommended for companies to use their core competencies to achieve competitive advantage. A core competency is a unique capability or resource that an organisation has that differentiates it from other organisations. These gives the company competitive advantage as they can:
 
@@ -464,7 +461,7 @@ In 1997, the world’s first global airline network was launched under the name 
 ## Product Life Cycle
 Before making decisions related to the product such as pricing, product portfolio, markets, technology, capacity, and marketing and promotional measures, the company should analyse the product with the **Product Life Cycle(PLC)** modell. According to this modell, the lifecycle of a product is similar to that of human being i.e it starts with *development then goes through growth and maturity, and ends with decline*. The following image visualises the product life cycle. It is important to note that each phase has opportunities and threats, and that few products follow the exact product life cycle. This modell is largely used for forecasting sales and formulating strategies.
 
---insert plc image here--
+![Product Life Cycle](./img/product_life_cycle.png)
 
 1. Development Phase<br>
 The product is born and enters the market in this phase. It is characterised by long development time and low growth rates. This is because a large portion of the investment flows into marketing and distribution which eats up the profit that is be generated in this phase. It is in this phase that the company require a well-defined marketing plan that takes into consideration all the parts of the marketing mix(product, price, place(distribution) and promotion) to successfully put the product in the market. Typically, there are few or no competitors in the market at this phase espcially when the product is new.
@@ -540,7 +537,7 @@ A production portfolio is a description of the collection of all the products of
 
 These 3 factors combined leverage information about the strategic position of the company's products, services, or businesses and the financial requirements of the individual products/businesses to balance the company's cash flow. IT also indicates the ideal situation with a balanced product portfolio with a balanced product portfolio. A balanced includes enough products that generate profits (cash cows) for the organisation to be able to finance new products (Stars and question marks). The BCG matrix is made up of four quadrants. Each quadrant consist of guidelines that can be used to measure or evalues strategies.
 
---insert image of BCG matrix example here--
+![BCG Matrix](./img/bcg_matrix.png)
 
 **Description of the Quadrants**<br>
 
@@ -562,7 +559,7 @@ The drawback of this Matrix is that it only considers the relative market share 
 ## Product Portfolio Analysis Using the GE-McKinsey Matrix
 McKinsey and the American Corporation General Electric developed the GE-McKinsey matrix based on the BCG Matrix. This matrix focuses on two metrics, namely, *market attractiveness and competitive strength*. It has the same goal as the BCG matrix, however the external analysis is not restricted to growth potential and market share. It considers several factors under the term market attractiveness which include: *market volume, profitability, and intensity of the competition*. Instead of limiting itself to market shares, this model analysis the relative competitive strengths of the organisation over the competition. This includes, relative market share, relative product quality, company image and financial strength. This matrix is 3X3 and more detailed the the BCG 2X2 matrix.
 
---insert image here--
+![McKinsey Matrix](./img/mckinsey_matrix.png "Strategic Levels")
 
 **Interpretation of the Quadrants**
 - The more attractive the market and the stronger the competitive position of the business or product, the more should be invested.
