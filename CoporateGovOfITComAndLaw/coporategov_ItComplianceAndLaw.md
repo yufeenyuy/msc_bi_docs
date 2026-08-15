@@ -55,7 +55,7 @@ risk is a *measure of the extent to which an entity is threatened by a potential
 - The adverse impacts that would arise if the circumstance of event occurs
 - Likelihood of occurrence
 
-Risk = Threat * Vulnerability * AsseValue
+Risk = Threat * Vulnerability * AssetValue
 
 **Controls**
 
