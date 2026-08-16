@@ -14,6 +14,8 @@ In our daily lives, we define success as the achievement of objectives, irrespec
 
 Given the complexity of IT Projects, the iron triangle might not be enough to handle the changing conditions around the IT project. As a result a **quintuple** with five constraints can adopted to handle this complexity. The dimensions of the quintuple are *schedule, cost, financing, technical and context*. Technical, Cost and Schedule of the quintuple correspond to the Scope, Cost and Schedule of the iron triangle respectfully. The Content of the quintuple considers the environment where the end result of the project will be used. It takes into account the people, culture, political and demographics as well as the impact of the product or service in its environment. The financial dimension is concerned with the body responsible for financing the project. This could be private or government stakeholders. This is relevant when the operations of the project cross borders. One difference between traditional project and IT projects is that IT projects are *sociotechnical*. This means that the interaction between stakeholders(e.g users) and the service or product. The product is itself is built using technologies. As a result, stakeholders can infleunce the way the application is technically built. On the other hand, traditional projects are always premeditated then implemented without seeking users opionion. Another difference is that, IT project results, in an organisational context, play a supporting role to other departments of the organisation. For instance, an application can be developed for a particular department. For this, reason, IT projects can initiate changes in the organisation's structure.
 
+![Project Structure](./img/quintuple.png)
+
 ### Overview of Typical Roles and Phases of IT Projects
 IT Project endeavors can be of different sizes and types, ranging from simple applications to complex software systems, irrespective of the size of the company. To ensure that the project delivers as expected, it is important to define roles and responsibilities as well as setting milestones to track the progress of the project. The following image illustrates a project structure for large plan-driven projects. It shows the different roles that can exist.
 
@@ -44,7 +46,8 @@ This role is in charge of the project and:
 - Manage the overall ethical and gender issues, etc.
 The soft and hard skills required by an (IT) project manager are listed on the following image. Notice that the soft skills are qualitative while the hard skills are quantitative.
 - Ability to detect and handle risk. They can use *project triggers* to identify (indicators) risks within the project so it can be handled before it becomes significant.
---insert pm_skill_breakdown here--
+
+![PM Skill breakdown](./img/pm_skill_breakdown.png)
 **Technical coordinator (TC)**<br>
 This role is used in specific situations, i.e. where the project manager does not have the background knowledge and skills to judge and oversee every technology involved in the project. This role has the following responsibilities:
 - It is a supporting role to the PM
@@ -74,7 +77,6 @@ In the *Scrum* agile project management approach, this role is responsible for s
 ## PROJECT PHASES
 After establishing a project structure, especially in a plan-driven project, the next stpe is typically the identification of the activities to be followed in achieving the project goal and objectives. These activities are usually grouped into phases termed project phases. These are the steps in time required to develope product, service or solution(Larson & Gray, 2015). Typically, a project is an endeavor in response to a client's specific request. This means that project phases are also specific to the project. Depending on the expected outcome of the project, emphasis is laid on some phases and the phases of IT Projects often overlap to a great extend. Due to this overlap, there are general stages that are accepted in IT Projects. This is illustrated and described as follows:
 
---insert Generic project phases here--
 ![Generic Project Phases](./img/generic_project_phases.png)
 
 **CLIENT/CUSTOMER/USER REQUESTS**<br>
