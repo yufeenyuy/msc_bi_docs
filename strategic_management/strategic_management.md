@@ -2,11 +2,11 @@
 
 ## What is a corporate strategy
 
-A corporate strategy is the long-term goal of an organisation which is flexible to allow revision of plans and make adjustments in changing market environments. Market environment include: change in demand for products/services, loss in market share, acquisition of new companies, introduction of new product/service etc. Alfred Chandler, Michael Porter and Henry Mintzberg are the leading corporate strategist and they define corporate strategy as follows:
+A corporate strategy is the long-term goal of an organisation which is flexible to allow revision of plans and make adjustments in changing market environments. Market environment include change in demand for products/services, loss in market share, acquisition of new companies, introduction of new product/service etc. Strategy itself is about making choices to create a unique and value position, involving a different set of activities from those pursued by competitors. Alfred Chandler, Michael Porter and Henry Mintzberg are the leading corporate strategist and they define corporate strategy as follows:
 
-1. Alfred Chandler: "The determination of long-term goals and objectives of an enterprise, and the adoption of courses of action and the allocation of *resources(available means to the organisation)* necessary for carrying out these goals". Based on the market situation both the strategy and structure on the firm must be adequately adjusted and resources reallocated. 
+1. Alfred Chandler: "The determination of *long-term goals and objectives* of an enterprise, and the adoption of courses of action and the allocation of *resources(available means to the organisation)* necessary for carrying out these goals". Based on the market situation both the strategy and structure of the firm must be adequately adjusted and resources reallocated. 
 
-2. Michael Porter: With the focus on *competition*, "strategy is the creation of a unique and valuable position, involving a different set of activities". This means that strategy is not about long-term view rather, it should focus on developing and maintaining competitive advantage linked to a clear and distinctive feature.
+2. Michael Porter: With the focus on *competition*, "strategy is the creation of a unique and valuable position, involving a different set of activities". This means that strategy is not about long-term view rather, it should focus on developing and maintaining *competitive advantage* linked to a clear and *distinctive product/service(differentiation)*.
 
 3. Henry Mintzbertg: Strategy is "a pattern in a stream of decisions". With focus on *vision*, the pattern of decisions made to achieve the vision constitute the corportate strategy. Depending on the odds, the vision may be adjusted, thus requiring a change in strategy. It is highly recommended to develope a flexible strategy, to allow for adjustments during high and downtimes. Rigid strategies are in most cases disadvantageous to the organisation, as they psychologically hook the organisation to stale objectives. To develop a *flexible and sustainable strategy, companies must gather and thoroughly analyse detailed information*. Adequate time should be reserved for this activity. There are developed techniques that managers can use to analyse company issues and changes in market in order to make better decisions.
 
@@ -14,12 +14,12 @@ A corporate strategy is the long-term goal of an organisation which is flexible 
 
 In Practice, managers take the following in to consideration
 
-+ long-term orientation of the organisation
-+ purpose of the organisation
-+ attainment of a competitive advantage
-+ expandability of resources and the efficiency of the orgaisation
-+ *corporate philosophy*: These are the main principles by which an organisation operates.
-+ expectations of stakeholders
++ long-term orientation of the organisation i.e look beyond short-term quick wins
++ purpose of the organisation i.e reason for creating the organisation beyound making profit
++ attainment of a competitive advantage i.e unique strengths and capabilities that enable a company to outperform its competitors in the market.
++ adaptability to changes i.e expandability of resources and the efficiency of the orgaisation
++ corporate philosophy i.e concepts that shapes a company's approach to navigate changing market environments, attaining resilience and achieving long-term success.
++ expectations of stakeholders(e.g shareholders, customers, employees, suppliers etc) i.e Individuals or groups who have an interest or stake in the entities, decisions and outcomes of an organisation. 
 
 Considering the usecase, it can be determined that the management did not consider these points because:
 
@@ -41,21 +41,17 @@ Depending on the size of an organisation, there are various strategic levels whi
 + Product Level: Situation analysis, marketing strategy and business plans for respective products are developed at this level. The actions that must be taken to implement the business plans are also specified at this level.
 
 ### What is Included in a Solid Strategic Plan?
+A strategic plan can be compared to a road map that an organisation draws up in order to reach its strategic goals. To develop such a road map, the following questions can assist as a guide.
 
-To develop a solid strategic plan, an organisation needs to answers questions like:
-
-**What is their position in the market?**
-
+**What is their position in the market?**<br>
 Companies need to analyse the following points to be able to understand their position in the market.
-
 + Perform SWOT analysis
 + the infleunce of the corporate strategy on the environment and the corporate culture
 + whether the existing resources are sufficient to support the strategic goals of the organisation
 + whether the strategic plan aligns with the purpose of the organisation
 
-2. What are their Strategic Capabailities?
-
-This helps the company to understand the availability of their strategic resources. To determine this, the following points need to be analysed
+2. **What are their Strategic Capabilities?**<br>
+Strategic capabilities refers to *resources, competencies and capacities* that enable an organisation to achieve its strategic objectives and gain competitive advantage in the market. To determine this, the following points need to be analysed
 
 + Check whether the portfolio of the business units aligns with the strategic objectives of the company
 + Check whether the business units are adequately positioned in the market place to support the overall strategy of the company
@@ -63,9 +59,8 @@ This helps the company to understand the availability of their strategic resourc
 + determine the strategic alliances that should be formed if possible
 + check whether the organisation is active in the right areas of innovation
 
-3. how can the overall company strategy be implemented?
-
-In planning the implementation of the strategic plan, it is important to analyse the following points.
+3. **How can the overall company strategy be implemented?**<br>
+This refers to the translation of strategic plan into tangible actions. This is necessary for achieving organisational goals. The following should be considered during implementation:
 
 + What process is necessary to develop a strategy
 + what strategy is a good fit for the organisation and what is feasible
@@ -110,13 +105,13 @@ Under normal circumstances, an airline may offer tickets at discounted prices or
 
 + Technological Factors
 
-Digital checkin possibility to reduce manuall work at the counter in the airport which significantly increases work efficiency and reduce workload on employees.
+Digital checking possibility to reduce manuall work at the counter in the airport which significantly increases work efficiency and reduce workload on employees.
 
 + Environmental or Ecological Factors
 
 An airline is allowed to dump fuel only in specified areas. This must be respected to reduce environmental polusion. Additionally, airlines need to invest in development and purchase of planes that have optimised systems with a lower rate of air polusion.
 
-+ Legal Factors
++ Legal Factors or legislative factors
 
 Airlines must comply to laws and regulations otherwise they risk paying huge amounts of money on penalties and some situations they might have their license withdrawn. For instance, airlines are not allowed to overbook flights. Also, pilots must take all necessary trainings that legitimises them to fly to ensure the safety of passengers. Trainings usually cost time and money which increase cost to airlines.
 
@@ -164,14 +159,20 @@ Competition is felt in the market when competition exhibit the following charact
 
 3. **New market entrants**<br>
 In some market segments, when a new business enters a market, the existing markets tend to perceive this as threat. This does not only increase competative pressure on existing business but it might force them to adjust to accomodate new entrants. To secure their market share, control price levels and protect their customer base, existing business may use one or serval threat barriers to stop or control the entrants of new businesses in their market segment. 
-Potential market entry barriers include:
+Potential market entry barriers by category include:
 
-- economies of scale: an organisation needs to be of a certain size in order to be more efficient
-- high initial cost or high fixed costs
-- brand-loyal customers
-- scarce resources e.g qualified human resources
-- controlled resources by existing organisations
-- high switching cost
++ Structural Bariers<br>
+    - economies of scale: an organisation needs to be of a certain size in order to be more efficient
+    - high initial cost or high fixed costs
+    - brand-loyal customers
+    - cost advantage i.e limiting cost via experience
+    - scarce resources e.g qualified human resources
++ Strategic Bariers<br>
+    - controlled resources by existing organisations
+    - Controlled distribution channels
+    - contracts
+    - high switching cost
++ Legal Bariers<br>
 - patents and licenses which protect the intellectual property of organisations
 
 4. **Substitutes**<br>
