@@ -261,10 +261,10 @@ Porter's forces was created when companies where establishing themselves in the 
 
 # Unit 3: The Position in the Market
 
-The aim of this topic revolves around *vision, mission, goals and values of the company* and how to perform a *SWOT* analysis. In an organisation, the executive or founders or corporate level are responsible for formulating the mission and vision of the company as well as defining its values. The mission expresses what the company stands for and it usually reflects the values of the company. The vision expresses how the company views itself and sets the future direction of the organisation. The vision should be understood as the *corporate identity* of the company. The company expects its employees align with the vision. This should be reflected in their behaviours and motivations.
+The aim of this topic revolves around *vision, mission, goals and values of the company* and how to perform a *SWOT* analysis. In an organisation, the executive or founders or corporate level are responsible for formulating the guiding phylosophy. This guiding phylosophy defines the values of the organisation and how the organisation will view itself. Additionally, it sets the future direction of an organisation. This serves as an internal orientation for employees as it provides the guidelines for different activities. For external stakeholders, the guiding phylosophy communicates its core values i.e what the stand for.
 
 1. **Mission** <br>
-This is the heart of the strategy and explains why the company exist and also provides clarity of its purpose to its stakeholders. Stakeholders include: employees, suppliers, distributors, customers, shareholders etc. The mission answers questions like the following:
+This is the heart of the strategy and does not only explain why the company exist but articulate the corporate identity of the organisation i.e how the company is viewed both internally and externally. A mission statement, defined at the corporate level, is a concise declaration of an organisation's purpose. This statement defines the fundamental reason for the existence of the organisation and guides its strategic direction as well as it decision-making. It communicates the organisation's core values, goals and aspirations as well as its impact on stakeholders and the society. For example: Google's mission is to organise the world's information and make it accessible and usefull to every stakeholder. Stakeholders include employees, suppliers, distributors, customers, shareholders etc. The mission answers questions like the following:
 
 - Why do we exist?
 - What is our purpose?
@@ -276,7 +276,7 @@ Considering the mission statement of the case study "The mission of the Bar Scho
 
 2. **vision**
 
-This defines the identity of the company and provide information of the long-term perspectives(where the organisation wants to be in the future) of the organisation. The questions that should be answered here are:
+A vision statement  provide information about the long-term perspectives/aspirations of the organisation and its desired future state. Specifically, it articulates what the company seeks to achieve or become over time, and provide a clear view of the organisation's future direction. Both the identity and long-term objectives of an organisation serve as a source of inspiration and motivation to employees, stakeholders and partners. E.g Tesla's vision is to be the world's leading provider of sustainable transportation solution while being environmentally friendly. The questions that should be answered here are:
 
 - What do we want to accomplish in the future?
 - Where do we see our organisation in 5, 10, 15 or even 20 years.
@@ -285,7 +285,7 @@ Foe example "We want to provide data-driven healthcare services. In the next 5 y
 
 3. **Values**
 
-Values are fix and form the basis for every strategy that the company creates. Values define the guidelines and principles that the organisation upholds when doing business. In a values statement, the values must be clearly communicated. Considering the case study, the values of the Bar School are:
+Values are fix and form the basis for every strategy that the company creates. Value statement define the core beliefs, guidelines, principles and article standards that guides an organisation's culture, behaviour and decision-making. These values serve as a moral compas for employees i.e it shapes how employees behave and interact both internally and externally. Considering the case study, the values of the Bar School are:
 
 - Every person is of value and has unique potential
 - Good conduct, teamwork, cooperation, and respect are important factors for success, and that education is a partnership between students, parents and teachers.
@@ -320,9 +320,9 @@ Companies use a positioning map to compare themselves with competitors based on 
 
 ![Positioning Map](./img/positioning_map.png)
 
-## What Information Does the Company Need?
+## What Information Does the Company Need? important
 
-For strategic positioning, companies need results of Analysis performed on recorded data and market segmentation.
+The information that companies need depends on various factors such as *company size, level of operations, the product/services that the company offers to its customers etc. This involves gathering, interpreting and synthesising data/information about the *market size, market potential, market growth, market share of the main competitor, size of main customer segment, customer preferences and other factors necessary for analysing the market behaviour*. The market analysis typically encompasis several key components such as market size and growth, market segmentation, competitor analysis and customer analysis. Market analysis provide valuable insight necessary for making informed decisions, develop effective market strategies, identify growth opportunities, mitigate risks and achieve sustainable competitive advantage. It is also a vital component for developing a strategic plan and business development processes for all organisations across different industries and sectors. The following are elaborations of key factors through which a company can gain valuable insight in support of decision-making.
 
 1. **Quantitative Market and Customer Analysis**
 
@@ -334,9 +334,8 @@ An organisation can divide its market into segments where each segment consist o
 
 ![Market Segmentation](./img/market_segment.png)
 
-## What Capabilities Does the Company Have?
-
-The SWOT Analysis is a method wided used by companies to assess their capabilites and resources. SWOT is an acronym for *Strength, Weakness, Opportunity and Threat*. This means that the SWOT Analysis strive to achieve an internal thorough analysis of a company's strengths, weaknesses, opportunities and threats. This analysis considers three categories of resources which are:
+## What Capabilities Does the Company Have? important!
+The SWOT analysis is a strategic management tool used to assess the internal strengths and weaknesses of an organisation as well as the external opportunities and threats that the company is facing. The SWOT Analysis is a method wided used by companies to assess their capabilites and resources. SWOT is an acronym for *Strength, Weakness, Opportunity and Threat*. This means that the SWOT Analysis strive to achieve an internal thorough analysis of a company's strengths, weaknesses, opportunities and threats. This analysis considers three categories of resources which are:
 
 + Physical resources: Machines, equipment, buildings, raw materials, patents, computers etc constitute physical resources that determine the efficiency, productivity and flexibility of an organisation.
 + Fiancial resources: Balance sheet and *cash flow(liquidity in a time period)* enable organisations to determine their financial viability which is necessary to sustain the company.
@@ -355,8 +354,7 @@ In addition to the SWOT analysis, it is recommended for companies to use their c
 ## What Capabilities Do Others Have?
 
 ### Benchmarking
-
-This is comparison that leads to the selection of the **best choice as a point of reference** for bearing or orientation. Several criteria are usually used for comparison. Benchmarks can be used by companies for self evaluation, identify superio methods & best practices used by other firms, and to optimise internal processes. The four main types of Benchmarking are:
+This is a strategic management tool used by organisations to compare their performance, processes, practices or outcomes against industry standards, best practices and competitors. This comparison leads to the selection of the **best choice as a point of reference** for bearing or orientation. Several criteria are usually used for comparison. Benchmarks can be used by companies for self evaluation, identify superio methods & best practices used by other firms, and to optimise internal processes. The four main types of Benchmarking are:
 
 + Internal benchmarking
 + Competitive benchmarking
@@ -431,13 +429,16 @@ Southwest Airlines is one of the most successful carriers in the United States, 
 3. The focus strategy (being better)<br>
 With this strategy, a company focuses on a small market segment or niche, and provide high quality products/services that satisfy the needs/desires of this customer group.The advantage is that, the company maintains a small and stable customer bases and have no competition, as well as benefit from high profit margins as they charge high prices for the high quality of products/services they offer. We saw this in the case of Bhutan charging tourists(value culture and care for environment) a daily $200-300 for a complete package with high quality service. The disadvantage of this strategy is that growth is limited and changes in market impacts sales.
 
-Generic strategies can also be combined. For instance, Bhatan sets itself apart from other tourist destinations as it offers superior service and focuses on a very specific market segment. This is applicable to SBUs as they could employ combined generic strategies depending on their cost structure and the market they serve.
+Generic strategies can also be combined. For instance, Bhutan sets itself apart from other tourist destinations as it offers superior service and focuses on a very specific market segment. This is applicable to SBUs as they could employ combined generic strategies depending on their cost structure and the market they serve.
+The following image is an illustration of generic strategy by Porter.
+
+![Generic Strategy](./img/generic_strategy_illustration_by_porter.png)
 
 **Interactive Strategies** <br>
 In this strategy, a company reacts to the strategies employed by its competitors in a highly competitive and volatile market where *price and quality* are the major drivers of competition. If a company, reduces the price of a specific product, the competitors will immediately do the same. This also applies to quality i.e if a company integrates a new feature on its product, the competitors will also do the same to stay competitive in the market. There are different types of *interactive strategies*:
 
 1. Hypercompetition<br>
-This term describes a business or market environment characterised by fierce competition. In this kind of business environment, competitive advantage is created and destroyed at a fast pace. Due to this strong dynamics, competitors cannot defend their position in the market for long. As a result, price and quality are the basis for comparison. To achieve success in this kind of market situation, organisations have to be flexible, react fast, and be prepared to take risks. Even well established companies may fail in this kind of market situation if they stick to their old strategies rather than adopting to strategies that are forward looking. A prime example of a hypercompetitive market is the consumer electronics market. The following excerpt describes the battle between the two giants, Samsung and Apple.
+This term describes a business or market environment characterised by fierce competition. In this kind of business environment, competitive advantage is created and destroyed at a fast pace. Due to this strong dynamics, competitors cannot defend their position in the market for long. As a result, *price and quality* are the basis for comparison. In the case where pricing and quality is exhausted or no longer sufficient for competition, *timing(e.g fast time to market) and knowhow(e.g recipy, packaging and branding)* become the new axis for competition, thaugh they only lead to short-timed competitive advantage. To achieve success in this kind of market situation, organisations have to be flexible, react fast, and be prepared to take risks. Even well established companies may fail in this kind of market situation if they stick to their old strategies rather than adopting to strategies that are forward looking. A prime example of a hypercompetitive market is the consumer electronics market. The following excerpt describes the battle between the two giants, Samsung and Apple.
 
 ```
 BATTLE OF THE TECH GIANTS
@@ -478,7 +479,7 @@ In this phase the company experiences sales decline as the product becomes outda
 
 # UNIT 5: WHAT STRATEGIC OPTIONS ARE AVAILABLE TO THE CORPORATION?
 
-## Areas to Consider When Formulating a Strategy
+## Areas to Consider When Formulating a Strategy vip
 
 Strategic planning is a very vital activity of an organisation as it decides whether the organisation or SBU will be successful in the future or not. It is usually a daunting task for an organisation to explore several options or scenarios during this process before choosing the strategy to adopt. However, this strategic planning does not guarantee that the chosen strategic is the ideal decision. Some factors infleuncing strategic decisions in an organisation include: history of the organisation, culture and management. The management is responsible for choosing the strategic path to adopt. For more details see *Levitt 1990*. In the strategic planning process, there are several areas that the company need to examine. These include:
 
@@ -509,9 +510,15 @@ Companies can adopt this strategy to expand their presence in the market by intr
 3. **Developing New Markets** <br>
 Companies can introduce existing products in a new market with the aim to increase its usage and to expand their market share. Typically, the product can be modified before being introduced in the new market. Modification could include changing its design or packaging to make it appear new and attractive. Venturing into a new market also comes with cost as the organisation might need to secure new distributors and develope a new marketing strategy based on the marketing mix in order to achieve its objectives in the new market.
 
-4. **Diversification** <br>
-In this approach, a new market is penatrated with new products. This usually require a complete change in strategy. As a result, the risk of failure increases. This has been observed by the fall of the merger between Time Warner and AOL. Despite the high risk of failure, diversification offers enormous opportunities if they are well managed. The three main reasons for companies to diversify are the following:
+4. **Diversification** vip<br>
+In this approach, a new market is penatrated with new products i.e a company ventures into a market that is distinct from the products/services it offers. This usually require a complete change in strategy. The aim of diversification is to diversify investmenst. However, the risk of failing in a new market is high. This has been observed by the fall of the merger between Time Warner and AOL. Despite the high risk of failure, diversification offers enormous opportunities if they are well managed. Basically, companies can diversify in four direction which are:<br>
 
+- Market penetration (discussed above)
+- Developing new products and services(discussed above)
+- Developing new markets(discussed above)
+- Diversification
+
+The three main reasons for companies to diversify are the following:
 - Increase efficiency
 - Utitlize management competencies
 - Increase market power
@@ -563,10 +570,9 @@ McKinsey and the American Corporation General Electric developed the GE-McKinsey
 ![McKinsey Matrix](./img/mckinsey_matrix.png "Strategic Levels")
 
 **Interpretation of the Quadrants**
-- The more attractive the market and the stronger the competitive position of the business or product, the more should be invested.
+- The more attractive the market and the stronger the competitive position of the business or product, the more should be invested. These markets yield great profit.
 - If the market attractiveness is low and the competitive position weak, the business unit or product should be divested.
-- The products and businesses that are positioned in the middle segments of the matrix are more difficult to evaluate and more detailed analyses are
-required in order to make a final decision as to whether to invest in the business or product or whether to divest it.
+- The products and businesses that are positioned in the middle segments of the matrix are more difficult to evaluate and more detailed analyses are required in order to make a final decision as to whether to invest in the business or product or whether to divest it.
 
 
 # UNIT 6: WHAT INTERNATIONAL STRATEGIES ARE AVAILABLE?
@@ -584,29 +590,29 @@ There are several reasons that motivate small to large companies to go internati
 
 Going internation requires carefull planning and commitment to understake the required coordinating tasks. Coordination is the organisation of human resources as well as economic and technical tasks in an organisation.
 
-1. **Trade Agreements** <br>
+1. **Trade Agreements**-- <br>
 In increasing number of trade regulations between countries has made it easier for companies to do business in other countries and across regions. In the best case, relaxing trade relations accelerates trade between the partying countries involved. For instance, China and Taiwan eliminated custom duties for more than 800 products and it accelarated trade between them.
 
-2. **Unification** <br>
+2. **Unification**-- <br>
 This usually leads to the creation of *free trade zones* like the EU. Most terms and conditions agreed for doing business with zone usually applies to the individual countries that make up that zone.
 
-3. **Economies of Scale** <br>
-pass
+3. **Economies of Scale**-- <br>
+The cost advantage that the company achieves as it increases the scale of production. The more you do the better you get at and the more efficient you become. Being efficient can enable an organisation to significantly reduce production cost and increase its profit margin.
 
-4. **Infrastructure** <br>
-This includes the transportation and human resources necessary to run an economy. For instance international container shipping business has improved due to technological advancement, thus 
+4. **Infrastructure**-- <br>
+This includes the transportation and human resources necessary to run an economy. For instance international container shipping business has improved due to technological advancement. This has made the loading and unloading activities more efficient, thus reducing the time that ships spend at ports. Think of decision support and operation research.
 
 5. **Local Differences** <br>
 
 Improvement in infrastructure create flexibility for companies as they can decide where to perform certain operations. The division of tasks to be performed on chosen locations are related to the cost and opportunities. For instance, a company selling textile in europe will prefer to push production in Asia as it is cheap there, howerver marketing will be done in the home country where the customers are located or are to be served.
 
 6. **The World is Growing Closer Together** <br>
-Globalisation and growing accessibility to the internet.s
+Globalisation and growing accessibility to the internet.
 
-7. **Standardisation** <br>
+7. **Standardisation**-- <br>
 E.g Using the USD as the base currency for global foreign exchange market. A company producing chocolate in the germany can purchase coacoa from a coacoa producing company in ivory coast and make payments in USD.
 
-8. **Global Marketing** <br>
+8. **Global Marketing**-- <br>
 Some business activities are accomplished using standards while others remain under local standards. On one hand it gives the sense of belonging and on the other hand it shows respect for local cultures, values and inclsuion. E.g McDonald may make ads with a global theme like reducing environmental polution and in the ad it features natives of individual countries.
 
 9. **Dependencies** <br>
@@ -616,32 +622,33 @@ International companies usually sites located in different parts of the world. T
 Hiving strong financial resources does not guarantee success in international markets. Walmart failed in Germany.
 
 ## What Factors Contribute to the Decision About Which Country to Invest In?
+Answers the question which markets would be interested for companies
 
 1. **Global Factors** <br>
 Just like analysing micro -and macroenvironments of an organisation, companies have to research the international environment in order to make informed strategic decisions.
 
-2. **Political situation** <br>
+2. **Political situation**-- <br>
 International companies need regurlarly update themselves with respect to the political situation in the country where they are operating. Quick change of governments of a country can lead to changes in the terms for doing business for international companies.
 
-3. **Legal situation** <br>
+3. **Legal situation**-- <br>
 Ligitimacy and Seizure of foreign companies
 
-4. **Economic situation** <br>
+4. **Economic situation**-- <br>
 GDP and GDP per capita.
 
-5. **Social situation** <br>
-Does the buying habbit support the establishment of an international market for the product/services that the company wants to sell. The demography may be attractive but the buying power may be weak. The large and young population in sub-sahara africa is suitable to boost production of mercedes cars in sub-sahara. However, very a small percentage of this population could aford a mercedes. As a result, it is not beneficial for mercedes to create a production site in sub-sahara.
+5. **Social situation**-- <br>
+Does the buying habbit support the establishment of an international market for the product/services that the company wants to sell. The demography may be attractive but the buying power may be weak. For this reason, it is important to consider cultural and social factors before making investment decisions with regards to a market. E.g the large and young population in sub-sahara africa is suitable to boost production of mercedes cars in sub-sahara. However, a very small percentage of this population can aford a mercedes. Mercedes must take this social factor into consideration before making investments in the assembly of mercedes vehicles in e.g Nigeria.
 
-## Factors That Lead to Competitivee Advantages
+## Factors That Lead to Competitivee Advantages --
 International successful companies often benefit from local competitive advantages. These local competitive advantages occur as a result of regional factors. Some regions are predestined for specific business sectors and promote their success. Michael Porter (1998) identifies four factors that lead to a sustainable competitive advantage for companies. These are:
 
 1. Local Factors <br>
 Some regions are particularly equiped to produce specific products or services as they have ready access to raw materials needed for production. Resources could be human or knowledge or material. 
-
 2. Local demand <br>
 The local demand for specific goods and services often favors the establishment of specific businesses in the area to makeup to the needs of the natives. Companies who fulfil this already secure a market share locally which gives them a positive edge in the local industry. In 1886, the German inventor Carl Benz filed a patent for the first motorized vehicle, marking the birth of the modern automobile. A world-renowned car industry
 was henceforth established in southern Germany. The strong connection of the German people to locally produced automobiles (which still exists today), paired with the German sense of quality, has led to and perpetuated the competitive advantage of German companies in the automotive industry.
-3. Supporting industry
+3. Supporting industry<br>
+When a company is established somewhere other companies(e.g startups) may be created soon afterwards. These startups may offer specialised services to the organisation, through outsourcing. Alternatively, there may be an increase in the demand for skills required by this organisation in the environment where they are located. 
 4. Local strategy, structure, and competition
 
 ## How Can a Company Invest Internationally?
@@ -661,7 +668,7 @@ Joint ventures and alliances with local firms can be a strong way to expand inte
 However, they are difficult to manage. Finding a reliable partner with aligned goals can be challenging, and successful cooperation requires ongoing relationship management and coordination. There is also a risk that the local partner learns and uses transferred know-how, which can reduce the foreign company’s competitive advantage in that market.
 
 3. Licenses <br>
-Licensing, especially franchising, is a way for companies to enter foreign markets without selling directly themselves. In this model, local partners use the brand and business system in return for agreed payments, and both sides share costs and risks. Common examples include McDonald’s and other franchise-based brands.
+Licensing refers to the legal permissions granted by one party to another party to use certain rights, properties or intellectual assets in exchange for agreed terms e.g finance, marketing, endorsement etc. Licensing, especially *franchising*, is a way for companies to enter foreign markets without selling directly themselves. In this model, local partners use the brand and business system in return for agreed payments, and both sides share costs and risks. Common examples include McDonald’s and other franchise-based brands.
 
 The main challenges are finding reliable partners who protect intellectual property, maintain quality standards, and actively grow sales. The original company also gives up some local cost advantages, since the franchise partner captures those benefits. There is further risk of reputational damage or lost competitive advantage if franchisees deliver poor quality or copy the system to start competing businesses. Ongoing quality control is therefore essential for franchising success.
 
@@ -673,7 +680,7 @@ Its benefits include full managerial control, stronger integration across operat
 Its downsides are high cost, major coordination demands, and significant risk. Integration can fail because firms must manage both national cultural differences and differing corporate cultures. As a result, FDI is a costly but potentially strategic way to expand internationally. e.g A foreign company bought a declining sugar producing company in cameroon and made investments to boost its market presense. The foreign company chose their management, hired workers and determined wages. Is this foreign direct investment.
 
 # UNIT 7: DO-IT- YOURSELF, BUY, OR ALLY?
-
+For companies to embark on the path of strategic growth, they can either *grow organically, merge with or acquire another organisation, or form a strategic alliance*.
 The most common reasons why companies fail to integrate and benefit from Mergers&Acquisition(MA) activities. These include:
 
 1. **Ignorance**<br>
@@ -702,24 +709,28 @@ In order for an organisation to embark on the path of strategic growth, organisa
 - Buy
 - Ally
 
-## Do-It-yourself (Organic growth strategy)
-This is also known as organic growth and it is a practice where an organisation invests into its development and growth using its resources and capabilities. The advantages of this strategic growth approach is that the organisation builds on time to grow into new areas and make its own experiences. Thaugh the growth is slow, it makes it easier for companies to adequately allocate their financial resources in areas that creates significant positive impact. It also enables the company to be independently and follow its strategic path. A good example of a product that grew organically is Amazon's e-book named *kindle*. Amazone learned from its online book business and leveraged its technological expertise to develop this tool. Today, kindle is still generates huge sales for Amazon.
+## Do-It-yourself (Organic growth strategy)--
 
-## Mergers and Acquisition (Buy strategy)
+This is also known as organic growth and it is a practice where an organisation invests into its development and growth using its internal resources and capabilities. The advantages of this strategic growth approach is that the organisation builds on time to grow into new areas and make its own experiences. Thaugh the growth is slow, it makes it easier for companies to adequately allocate their resources in areas that creates significant positive impact. As result a company can grow within in markets by acquiring new customers which increases its market share. It also enables the company to be independent and follow its strategic path. Organic growth can also be practice in the development of a new product/service. This allows a company to conceptualise and develope the new product based on their resources. This gives the company an edge with regards to production, customer acquisition and sales. This approach is suitable when a company is creating a new market. A good example of a product that grew organically is Amazon's e-book named *kindle*. Amazone learned from its online book business and leveraged its technological expertise to develop this tool. Today, kindle is still generates huge sales for Amazon.
+
+## Mergers and Acquisition (Buy strategy)--
+
 A merger is the formation of a larger organisation by two companies that operate as more or less equal partners. On the other hand, an acquisition is when one company takeover another company. If it occurs under mutual understanding then it is a friendly takeover otherwise it is a hostile takeover. A hostile takeover occurs when one company acquires a majority share of the other company. In general there are three motives that supports mergers and acquisition. These are, strategic, financial and personal reason.
 
-1. **Strategic motives**<br>
-The target for this motive is to grow in size and increase productivity in order to benefit from economies of scale. For instance, through a merger, a company can:
+1. **Strategic motives** --<br>
+This motive is centered around achieving specific long-term objectives that contribute to the growth, competitiveness and sustainability of the acquiring company. The aquiring company may aim to grow in size and increase productivity in order to benefit from economies of scale. For instance, through a merger, a company can:
 - Expand its product porfolio
 - Explore new markets
 - Expand locally and internationally
 As an example, the Chinese motor company Geely acquired Volvo and expanded into another country.
 
-2. **Financial motives**<br>
+2. **Financial motives** -- <br>
+
 A merger creates financial efficiency especially when one of the companies faces loses. In this case, the profit of the other can be used to offset the loses of the other, thus keeping the merger stable as a unified entity. Additionally, if one of the companies is located in a country with lower tax, then the merger will prefer to pay their taxes in this country. This positively impacts their financial status, creating room for other possible investments.
 
-3. **Personal/Management motives**<br>
-The personal ambition of a *CEO* may play a role in *M&A* decisions. Often, managers are evaluated on short.term wins and their target share price. As result, a CEO may may prefer pursuit a merger or acquisition especially when there is evidence that it will create immediate benefit, rather than grow the company organically and benefit from slow but steady growth that will make the company independent.A successful merge or acquisition will boost the reputation of the acquiring firm and ofcourse the profil of the CEO for the deal.
+3. **Personal/Management motives** --<br>
+
+The personal ambition of a *CEO* may play a role in *M&A* decisions. Often, managers are evaluated on short-term wins and their target share price. As result, a CEO may may prefer pursuit a merger or acquisition especially when there is evidence that it will create immediate benefit, rather than grow the company organically and benefit from slow but steady growth that will make the company independent.A successful merge or acquisition will boost the reputation of the acquiring firm and ofcourse the profil of the CEO for the deal.
 
 ## What Criteria Play a Role in the Selection of a Company for M&A?
 Before deciding whether to merge with or acquire a company, it is crucial to evaluate some factors. These are typically, the *fundamental, strategic and cultural fit* between the organisations
@@ -735,15 +746,19 @@ This includes the corporate cultures and management of the individual companies 
 Basically, the level of integration between two companies in a M&A depends on the *strength of their individual strategic independence and the need for organisational automay*. Based on how close or different they are, one of the following integration strategies can be adopted.
 
 1. **Maintenance or preservation**<br>
-Adopted when both companies are less strategically dependent and one wants to require more control over its unit. Strategic independence can be when one company does not depend on the product/service of the other. This approach allows for minimul integration typically involving, common financial reporting while both companies continue to separate as separate entities.
-2. **Symbiosis**<br>
-This is recommended when the two companies show *high strategic interdependence* and have a marked need for organisation autonomy. This means that, both companies need to integrate their processes to be more efficient,however each company control their market. The benefit of this approach is that, the companies can learn from their core capabilities. However, a drawback is that, the integration process is difficult and time consuming.
-3. **Absorption**<br>
-Ideal for cases where both companies are strongly interdependent and one company has very little organisational autonomy. In this case, the company with stronger organisational autonomy absorbes the other company. The absorbed company typically has to accept the decision and adatp to the strategy, culture and processes of the other company.
-4. **Holding**<br>
-This approach is adopted when the merging companies have little to no strategic dependence and need for organisational autonomy is for both is low as well. In this case, the acquired company is usually not integrated into the strategy, culture and processes of the acquiring firm. The acquired firm is usually sold as soon as a good opportunity shows up. For instance, you stop renting as soon as you acquire yours.
+Adopted when both companies are less strategically dependent and one wants more control over its unit. In essense, high need for organisational autonomy and low need for strategic interdependence. This strategy is suitable for companies operating in different business. They require minimum level of integration. As a result, after the integration, each company will have high autonomy over its business and heavily rely on their individual strategies.
 
-## Strategic Alliances
+2. **Symbiosis**<br>
+This is recommended when the two companies show *high need for strategic interdependence and high need for organisation autonomy*. This means that, both companies need to integrate their processes to be more efficient,however each company control their market. The benefit of this approach is that, the companies can learn from their core capabilities. However, a drawback is that, the integration process is difficult and time consuming.
+
+3. **Absorption**<br>
+Ideal for cases where one company has high need for strategic interdependence but has very little need for organisational autonomy. In this case, the company with stronger organisational autonomy absorbes the other company. The absorbed company typically has to accept the decision and adatp to the strategy, culture and processes of the other company.
+
+4. **Holding**<br>
+This approach is adopted when the merging companies have little to no interest on strategic dependence and the need for organisational autonomy is low for both as well. In this case, the acquired company is usually not integrated into the strategy, culture and processes of the acquiring firm. The acquired firm is usually sold as soon as a good opportunity shows up, because of their low need on organisational autonomy. This approach is rarely used in practice because no integration occurs in actuall terms. It is more like, i don't care who controls me but i want to maintain my strategy.
+
+## Strategic Alliances--
+
 There are two types of strategic alliances in terms of the ownership structure. This can be *equity or non-equity* alliances. In equity-alliance, the two companies merge to create a new entity which belongs to both companies. E.g Two pharma companies invest together in a research institution. Non-equity alliances are merely contact bound.E.g The Leading Hotels of the World (LHW) is an alliance of luxury hotels, resorts and spas worldwide that offer member hotels certain services like marketing measures for the group, consultation and a central reservation system. TThe motives for forming alliances are similar to those of *M&A*. However, the financial commitment of the companies are much lower. For instance, in the case of LHW, the members of the alliance benefit from a centralised marketing, consultation, reservation system. Additionally, all members receive the same quality of inspection to all the member hotels. This significantly reduces the cost of ads and maintaining employees. Through partners located in other countries, a member of the alliance can access the other a market without having to invest in marketing. This is seen in McDonals expanding internationally via its franchise or licensing system. In complementary alliance, each member provides one component that is beneficial to the other members of the alliance. Example: A owns a warehouse and logistics in his country. B is in another country and has customers where A resides. A purchases products in the country where B resides. Now, A and B can form an alliance where B takes care of shipping products to A including A's products while A takes responsibility to distribute B's products to its customers. In this case B does not have to setup a warehouse where A lives and A does not have to travel to B's place to search for suppliers.
 
 ## How to Decide Whether to Buy, Ally or Do-It-Yourself?
@@ -767,19 +782,20 @@ The SWOT analysis is a method used to evaluate the internal and external conditi
 This approach looks at the expected performance results of the strategy. Basically, it should meet the expectations of the stakeholders(e.g management) of the organisation. Management could focus on risk of failure, return on investment and reaction of shareholders. The risk level indicates the accuracy of the strategy to achieve expected results. The risk level is of the strategy is determined via questioning and testing its assumptions and how the strategy influences the liquidity of the organisation. Liquidity is the financial means readily available to an organisation. Shareholders are most often interested in the return like *Return on capital employed (ROCE)*. This indicator measures how effective and profitable the company uses its invested capital.
 
 3. **Feasibility**<br>
-This approach looks at the capabilities and resources that the organisation has to pursue the strategy they want to implement. Resources included, human resource, financial resource, technological resource, hard capabilities like machines etc.
+This approach looks at the capabilities and resources that the organisation has to pursue the strategy they want to implement. This is usually preceded by a SWOT and Product analysis.  Resources considered included, human resource, financial resource, technological resource, hard capabilities like machines etc.
 
 ## Implementing Strategy
 To effectively implement a strategy, the structure and processes of the organisation need to be considered and redesigned. The formation of internal structures and processes are part of the implementation of the strategy. Four main areas should be considered in the implementation plan. These are:
 
 1. **Organisation**
-Roles and Responsibilities as in an organigram. This includes how decisions are made and the organisational structure also determines how information flows in the company.
+The structure and processes of the organisation need to be aligned with the strategic requirements.For instance, roles and responsibilities are governed are attributed following the structure of the organisation and governed by agreed rules and principles.
 
 2. **Human Resource Management**<br>
+A program needs to be developed that defines the necessary training, selection and development of new and current employees, and reward systems in order to facilitate the implementation.
 
 3. **Controlling Systems**<br>
 Controlling: This is a financial management and steering system for the management of an organization in order to control the organization
 
 4. **Corporate Structure**<br>
-pass
+The infrastructure of the organisation should be designed in such a way that the employees think, feel, and act according to the goals set by the organisation.
 
