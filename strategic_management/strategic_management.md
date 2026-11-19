@@ -43,7 +43,7 @@ Depending on the size of an organisation, there are various strategic levels whi
 ### What is Included in a Solid Strategic Plan?
 A strategic plan can be compared to a road map that an organisation draws up in order to reach its strategic goals. To develop such a road map, the following questions can assist as a guide.
 
-**What is their position in the market?**<br>
+1. **What is their position in the market?**<br>
 Companies need to analyse the following points to be able to understand their position in the market.
 + Perform SWOT analysis
 + the infleunce of the corporate strategy on the environment and the corporate culture
